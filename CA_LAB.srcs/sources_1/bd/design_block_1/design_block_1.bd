@@ -1,0 +1,156 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xBFE29F6DBFE29F6D",
+      "device": "xc7z010clg400-1",
+      "name": "design_block_1",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2018.3",
+      "validated": "true"
+    },
+    "design_tree": {
+      "debouncer_0": "",
+      "debouncer_1": "",
+      "test_0": ""
+    },
+    "ports": {
+      "clk": {
+        "direction": "I"
+      },
+      "key1": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "key2": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "led1": {
+        "direction": "O"
+      },
+      "led2": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "debouncer_0": {
+        "vlnv": "xilinx.com:module_ref:debouncer:1.0",
+        "xci_name": "design_block_1_debouncer_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "debouncer",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "SIGNAL_I": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "CLK_I": {
+            "direction": "I"
+          },
+          "SIGNAL_O": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          }
+        }
+      },
+      "debouncer_1": {
+        "vlnv": "xilinx.com:module_ref:debouncer:1.0",
+        "xci_name": "design_block_1_debouncer_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "debouncer",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "SIGNAL_I": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "CLK_I": {
+            "direction": "I"
+          },
+          "SIGNAL_O": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          }
+        }
+      },
+      "test_0": {
+        "vlnv": "xilinx.com:module_ref:test:1.0",
+        "xci_name": "design_block_1_test_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "test",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "key1": {
+            "direction": "I"
+          },
+          "key2": {
+            "direction": "I"
+          },
+          "led1": {
+            "direction": "O"
+          },
+          "led2": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "debouncer_0_SIGNAL_O": {
+        "ports": [
+          "debouncer_0/SIGNAL_O",
+          "test_0/key1"
+        ]
+      },
+      "debouncer_1_SIGNAL_O": {
+        "ports": [
+          "debouncer_1/SIGNAL_O",
+          "test_0/key2"
+        ]
+      },
+      "CLK_I_0_1": {
+        "ports": [
+          "clk",
+          "debouncer_0/CLK_I",
+          "debouncer_1/CLK_I"
+        ]
+      },
+      "SIGNAL_I_0_1": {
+        "ports": [
+          "key1",
+          "debouncer_0/SIGNAL_I"
+        ]
+      },
+      "SIGNAL_I_1_1": {
+        "ports": [
+          "key2",
+          "debouncer_1/SIGNAL_I"
+        ]
+      },
+      "test_0_led1": {
+        "ports": [
+          "test_0/led1",
+          "led1"
+        ]
+      },
+      "test_0_led2": {
+        "ports": [
+          "test_0/led2",
+          "led2"
+        ]
+      }
+    }
+  }
+}
