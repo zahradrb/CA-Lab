@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# debouncer, debouncer, test
+# MUX, PC, adder
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -164,53 +164,93 @@ proc create_root_design { parentCell } {
   # Create interface ports
 
   # Create ports
-  set clk [ create_bd_port -dir I clk ]
-  set key1 [ create_bd_port -dir I -from 0 -to 0 key1 ]
-  set key2 [ create_bd_port -dir I -from 0 -to 0 key2 ]
-  set led1 [ create_bd_port -dir O led1 ]
-  set led2 [ create_bd_port -dir O led2 ]
+  set Branch_Address [ create_bd_port -dir I -from 31 -to 0 Branch_Address ]
+  set Branch_Tacken [ create_bd_port -dir I Branch_Tacken ]
+  set PC [ create_bd_port -dir O -from 31 -to 0 PC ]
+  set clk [ create_bd_port -dir I -type clk clk ]
+  set_property -dict [ list \
+   CONFIG.ASSOCIATED_RESET {rst} \
+ ] $clk
+  set freeze [ create_bd_port -dir I freeze ]
+  set instruction [ create_bd_port -dir O -from 31 -to 0 instruction ]
+  set rst [ create_bd_port -dir I -type rst rst ]
 
-  # Create instance: debouncer_0, and set properties
-  set block_name debouncer
-  set block_cell_name debouncer_0
-  if { [catch {set debouncer_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+  # Create instance: MUX_0, and set properties
+  set block_name MUX
+  set block_cell_name MUX_0
+  if { [catch {set MUX_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
-   } elseif { $debouncer_0 eq "" } {
+   } elseif { $MUX_0 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
   
-  # Create instance: debouncer_1, and set properties
-  set block_name debouncer
-  set block_cell_name debouncer_1
-  if { [catch {set debouncer_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+  # Create instance: PC_0, and set properties
+  set block_name PC
+  set block_cell_name PC_0
+  if { [catch {set PC_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
-   } elseif { $debouncer_1 eq "" } {
+   } elseif { $PC_0 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
   
-  # Create instance: test_0, and set properties
-  set block_name test
-  set block_cell_name test_0
-  if { [catch {set test_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+  # Create instance: adder_0, and set properties
+  set block_name adder
+  set block_cell_name adder_0
+  if { [catch {set adder_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
-   } elseif { $test_0 eq "" } {
+   } elseif { $adder_0 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
   
+  # Create instance: blk_mem_gen_0, and set properties
+  set blk_mem_gen_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_0 ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.Coe_File {c:/Users/Novin.SYS/Desktop/output.coe} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Load_Init_File {true} \
+   CONFIG.Memory_Type {Single_Port_ROM} \
+   CONFIG.Port_A_Write_Rate {0} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_0
+
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {1} \
+   CONFIG.CONST_WIDTH {32} \
+ ] $xlconstant_0
+
+  # Create instance: xlslice_0, and set properties
+  set xlslice_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {12} \
+   CONFIG.DOUT_WIDTH {13} \
+ ] $xlslice_0
+
   # Create port connections
-  connect_bd_net -net CLK_I_0_1 [get_bd_ports clk] [get_bd_pins debouncer_0/CLK_I] [get_bd_pins debouncer_1/CLK_I]
-  connect_bd_net -net SIGNAL_I_0_1 [get_bd_ports key1] [get_bd_pins debouncer_0/SIGNAL_I]
-  connect_bd_net -net SIGNAL_I_1_1 [get_bd_ports key2] [get_bd_pins debouncer_1/SIGNAL_I]
-  connect_bd_net -net debouncer_0_SIGNAL_O [get_bd_pins debouncer_0/SIGNAL_O] [get_bd_pins test_0/key1]
-  connect_bd_net -net debouncer_1_SIGNAL_O [get_bd_pins debouncer_1/SIGNAL_O] [get_bd_pins test_0/key2]
-  connect_bd_net -net test_0_led1 [get_bd_ports led1] [get_bd_pins test_0/led1]
-  connect_bd_net -net test_0_led2 [get_bd_ports led2] [get_bd_pins test_0/led2]
+  connect_bd_net -net MUX_0_out [get_bd_pins MUX_0/res] [get_bd_pins PC_0/inp]
+  connect_bd_net -net PC_0_res [get_bd_pins PC_0/res] [get_bd_pins adder_0/b] [get_bd_pins xlslice_0/Din]
+  connect_bd_net -net adder_0_out [get_bd_ports PC] [get_bd_pins MUX_0/a] [get_bd_pins adder_0/res]
+  connect_bd_net -net b_0_1 [get_bd_ports Branch_Address] [get_bd_pins MUX_0/b]
+  connect_bd_net -net blk_mem_gen_0_douta [get_bd_ports instruction] [get_bd_pins blk_mem_gen_0/douta]
+  connect_bd_net -net clk_0_1 [get_bd_ports clk] [get_bd_pins PC_0/clk] [get_bd_pins blk_mem_gen_0/clka]
+  connect_bd_net -net freeze_0_1 [get_bd_ports freeze] [get_bd_pins PC_0/freeze]
+  connect_bd_net -net rst_0_1 [get_bd_ports rst] [get_bd_pins PC_0/rst]
+  connect_bd_net -net sel_0_1 [get_bd_ports Branch_Tacken] [get_bd_pins MUX_0/sel]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins adder_0/a] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net xlslice_0_Dout [get_bd_pins blk_mem_gen_0/addra] [get_bd_pins xlslice_0/Dout]
 
   # Create address segments
 

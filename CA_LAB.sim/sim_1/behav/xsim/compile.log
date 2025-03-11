@@ -1,0 +1,25 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/new/test.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-311] analyzing module register
+INFO: [VRFC 10-2263] Analyzing Verilog file "G:/CA lab/CA_LAB/CA_LAB.ip_user_files/bd/design_block_1/sim/design_block_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_block_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "G:/CA lab/CA_LAB/CA_LAB.ip_user_files/bd/design_block_1/ip/design_block_1_MUX_0_0/sim/design_block_1_MUX_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_block_1_MUX_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "G:/CA lab/CA_LAB/CA_LAB.ip_user_files/bd/design_block_1/ip/design_block_1_PC_0_0/sim/design_block_1_PC_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_block_1_PC_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "G:/CA lab/CA_LAB/CA_LAB.ip_user_files/bd/design_block_1/ip/design_block_1_adder_0_0/sim/design_block_1_adder_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_block_1_adder_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "G:/CA lab/CA_LAB/CA_LAB.ip_user_files/bd/design_block_1/ip/design_block_1_xlconstant_0_0/sim/design_block_1_xlconstant_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_block_1_xlconstant_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "G:/CA lab/CA_LAB/CA_LAB.ip_user_files/bd/design_block_1/ip/design_block_1_xlslice_0_0/sim/design_block_1_xlslice_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_block_1_xlslice_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "G:/CA lab/CA_LAB/CA_LAB.ip_user_files/bd/design_block_1/ip/design_block_1_blk_mem_gen_0_1/sim/design_block_1_blk_mem_gen_0_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_block_1_blk_mem_gen_0_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/new/ARM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ARM
+INFO: [VRFC 10-2263] Analyzing Verilog file "G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/hdl/design_block_1_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_block_1_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "G:/CA lab/CA_LAB/CA_LAB.srcs/sim_1/new/ARM_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ARM_tb

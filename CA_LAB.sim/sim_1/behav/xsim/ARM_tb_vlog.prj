@@ -1,0 +1,19 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../CA_LAB.srcs/sources_1/new/test.v" \
+"../../../../CA_LAB.ip_user_files/bd/design_block_1/sim/design_block_1.v" \
+"../../../../CA_LAB.ip_user_files/bd/design_block_1/ip/design_block_1_MUX_0_0/sim/design_block_1_MUX_0_0.v" \
+"../../../../CA_LAB.ip_user_files/bd/design_block_1/ip/design_block_1_PC_0_0/sim/design_block_1_PC_0_0.v" \
+"../../../../CA_LAB.ip_user_files/bd/design_block_1/ip/design_block_1_adder_0_0/sim/design_block_1_adder_0_0.v" \
+"../../../../CA_LAB.ip_user_files/bd/design_block_1/ip/design_block_1_xlconstant_0_0/sim/design_block_1_xlconstant_0_0.v" \
+"../../../../CA_LAB.ip_user_files/bd/design_block_1/ip/design_block_1_xlslice_0_0/sim/design_block_1_xlslice_0_0.v" \
+"../../../../CA_LAB.ip_user_files/bd/design_block_1/ip/design_block_1_blk_mem_gen_0_1/sim/design_block_1_blk_mem_gen_0_1.v" \
+"../../../../CA_LAB.srcs/sources_1/new/ARM.v" \
+"../../../../CA_LAB.srcs/sources_1/bd/design_block_1/hdl/design_block_1_wrapper.v" \
+"../../../../CA_LAB.srcs/sim_1/new/ARM_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
