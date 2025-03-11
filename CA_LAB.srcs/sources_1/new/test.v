@@ -39,13 +39,13 @@ endmodule
 module PC(
     input [31:0] in,
     input clk, rst, freeze,
-    output [31:0] out
+    output reg [31:0] out
 );
     always @(posedge clk) begin
         if (rst)
-            out => 32'b0;
-        else if (freeze)
-            
+            out <= 32'b0;
+        else if (~freeze)
+            out <= in;
     end
 
 endmodule
