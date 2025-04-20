@@ -17,6 +17,8 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param tcl.collectionResultDisplayLimit 0
+set_param xicom.use_bs_reader 1
 set_msg_config -id {HDL-1065} -limit 10000
 create_project -in_memory -part xc7z010clg400-1
 
@@ -26,12 +28,19 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir {G:/CA lab/CA_LAB/CA_LAB.cache/wt} [current_project]
 set_property parent.project_path {G:/CA lab/CA_LAB/CA_LAB.xpr} [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo {g:/CA lab/CA_LAB/CA_LAB.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
+add_files c:/Users/Novin.SYS/Desktop/output.coe
 read_verilog -library xil_defaultlib {{G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/hdl/design_block_1_wrapper.v}}
 add_files {{G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/design_block_1.bd}}
+set_property used_in_implementation false [get_files -all {{g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_blk_mem_gen_0_1/design_block_1_blk_mem_gen_0_1_ooc.xdc}}]
+set_property used_in_synthesis false [get_files -all {{g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_ila_0_1/ila_v6_2/constraints/ila_impl.xdc}}]
+set_property used_in_implementation false [get_files -all {{g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_ila_0_1/ila_v6_2/constraints/ila_impl.xdc}}]
+set_property used_in_implementation false [get_files -all {{g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_ila_0_1/ila_v6_2/constraints/ila.xdc}}]
+set_property used_in_implementation false [get_files -all {{g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_ila_0_1/design_block_1_ila_0_1_ooc.xdc}}]
 set_property used_in_implementation false [get_files -all {{G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/design_block_1_ooc.xdc}}]
 
 # Mark all dcp files as not used in implementation to prevent them from being

@@ -19,14 +19,18 @@ Compiling module blk_mem_gen_v8_4_2.blk_mem_gen_v8_4_2_softecc_outpu...
 Compiling module blk_mem_gen_v8_4_2.blk_mem_gen_v8_4_2_mem_module(C_...
 Compiling module blk_mem_gen_v8_4_2.blk_mem_gen_v8_4_2(C_FAMILY="zyn...
 Compiling module xil_defaultlib.design_block_1_blk_mem_gen_0_1
+Compiling module xil_defaultlib.registerIF
+Compiling module xil_defaultlib.design_block_1_registerIF_0_0
+Compiling module xil_defaultlib.register
+Compiling module xil_defaultlib.design_block_1_register_0_1
+Compiling module xil_defaultlib.design_block_1_register_1_0
+Compiling module xil_defaultlib.design_block_1_register_2_0
 Compiling module xlconstant_v1_1_5.xlconstant_v1_1_5_xlconstant(CON...
 Compiling module xil_defaultlib.design_block_1_xlconstant_0_0
 Compiling module xlslice_v1_0_1.xlslice_v1_0_1_xlslice(DIN_FROM=...
 Compiling module xil_defaultlib.design_block_1_xlslice_0_0
 Compiling module xil_defaultlib.design_block_1
 Compiling module xil_defaultlib.design_block_1_wrapper
-Compiling module xil_defaultlib.register
-Compiling module xil_defaultlib.ARM
 Compiling module xil_defaultlib.ARM_tb
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot ARM_tb_behav

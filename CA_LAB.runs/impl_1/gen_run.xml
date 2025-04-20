@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1741096544">
-  <File Type="BITSTR-BMM" Name="design_block_1_wrapper_bd.bmm"/>
+<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1744121534">
   <File Type="ROUTE-PWR" Name="design_block_1_wrapper_power_routed.rpt"/>
   <File Type="PA-TCL" Name="design_block_1_wrapper.tcl"/>
-  <File Type="OPT-DCP" Name="design_block_1_wrapper_opt.dcp"/>
+  <File Type="BITSTR-BMM" Name="design_block_1_wrapper_bd.bmm"/>
   <File Type="ROUTE-PWR-SUM" Name="design_block_1_wrapper_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="design_block_1_wrapper_reports.tcl"/>
+  <File Type="OPT-DCP" Name="design_block_1_wrapper_opt.dcp"/>
   <File Type="OPT-DRC" Name="design_block_1_wrapper_drc_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="design_block_1_wrapper.hwdef"/>
   <File Type="PWROPT-DCP" Name="design_block_1_wrapper_pwropt.dcp"/>
@@ -25,20 +25,19 @@
   <File Type="ROUTE-BLACKBOX-DCP" Name="design_block_1_wrapper_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="design_block_1_wrapper_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="design_block_1_wrapper_drc_routed.pb"/>
-  <File Type="BITSTR-LTX" Name="design_block_1_wrapper.ltx"/>
   <File Type="ROUTE-DRC-RPX" Name="design_block_1_wrapper_drc_routed.rpx"/>
-  <File Type="BITSTR-MMI" Name="design_block_1_wrapper.mmi"/>
+  <File Type="BITSTR-LTX" Name="design_block_1_wrapper.ltx"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="design_block_1_wrapper_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-MMI" Name="design_block_1_wrapper.mmi"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="design_block_1_wrapper_methodology_drc_routed.rpx"/>
-  <File Type="BITSTR-SYSDEF" Name="design_block_1_wrapper.sysdef"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="design_block_1_wrapper_methodology_drc_routed.pb"/>
+  <File Type="BITSTR-SYSDEF" Name="design_block_1_wrapper.sysdef"/>
   <File Type="ROUTE-PWR-RPX" Name="design_block_1_wrapper_power_routed.rpx"/>
   <File Type="ROUTE-STATUS" Name="design_block_1_wrapper_route_status.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="design_block_1_wrapper_route_status.pb"/>
   <File Type="ROUTE-TIMINGSUMMARY" Name="design_block_1_wrapper_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="design_block_1_wrapper_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="design_block_1_wrapper_timing_summary_routed.rpx"/>
-  <File Type="RDI-RDI" Name="design_block_1_wrapper.vdi"/>
   <File Type="ROUTE-CLK" Name="design_block_1_wrapper_clock_utilization_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW" Name="design_block_1_wrapper_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="design_block_1_wrapper_bus_skew_routed.pb"/>
@@ -49,19 +48,20 @@
   <File Type="BITSTR-RBT" Name="design_block_1_wrapper.rbt"/>
   <File Type="BITSTR-NKY" Name="design_block_1_wrapper.nky"/>
   <File Type="BG-DRC" Name="design_block_1_wrapper.drc"/>
+  <File Type="RDI-RDI" Name="design_block_1_wrapper.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="C:/Users/Novin.SYS/Desktop/debouncer.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/test.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="C:/Users/Novin.SYS/Desktop/debouncer.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -74,6 +74,28 @@
     </File>
     <File Path="$PSRCDIR/sources_1/bd/design_block_1/hdl/design_block_1_wrapper.v">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ARM.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="c:/Users/Novin.SYS/Desktop/output.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/design_arm/design_arm.bd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -114,7 +136,14 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="design_block_1_register_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_block_1_register_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_block_1_adder_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_block_1_register_2_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_block_1_registerIF_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_block_1_PC_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_block_1_blk_mem_gen_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_block_1_debouncer_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_block_1_test_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_block_1_debouncer_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_block_1_MUX_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_block_1_ila_0_1"/>
 </GenRun>

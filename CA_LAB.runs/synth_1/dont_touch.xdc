@@ -6,13 +6,46 @@
 # Block Designs: bd/design_block_1/design_block_1.bd
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_block_1 || ORIG_REF_NAME==design_block_1} -quiet] -quiet
 
+# IP: bd/design_block_1/ip/design_block_1_MUX_0_0/design_block_1_MUX_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_block_1_MUX_0_0 || ORIG_REF_NAME==design_block_1_MUX_0_0} -quiet] -quiet
+
+# IP: bd/design_block_1/ip/design_block_1_PC_0_0/design_block_1_PC_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_block_1_PC_0_0 || ORIG_REF_NAME==design_block_1_PC_0_0} -quiet] -quiet
+
+# IP: bd/design_block_1/ip/design_block_1_adder_0_0/design_block_1_adder_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_block_1_adder_0_0 || ORIG_REF_NAME==design_block_1_adder_0_0} -quiet] -quiet
+
+# IP: bd/design_block_1/ip/design_block_1_xlconstant_0_0/design_block_1_xlconstant_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_block_1_xlconstant_0_0 || ORIG_REF_NAME==design_block_1_xlconstant_0_0} -quiet] -quiet
+
+# IP: bd/design_block_1/ip/design_block_1_xlslice_0_0/design_block_1_xlslice_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_block_1_xlslice_0_0 || ORIG_REF_NAME==design_block_1_xlslice_0_0} -quiet] -quiet
+
+# IP: bd/design_block_1/ip/design_block_1_blk_mem_gen_0_1/design_block_1_blk_mem_gen_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_block_1_blk_mem_gen_0_1 || ORIG_REF_NAME==design_block_1_blk_mem_gen_0_1} -quiet] -quiet
+
+# IP: bd/design_block_1/ip/design_block_1_registerIF_0_0/design_block_1_registerIF_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_block_1_registerIF_0_0 || ORIG_REF_NAME==design_block_1_registerIF_0_0} -quiet] -quiet
+
+# IP: bd/design_block_1/ip/design_block_1_register_0_1/design_block_1_register_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_block_1_register_0_1 || ORIG_REF_NAME==design_block_1_register_0_1} -quiet] -quiet
+
+# IP: bd/design_block_1/ip/design_block_1_register_1_0/design_block_1_register_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_block_1_register_1_0 || ORIG_REF_NAME==design_block_1_register_1_0} -quiet] -quiet
+
+# IP: bd/design_block_1/ip/design_block_1_register_2_0/design_block_1_register_2_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_block_1_register_2_0 || ORIG_REF_NAME==design_block_1_register_2_0} -quiet] -quiet
+
+# IP: bd/design_block_1/ip/design_block_1_xlconstant_1_0/design_block_1_xlconstant_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_block_1_xlconstant_1_0 || ORIG_REF_NAME==design_block_1_xlconstant_1_0} -quiet] -quiet
+
+# IP: bd/design_block_1/ip/design_block_1_xlconstant_1_1/design_block_1_xlconstant_1_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_block_1_xlconstant_1_1 || ORIG_REF_NAME==design_block_1_xlconstant_1_1} -quiet] -quiet
+
 # IP: bd/design_block_1/ip/design_block_1_debouncer_0_0/design_block_1_debouncer_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_block_1_debouncer_0_0 || ORIG_REF_NAME==design_block_1_debouncer_0_0} -quiet] -quiet
 
-# IP: bd/design_block_1/ip/design_block_1_debouncer_0_1/design_block_1_debouncer_0_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_block_1_debouncer_0_1 || ORIG_REF_NAME==design_block_1_debouncer_0_1} -quiet] -quiet
-
-# IP: bd/design_block_1/ip/design_block_1_test_0_0/design_block_1_test_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_block_1_test_0_0 || ORIG_REF_NAME==design_block_1_test_0_0} -quiet] -quiet
+# IP: bd/design_block_1/ip/design_block_1_ila_0_1/design_block_1_ila_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_block_1_ila_0_1 || ORIG_REF_NAME==design_block_1_ila_0_1} -quiet] -quiet
 
 # XDC: bd/design_block_1/design_block_1_ooc.xdc

@@ -8,11 +8,35 @@
       "tool_version": "2018.3"
     },
     "design_tree": {
+      "debouncer_0": "",
       "register_0": "",
-      "register_1": "",
-      "debouncer_0": ""
+      "register_1": ""
     },
     "components": {
+      "debouncer_0": {
+        "vlnv": "xilinx.com:module_ref:debouncer:1.0",
+        "xci_name": "design_arm_debouncer_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "debouncer",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "SIGNAL_I": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "CLK_I": {
+            "direction": "I"
+          },
+          "SIGNAL_O": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          }
+        }
+      },
       "register_0": {
         "vlnv": "xilinx.com:module_ref:register:1.0",
         "xci_name": "design_arm_register_0_1",
@@ -79,30 +103,6 @@
           "PC_out": {
             "direction": "O",
             "left": "31",
-            "right": "0"
-          }
-        }
-      },
-      "debouncer_0": {
-        "vlnv": "xilinx.com:module_ref:debouncer:1.0",
-        "xci_name": "design_arm_debouncer_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "debouncer",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "SIGNAL_I": {
-            "direction": "I",
-            "left": "0",
-            "right": "0"
-          },
-          "CLK_I": {
-            "direction": "I"
-          },
-          "SIGNAL_O": {
-            "direction": "O",
-            "left": "0",
             "right": "0"
           }
         }

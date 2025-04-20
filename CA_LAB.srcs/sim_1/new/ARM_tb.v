@@ -24,15 +24,35 @@ module ARM_tb(
 
     );
 
-    reg clk, rst;
+    reg [31:0]Branch_Address;
+    reg Branch_Tacken;
+    wire [31:0]PC;
+    wire [31:0]PC_out_0;
+    wire [31:0]instruction;
+    reg clk;
+    reg flush;
+    reg freeze;
+    reg rst;
 
-    ARM A(
-    .clk(clk), .rst(rst)
-    );
+    design_block_1_wrapper db
+       (.Branch_Address(Branch_Address),
+        .Branch_Tacken(Branch_Tacken),
+        .PC(PC),
+        .PC_out_0(PC_out_0),
+        .clk(clk),
+        .flush(flush),
+        .freeze(freeze),
+        .instruction(instruction),
+        .rst(rst));
+        
 
     initial begin
+        Branch_Address = 32'b0;
+        Branch_Tacken = 1'b0;
         rst = 0;
         clk = 0;
+        flush = 0;
+        freeze = 0;
         #10
         rst = 1;
         #10
