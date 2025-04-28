@@ -1,5 +1,4 @@
 -makelib xcelium_lib/xil_defaultlib -sv \
-  "G:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
   "G:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 -endlib
 -makelib xcelium_lib/xpm \
@@ -29,13 +28,30 @@
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/design_block_1/ip/design_block_1_blk_mem_gen_0_1/sim/design_block_1_blk_mem_gen_0_1.v" \
   "../../../bd/design_block_1/ip/design_block_1_registerIF_0_0/sim/design_block_1_registerIF_0_0.v" \
-  "../../../bd/design_block_1/ip/design_block_1_register_0_1/sim/design_block_1_register_0_1.v" \
   "../../../bd/design_block_1/ip/design_block_1_register_1_0/sim/design_block_1_register_1_0.v" \
   "../../../bd/design_block_1/ip/design_block_1_register_2_0/sim/design_block_1_register_2_0.v" \
   "../../../bd/design_block_1/ip/design_block_1_xlconstant_1_0/sim/design_block_1_xlconstant_1_0.v" \
   "../../../bd/design_block_1/ip/design_block_1_xlconstant_1_1/sim/design_block_1_xlconstant_1_1.v" \
-  "../../../bd/design_block_1/ip/design_block_1_debouncer_0_0/sim/design_block_1_debouncer_0_0.v" \
-  "../../../bd/design_block_1/ip/design_block_1_ila_0_1/sim/design_block_1_ila_0_1.v" \
+  "../../../bd/design_block_1/ip/design_block_1_xlslice_1_0/sim/design_block_1_xlslice_1_0.v" \
+  "../../../bd/design_block_1/ip/design_block_1_MUX_CU_0_0/sim/design_block_1_MUX_CU_0_0.v" \
+  "../../../bd/design_block_1/ip/design_block_1_register_ID_0_0/sim/design_block_1_register_ID_0_0.v" \
+  "../../../bd/design_block_1/ip/design_block_1_conditionCheck_0_0/sim/design_block_1_conditionCheck_0_0.v" \
+  "../../../bd/design_block_1/ip/design_block_1_not_1_0_0/sim/design_block_1_not_1_0_0.v" \
+  "../../../bd/design_block_1/ip/design_block_1_xlslice_1_1/sim/design_block_1_xlslice_1_1.v" \
+  "../../../bd/design_block_1/ip/design_block_1_slice_s_0/sim/design_block_1_slice_s_0.v" \
+  "../../../bd/design_block_1/ip/design_block_1_slice_s_1/sim/design_block_1_slice_s_1.v" \
+  "../../../bd/design_block_1/ip/design_block_1_controlUnit_0_0/sim/design_block_1_controlUnit_0_0.v" \
+  "../../../bd/design_block_1/ip/design_block_1_slice_s_2/sim/design_block_1_slice_s_2.v" \
+  "../../../bd/design_block_1/ip/design_block_1_slice_s_3/sim/design_block_1_slice_s_3.v" \
+  "../../../bd/design_block_1/ip/design_block_1_registerFile_1_0/sim/design_block_1_registerFile_1_0.v" \
+  "../../../bd/design_block_1/ip/design_block_1_slice_shiftop_0/sim/design_block_1_slice_shiftop_0.v" \
+  "../../../bd/design_block_1/ip/design_block_1_slice_shiftop_1/sim/design_block_1_slice_shiftop_1.v" \
+  "../../../bd/design_block_1/ip/design_block_1_slice_dest_0/sim/design_block_1_slice_dest_0.v" \
+  "../../../bd/design_block_1/ip/design_block_1_slice_dest_1/sim/design_block_1_slice_dest_1.v" \
+  "../../../bd/design_block_1/ip/design_block_1_MUX_4_0_0/sim/design_block_1_MUX_4_0_0.v" \
+  "../../../bd/design_block_1/ip/design_block_1_const32bit0_1/sim/design_block_1_const32bit0_1.v" \
+  "../../../bd/design_block_1/ip/design_block_1_const4bit0temp_0/sim/design_block_1_const4bit0temp_0.v" \
+  "../../../bd/design_block_1/ip/design_block_1_const4bit0temp_1/sim/design_block_1_const4bit0temp_1.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   glbl.v

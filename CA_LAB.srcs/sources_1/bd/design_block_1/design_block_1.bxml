@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="36">
   <CompositeFile CompositeFileTopName="design_block_1" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1744726724"/>
-    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1744726724"/>
-    <Generation Name="SIMULATION" State="STALE" Timestamp="1744726724"/>
-    <Generation Name="HW_HANDOFF" State="STALE" Timestamp="1744726724"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1745331510"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1745331510"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1745331510"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1745331510"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="synth\design_block_1.v" Type="Verilog">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
@@ -74,14 +74,6 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\design_block_1_register_0_1\design_block_1_register_0_1.xci" Type="IP">
-        <Instance HierarchyPath="register_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="ip\design_block_1_register_1_0\design_block_1_register_1_0.xci" Type="IP">
         <Instance HierarchyPath="register_1"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -114,16 +106,160 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\design_block_1_debouncer_0_0\design_block_1_debouncer_0_0.xci" Type="IP">
-        <Instance HierarchyPath="debouncer_0"/>
+      <File Name="ip\design_block_1_xlslice_1_0\design_block_1_xlslice_1_0.xci" Type="IP">
+        <Instance HierarchyPath="slice_cond"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\design_block_1_ila_0_1\design_block_1_ila_0_1.xci" Type="IP">
-        <Instance HierarchyPath="ila_0"/>
+      <File Name="ip\design_block_1_MUX_CU_0_0\design_block_1_MUX_CU_0_0.xci" Type="IP">
+        <Instance HierarchyPath="MUX_CU_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_block_1_register_ID_0_0\design_block_1_register_ID_0_0.xci" Type="IP">
+        <Instance HierarchyPath="register_ID_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_block_1_conditionCheck_0_0\design_block_1_conditionCheck_0_0.xci" Type="IP">
+        <Instance HierarchyPath="conditionCheck_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_block_1_not_1_0_0\design_block_1_not_1_0_0.xci" Type="IP">
+        <Instance HierarchyPath="not_1_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_block_1_xlslice_1_1\design_block_1_xlslice_1_1.xci" Type="IP">
+        <Instance HierarchyPath="slice_s"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_block_1_slice_s_0\design_block_1_slice_s_0.xci" Type="IP">
+        <Instance HierarchyPath="slice_opcode"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_block_1_slice_s_1\design_block_1_slice_s_1.xci" Type="IP">
+        <Instance HierarchyPath="slice_mode"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_block_1_controlUnit_0_0\design_block_1_controlUnit_0_0.xci" Type="IP">
+        <Instance HierarchyPath="controlUnit_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_block_1_slice_s_2\design_block_1_slice_s_2.xci" Type="IP">
+        <Instance HierarchyPath="slice_shiftop"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_block_1_slice_s_3\design_block_1_slice_s_3.xci" Type="IP">
+        <Instance HierarchyPath="slice_dest"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_block_1_registerFile_1_0\design_block_1_registerFile_1_0.xci" Type="IP">
+        <Instance HierarchyPath="registerFile_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_block_1_slice_shiftop_0\design_block_1_slice_shiftop_0.xci" Type="IP">
+        <Instance HierarchyPath="slice_imm"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_block_1_slice_shiftop_1\design_block_1_slice_shiftop_1.xci" Type="IP">
+        <Instance HierarchyPath="slice_signedImm"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_block_1_slice_dest_0\design_block_1_slice_dest_0.xci" Type="IP">
+        <Instance HierarchyPath="slice_rn"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_block_1_slice_dest_1\design_block_1_slice_dest_1.xci" Type="IP">
+        <Instance HierarchyPath="slice_rm"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_block_1_MUX_4_0_0\design_block_1_MUX_4_0_0.xci" Type="IP">
+        <Instance HierarchyPath="MUX_4_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_block_1_const32bit0_1\design_block_1_const32bit0_1.xci" Type="IP">
+        <Instance HierarchyPath="const4bit0temp"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_block_1_const4bit0temp_0\design_block_1_const4bit0temp_0.xci" Type="IP">
+        <Instance HierarchyPath="const1bit0temp"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_block_1_const4bit0temp_1\design_block_1_const4bit0temp_1.xci" Type="IP">
+        <Instance HierarchyPath="const32bit0temp"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -155,14 +291,6 @@
       <File Name="sim\design_block_1.protoinst">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\design_block_1_xlslice_1_0\design_block_1_xlslice_1_0.xci" Type="IP">
-        <Instance HierarchyPath="xlslice_1"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
     </FileCollection>

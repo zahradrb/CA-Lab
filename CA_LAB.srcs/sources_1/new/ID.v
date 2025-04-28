@@ -1,13 +1,23 @@
 module registerFile (
 input clk,rst,
-input [3:0]adr_rn, [3:0]adr_rm, [3:0]wb_dest, wb_en, [31:0]wb_res,
+input wb_en,
+input [3:0]adr_rn, [3:0]adr_rm, [3:0]wb_dest, [31:0]wb_res,
 output [31:0]val_rn, [31:0]val_rm
 );
 
-wire [31:0]temp[0:14];
+reg [31:0] register [0:14];
 
-assign val_rn = temp[adr_rn];
-assign val_rm = temp[adr_rm];
+assign val_rn = register[adr_rn];
+assign val_rm = register[adr_rm];
+// init all registers with their index
+always @(negedge clk, posedge rst) begin
+    if (rst && wb_en) begin
+        register[wb_dest] <= 32'b0;
+    end
+    else if (wb_en) begin
+        register[wb_dest] <= wb_res;
+    end
+end
 
 endmodule
 
@@ -46,7 +56,7 @@ module MUX_CU(
 endmodule
 
 module controlUnit(
-input [1:0] mode, [3:0]opcode, s,
+input s, [1:0] mode, [3:0]opcode,
 output reg [3:0]exe_c, 
 output mem_r_en, mem_w_en, wb_en, s_out, b
 );
@@ -114,6 +124,49 @@ begin
 
     endcase
 end
-
-
 endmodule
+
+module register_ID(
+    input [31:0] PC, [31:0] val_rn, [31:0] val_rm, [3:0] dst,
+    input wb_en, mem_r_en, mem_w_en, b, imm, s, [3:0]exe_c, [11:0] shift_op, [23:0] signed_imm,
+    input freeze, flush, rst, clk,
+    output reg wb_en_out, mem_r_en_out, mem_w_en_out, b_out, s_out, imm_out,
+    output reg [3:0] exe_c_out, dst_out,
+    output reg [31:0] PC_out, val_rn_out, val_rm_out,
+    output reg [11:0] shift_op_out,
+    output reg [23:0] signed_imm_out
+);
+    always @(posedge clk, posedge rst) begin
+        if (rst || flush) begin
+            wb_en_out <=1'b0;
+            mem_r_en_out <=1'b0;
+            mem_w_en_out<=1'b0;
+            exe_c_out<=4'b0;
+            b_out<=1'b0;
+            s_out<=1'b0;
+            PC_out <= 32'b0;
+            val_rn_out<=32'b0;
+            val_rm_out<=32'b0;
+            imm_out<=1'b0;
+            dst_out<=4'b0;
+            shift_op_out<=12'b0;
+            signed_imm_out<=24'b0;
+        end
+        else if (!freeze) begin
+            wb_en_out <=wb_en;
+            mem_r_en_out <=mem_r_en;
+            mem_w_en_out<=mem_w_en;
+            exe_c_out<=exe_c;
+            b_out<=b;
+            s_out<=s;
+            PC_out <= PC;
+            val_rn_out<=val_rn;
+            val_rm_out<=val_rm;
+            imm_out<=imm;
+            dst_out<=dst;
+            shift_op_out<=shift_op;
+            signed_imm_out<=signed_imm;
+        end
+    end
+endmodule
+
