@@ -5,47 +5,39 @@ vlib modelsim_lib/msim/xil_defaultlib
 vlib modelsim_lib/msim/xpm
 vlib modelsim_lib/msim/xlconstant_v1_1_5
 vlib modelsim_lib/msim/xlslice_v1_0_1
-vlib modelsim_lib/msim/blk_mem_gen_v8_4_2
+vlib modelsim_lib/msim/dist_mem_gen_v8_0_12
 
 vmap xil_defaultlib modelsim_lib/msim/xil_defaultlib
 vmap xpm modelsim_lib/msim/xpm
 vmap xlconstant_v1_1_5 modelsim_lib/msim/xlconstant_v1_1_5
 vmap xlslice_v1_0_1 modelsim_lib/msim/xlslice_v1_0_1
-vmap blk_mem_gen_v8_4_2 modelsim_lib/msim/blk_mem_gen_v8_4_2
+vmap dist_mem_gen_v8_0_12 modelsim_lib/msim/dist_mem_gen_v8_0_12
 
-vlog -work xil_defaultlib -64 -incr -sv \
+vlog -work xil_defaultlib -64 -incr -sv "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/122e/hdl/verilog" "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/7d3c/hdl/verilog" "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/c45e/hdl/verilog" \
+"G:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
 "G:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 
 vcom -work xpm -64 -93 \
 "G:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_VCOMP.vhd" \
 
-vlog -work xil_defaultlib -64 -incr \
+vlog -work xil_defaultlib -64 -incr "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/122e/hdl/verilog" "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/7d3c/hdl/verilog" "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/c45e/hdl/verilog" \
 "../../../bd/design_block_1/sim/design_block_1.v" \
 "../../../bd/design_block_1/ip/design_block_1_MUX_0_0/sim/design_block_1_MUX_0_0.v" \
 "../../../bd/design_block_1/ip/design_block_1_PC_0_0/sim/design_block_1_PC_0_0.v" \
 "../../../bd/design_block_1/ip/design_block_1_adder_0_0/sim/design_block_1_adder_0_0.v" \
 
-vlog -work xlconstant_v1_1_5 -64 -incr \
+vlog -work xlconstant_v1_1_5 -64 -incr "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/122e/hdl/verilog" "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/7d3c/hdl/verilog" "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/c45e/hdl/verilog" \
 "../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/4649/hdl/xlconstant_v1_1_vl_rfs.v" \
 
-vlog -work xil_defaultlib -64 -incr \
+vlog -work xil_defaultlib -64 -incr "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/122e/hdl/verilog" "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/7d3c/hdl/verilog" "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/c45e/hdl/verilog" \
 "../../../bd/design_block_1/ip/design_block_1_xlconstant_0_0/sim/design_block_1_xlconstant_0_0.v" \
 
-vlog -work xlslice_v1_0_1 -64 -incr \
+vlog -work xlslice_v1_0_1 -64 -incr "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/122e/hdl/verilog" "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/7d3c/hdl/verilog" "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/c45e/hdl/verilog" \
 "../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v" \
 
-vlog -work xil_defaultlib -64 -incr \
+vlog -work xil_defaultlib -64 -incr "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/122e/hdl/verilog" "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/7d3c/hdl/verilog" "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/c45e/hdl/verilog" \
 "../../../bd/design_block_1/ip/design_block_1_xlslice_0_0/sim/design_block_1_xlslice_0_0.v" \
-
-vlog -work blk_mem_gen_v8_4_2 -64 -incr \
-"../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/37c2/simulation/blk_mem_gen_v8_4.v" \
-
-vlog -work xil_defaultlib -64 -incr \
-"../../../bd/design_block_1/ip/design_block_1_blk_mem_gen_0_1/sim/design_block_1_blk_mem_gen_0_1.v" \
 "../../../bd/design_block_1/ip/design_block_1_registerIF_0_0/sim/design_block_1_registerIF_0_0.v" \
-"../../../bd/design_block_1/ip/design_block_1_register_1_0/sim/design_block_1_register_1_0.v" \
-"../../../bd/design_block_1/ip/design_block_1_register_2_0/sim/design_block_1_register_2_0.v" \
-"../../../bd/design_block_1/ip/design_block_1_xlconstant_1_0/sim/design_block_1_xlconstant_1_0.v" \
 "../../../bd/design_block_1/ip/design_block_1_xlconstant_1_1/sim/design_block_1_xlconstant_1_1.v" \
 "../../../bd/design_block_1/ip/design_block_1_xlslice_1_0/sim/design_block_1_xlslice_1_0.v" \
 "../../../bd/design_block_1/ip/design_block_1_MUX_CU_0_0/sim/design_block_1_MUX_CU_0_0.v" \
@@ -64,9 +56,30 @@ vlog -work xil_defaultlib -64 -incr \
 "../../../bd/design_block_1/ip/design_block_1_slice_dest_0/sim/design_block_1_slice_dest_0.v" \
 "../../../bd/design_block_1/ip/design_block_1_slice_dest_1/sim/design_block_1_slice_dest_1.v" \
 "../../../bd/design_block_1/ip/design_block_1_MUX_4_0_0/sim/design_block_1_MUX_4_0_0.v" \
-"../../../bd/design_block_1/ip/design_block_1_const32bit0_1/sim/design_block_1_const32bit0_1.v" \
-"../../../bd/design_block_1/ip/design_block_1_const4bit0temp_0/sim/design_block_1_const4bit0temp_0.v" \
-"../../../bd/design_block_1/ip/design_block_1_const4bit0temp_1/sim/design_block_1_const4bit0temp_1.v" \
+"../../../bd/design_block_1/ip/design_block_1_alu_0_0/sim/design_block_1_alu_0_0.v" \
+"../../../bd/design_block_1/ip/design_block_1_or_1_0_0/sim/design_block_1_or_1_0_0.v" \
+"../../../bd/design_block_1/ip/design_block_1_adder_0_1/sim/design_block_1_adder_0_1.v" \
+"../../../bd/design_block_1/ip/design_block_1_val2_generator_0_0/sim/design_block_1_val2_generator_0_0.v" \
+"../../../bd/design_block_1/ip/design_block_1_sign_extend_24_to_32_0_0/sim/design_block_1_sign_extend_24_to_32_0_0.v" \
+"../../../bd/design_block_1/ip/design_block_1_register_EXE_0_0/sim/design_block_1_register_EXE_0_0.v" \
+"../../../bd/design_block_1/ip/design_block_1_status_register_0_0/sim/design_block_1_status_register_0_0.v" \
+"../../../bd/design_block_1/ip/design_block_1_slice_shiftop_2/sim/design_block_1_slice_shiftop_2.v" \
+"../../../bd/design_block_1/ip/design_block_1_register_MEM_0_0/sim/design_block_1_register_MEM_0_0.v" \
+"../../../bd/design_block_1/ip/design_block_1_MUX_0_1/sim/design_block_1_MUX_0_1.v" \
+"../../../bd/design_block_1/ip/design_block_1_xlconstant_2_0/sim/design_block_1_xlconstant_2_0.v" \
+
+vlog -work dist_mem_gen_v8_0_12 -64 -incr "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/122e/hdl/verilog" "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/7d3c/hdl/verilog" "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/c45e/hdl/verilog" \
+"../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/d46a/simulation/dist_mem_gen_v8_0.v" \
+
+vlog -work xil_defaultlib -64 -incr "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/122e/hdl/verilog" "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/7d3c/hdl/verilog" "+incdir+../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/c45e/hdl/verilog" \
+"../../../bd/design_block_1/ip/design_block_1_dist_mem_gen_0_0/sim/design_block_1_dist_mem_gen_0_0.v" \
+"../../../bd/design_block_1/ip/design_block_1_ila_0_0/sim/design_block_1_ila_0_0.v" \
+"../../../bd/design_block_1/ip/design_block_1_hazardDetectionUnit_0_0/sim/design_block_1_hazardDetectionUnit_0_0.v" \
+"../../../bd/design_block_1/ip/design_block_1_or_1_0_1/sim/design_block_1_or_1_0_1.v" \
+"../../../bd/design_block_1/ip/design_block_1_or_1_1_0/sim/design_block_1_or_1_1_0.v" \
+"../../../bd/design_block_1/ip/design_block_1_not_1_0_1/sim/design_block_1_not_1_0_1.v" \
+"../../../bd/design_block_1/ip/design_block_1_dist_mem_gen_1_0/sim/design_block_1_dist_mem_gen_1_0.v" \
+"../../../bd/design_block_1/ip/design_block_1_slice_carry_0/sim/design_block_1_slice_carry_0.v" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

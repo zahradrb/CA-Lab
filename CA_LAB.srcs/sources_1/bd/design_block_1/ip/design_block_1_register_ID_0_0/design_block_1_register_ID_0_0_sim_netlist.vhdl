@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Tue Apr 22 17:50:13 2025
+-- Date        : Tue May  6 16:58:06 2025
 -- Host        : DESKTOP-PITB4KD running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim {G:/CA
 --               lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_register_ID_0_0/design_block_1_register_ID_0_0_sim_netlist.vhdl}
@@ -22,6 +22,7 @@ entity design_block_1_register_ID_0_0_register_ID is
     b_out : out STD_LOGIC;
     s_out : out STD_LOGIC;
     imm_out : out STD_LOGIC;
+    carry_out : out STD_LOGIC;
     exe_c_out : out STD_LOGIC_VECTOR ( 3 downto 0 );
     dst_out : out STD_LOGIC_VECTOR ( 3 downto 0 );
     PC_out : out STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -33,6 +34,7 @@ entity design_block_1_register_ID_0_0_register_ID is
     freeze : in STD_LOGIC;
     dst : in STD_LOGIC_VECTOR ( 3 downto 0 );
     exe_c : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    carry_in : in STD_LOGIC;
     imm : in STD_LOGIC;
     s : in STD_LOGIC;
     b : in STD_LOGIC;
@@ -53,6 +55,7 @@ end design_block_1_register_ID_0_0_register_ID;
 
 architecture STRUCTURE of design_block_1_register_ID_0_0_register_ID is
   signal b_out_i_1_n_0 : STD_LOGIC;
+  signal carry_out_i_1_n_0 : STD_LOGIC;
   signal \dst_out[0]_i_1_n_0\ : STD_LOGIC;
   signal \dst_out[1]_i_1_n_0\ : STD_LOGIC;
   signal \dst_out[2]_i_1_n_0\ : STD_LOGIC;
@@ -171,37 +174,38 @@ architecture STRUCTURE of design_block_1_register_ID_0_0_register_ID is
   attribute SOFT_HLUTNM : string;
   attribute SOFT_HLUTNM of \PC_out[0]_i_1\ : label is "soft_lutpair7";
   attribute SOFT_HLUTNM of \PC_out[10]_i_1\ : label is "soft_lutpair12";
-  attribute SOFT_HLUTNM of \PC_out[11]_i_1\ : label is "soft_lutpair12";
+  attribute SOFT_HLUTNM of \PC_out[11]_i_1\ : label is "soft_lutpair13";
   attribute SOFT_HLUTNM of \PC_out[12]_i_1\ : label is "soft_lutpair13";
-  attribute SOFT_HLUTNM of \PC_out[13]_i_1\ : label is "soft_lutpair13";
+  attribute SOFT_HLUTNM of \PC_out[13]_i_1\ : label is "soft_lutpair14";
   attribute SOFT_HLUTNM of \PC_out[14]_i_1\ : label is "soft_lutpair14";
-  attribute SOFT_HLUTNM of \PC_out[15]_i_1\ : label is "soft_lutpair14";
+  attribute SOFT_HLUTNM of \PC_out[15]_i_1\ : label is "soft_lutpair15";
   attribute SOFT_HLUTNM of \PC_out[16]_i_1\ : label is "soft_lutpair15";
-  attribute SOFT_HLUTNM of \PC_out[17]_i_1\ : label is "soft_lutpair15";
+  attribute SOFT_HLUTNM of \PC_out[17]_i_1\ : label is "soft_lutpair16";
   attribute SOFT_HLUTNM of \PC_out[18]_i_1\ : label is "soft_lutpair16";
-  attribute SOFT_HLUTNM of \PC_out[19]_i_1\ : label is "soft_lutpair16";
-  attribute SOFT_HLUTNM of \PC_out[1]_i_1\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \PC_out[19]_i_1\ : label is "soft_lutpair17";
+  attribute SOFT_HLUTNM of \PC_out[1]_i_1\ : label is "soft_lutpair8";
   attribute SOFT_HLUTNM of \PC_out[20]_i_1\ : label is "soft_lutpair17";
-  attribute SOFT_HLUTNM of \PC_out[21]_i_1\ : label is "soft_lutpair17";
+  attribute SOFT_HLUTNM of \PC_out[21]_i_1\ : label is "soft_lutpair18";
   attribute SOFT_HLUTNM of \PC_out[22]_i_1\ : label is "soft_lutpair18";
-  attribute SOFT_HLUTNM of \PC_out[23]_i_1\ : label is "soft_lutpair18";
+  attribute SOFT_HLUTNM of \PC_out[23]_i_1\ : label is "soft_lutpair19";
   attribute SOFT_HLUTNM of \PC_out[24]_i_1\ : label is "soft_lutpair19";
-  attribute SOFT_HLUTNM of \PC_out[25]_i_1\ : label is "soft_lutpair19";
+  attribute SOFT_HLUTNM of \PC_out[25]_i_1\ : label is "soft_lutpair20";
   attribute SOFT_HLUTNM of \PC_out[26]_i_1\ : label is "soft_lutpair20";
-  attribute SOFT_HLUTNM of \PC_out[27]_i_1\ : label is "soft_lutpair20";
+  attribute SOFT_HLUTNM of \PC_out[27]_i_1\ : label is "soft_lutpair21";
   attribute SOFT_HLUTNM of \PC_out[28]_i_1\ : label is "soft_lutpair21";
-  attribute SOFT_HLUTNM of \PC_out[29]_i_1\ : label is "soft_lutpair21";
+  attribute SOFT_HLUTNM of \PC_out[29]_i_1\ : label is "soft_lutpair22";
   attribute SOFT_HLUTNM of \PC_out[2]_i_1\ : label is "soft_lutpair8";
   attribute SOFT_HLUTNM of \PC_out[30]_i_1\ : label is "soft_lutpair22";
-  attribute SOFT_HLUTNM of \PC_out[31]_i_1\ : label is "soft_lutpair22";
-  attribute SOFT_HLUTNM of \PC_out[3]_i_1\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \PC_out[31]_i_1\ : label is "soft_lutpair23";
+  attribute SOFT_HLUTNM of \PC_out[3]_i_1\ : label is "soft_lutpair9";
   attribute SOFT_HLUTNM of \PC_out[4]_i_1\ : label is "soft_lutpair9";
-  attribute SOFT_HLUTNM of \PC_out[5]_i_1\ : label is "soft_lutpair9";
+  attribute SOFT_HLUTNM of \PC_out[5]_i_1\ : label is "soft_lutpair10";
   attribute SOFT_HLUTNM of \PC_out[6]_i_1\ : label is "soft_lutpair10";
-  attribute SOFT_HLUTNM of \PC_out[7]_i_1\ : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of \PC_out[7]_i_1\ : label is "soft_lutpair11";
   attribute SOFT_HLUTNM of \PC_out[8]_i_1\ : label is "soft_lutpair11";
-  attribute SOFT_HLUTNM of \PC_out[9]_i_1\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \PC_out[9]_i_1\ : label is "soft_lutpair12";
   attribute SOFT_HLUTNM of b_out_i_1 : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of carry_out_i_1 : label is "soft_lutpair4";
   attribute SOFT_HLUTNM of \dst_out[0]_i_1\ : label is "soft_lutpair0";
   attribute SOFT_HLUTNM of \dst_out[1]_i_1\ : label is "soft_lutpair0";
   attribute SOFT_HLUTNM of \dst_out[2]_i_1\ : label is "soft_lutpair1";
@@ -212,109 +216,108 @@ architecture STRUCTURE of design_block_1_register_ID_0_0_register_ID is
   attribute SOFT_HLUTNM of \exe_c_out[3]_i_1\ : label is "soft_lutpair3";
   attribute SOFT_HLUTNM of imm_out_i_1 : label is "soft_lutpair4";
   attribute SOFT_HLUTNM of mem_r_en_out_i_1 : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of mem_w_en_out_i_1 : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of s_out_i_1 : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of mem_w_en_out_i_1 : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of s_out_i_1 : label is "soft_lutpair5";
   attribute SOFT_HLUTNM of \shift_op_out[0]_i_1\ : label is "soft_lutpair55";
   attribute SOFT_HLUTNM of \shift_op_out[10]_i_1\ : label is "soft_lutpair60";
-  attribute SOFT_HLUTNM of \shift_op_out[11]_i_1\ : label is "soft_lutpair60";
-  attribute SOFT_HLUTNM of \shift_op_out[1]_i_1\ : label is "soft_lutpair55";
+  attribute SOFT_HLUTNM of \shift_op_out[11]_i_1\ : label is "soft_lutpair61";
+  attribute SOFT_HLUTNM of \shift_op_out[1]_i_1\ : label is "soft_lutpair56";
   attribute SOFT_HLUTNM of \shift_op_out[2]_i_1\ : label is "soft_lutpair56";
-  attribute SOFT_HLUTNM of \shift_op_out[3]_i_1\ : label is "soft_lutpair56";
+  attribute SOFT_HLUTNM of \shift_op_out[3]_i_1\ : label is "soft_lutpair57";
   attribute SOFT_HLUTNM of \shift_op_out[4]_i_1\ : label is "soft_lutpair57";
-  attribute SOFT_HLUTNM of \shift_op_out[5]_i_1\ : label is "soft_lutpair57";
+  attribute SOFT_HLUTNM of \shift_op_out[5]_i_1\ : label is "soft_lutpair58";
   attribute SOFT_HLUTNM of \shift_op_out[6]_i_1\ : label is "soft_lutpair58";
-  attribute SOFT_HLUTNM of \shift_op_out[7]_i_1\ : label is "soft_lutpair58";
+  attribute SOFT_HLUTNM of \shift_op_out[7]_i_1\ : label is "soft_lutpair59";
   attribute SOFT_HLUTNM of \shift_op_out[8]_i_1\ : label is "soft_lutpair59";
-  attribute SOFT_HLUTNM of \shift_op_out[9]_i_1\ : label is "soft_lutpair59";
+  attribute SOFT_HLUTNM of \shift_op_out[9]_i_1\ : label is "soft_lutpair60";
   attribute SOFT_HLUTNM of \signed_imm_out[0]_i_1\ : label is "soft_lutpair61";
   attribute SOFT_HLUTNM of \signed_imm_out[10]_i_1\ : label is "soft_lutpair66";
-  attribute SOFT_HLUTNM of \signed_imm_out[11]_i_1\ : label is "soft_lutpair66";
+  attribute SOFT_HLUTNM of \signed_imm_out[11]_i_1\ : label is "soft_lutpair67";
   attribute SOFT_HLUTNM of \signed_imm_out[12]_i_1\ : label is "soft_lutpair67";
-  attribute SOFT_HLUTNM of \signed_imm_out[13]_i_1\ : label is "soft_lutpair67";
+  attribute SOFT_HLUTNM of \signed_imm_out[13]_i_1\ : label is "soft_lutpair68";
   attribute SOFT_HLUTNM of \signed_imm_out[14]_i_1\ : label is "soft_lutpair68";
-  attribute SOFT_HLUTNM of \signed_imm_out[15]_i_1\ : label is "soft_lutpair68";
+  attribute SOFT_HLUTNM of \signed_imm_out[15]_i_1\ : label is "soft_lutpair69";
   attribute SOFT_HLUTNM of \signed_imm_out[16]_i_1\ : label is "soft_lutpair69";
-  attribute SOFT_HLUTNM of \signed_imm_out[17]_i_1\ : label is "soft_lutpair69";
+  attribute SOFT_HLUTNM of \signed_imm_out[17]_i_1\ : label is "soft_lutpair70";
   attribute SOFT_HLUTNM of \signed_imm_out[18]_i_1\ : label is "soft_lutpair70";
-  attribute SOFT_HLUTNM of \signed_imm_out[19]_i_1\ : label is "soft_lutpair70";
-  attribute SOFT_HLUTNM of \signed_imm_out[1]_i_1\ : label is "soft_lutpair61";
+  attribute SOFT_HLUTNM of \signed_imm_out[19]_i_1\ : label is "soft_lutpair71";
+  attribute SOFT_HLUTNM of \signed_imm_out[1]_i_1\ : label is "soft_lutpair62";
   attribute SOFT_HLUTNM of \signed_imm_out[20]_i_1\ : label is "soft_lutpair71";
-  attribute SOFT_HLUTNM of \signed_imm_out[21]_i_1\ : label is "soft_lutpair71";
+  attribute SOFT_HLUTNM of \signed_imm_out[21]_i_1\ : label is "soft_lutpair72";
   attribute SOFT_HLUTNM of \signed_imm_out[22]_i_1\ : label is "soft_lutpair72";
-  attribute SOFT_HLUTNM of \signed_imm_out[23]_i_1\ : label is "soft_lutpair72";
   attribute SOFT_HLUTNM of \signed_imm_out[2]_i_1\ : label is "soft_lutpair62";
-  attribute SOFT_HLUTNM of \signed_imm_out[3]_i_1\ : label is "soft_lutpair62";
+  attribute SOFT_HLUTNM of \signed_imm_out[3]_i_1\ : label is "soft_lutpair63";
   attribute SOFT_HLUTNM of \signed_imm_out[4]_i_1\ : label is "soft_lutpair63";
-  attribute SOFT_HLUTNM of \signed_imm_out[5]_i_1\ : label is "soft_lutpair63";
+  attribute SOFT_HLUTNM of \signed_imm_out[5]_i_1\ : label is "soft_lutpair64";
   attribute SOFT_HLUTNM of \signed_imm_out[6]_i_1\ : label is "soft_lutpair64";
-  attribute SOFT_HLUTNM of \signed_imm_out[7]_i_1\ : label is "soft_lutpair64";
+  attribute SOFT_HLUTNM of \signed_imm_out[7]_i_1\ : label is "soft_lutpair65";
   attribute SOFT_HLUTNM of \signed_imm_out[8]_i_1\ : label is "soft_lutpair65";
-  attribute SOFT_HLUTNM of \signed_imm_out[9]_i_1\ : label is "soft_lutpair65";
+  attribute SOFT_HLUTNM of \signed_imm_out[9]_i_1\ : label is "soft_lutpair66";
   attribute SOFT_HLUTNM of \val_rm_out[0]_i_1\ : label is "soft_lutpair39";
   attribute SOFT_HLUTNM of \val_rm_out[10]_i_1\ : label is "soft_lutpair44";
-  attribute SOFT_HLUTNM of \val_rm_out[11]_i_1\ : label is "soft_lutpair44";
+  attribute SOFT_HLUTNM of \val_rm_out[11]_i_1\ : label is "soft_lutpair45";
   attribute SOFT_HLUTNM of \val_rm_out[12]_i_1\ : label is "soft_lutpair45";
-  attribute SOFT_HLUTNM of \val_rm_out[13]_i_1\ : label is "soft_lutpair45";
+  attribute SOFT_HLUTNM of \val_rm_out[13]_i_1\ : label is "soft_lutpair46";
   attribute SOFT_HLUTNM of \val_rm_out[14]_i_1\ : label is "soft_lutpair46";
-  attribute SOFT_HLUTNM of \val_rm_out[15]_i_1\ : label is "soft_lutpair46";
+  attribute SOFT_HLUTNM of \val_rm_out[15]_i_1\ : label is "soft_lutpair47";
   attribute SOFT_HLUTNM of \val_rm_out[16]_i_1\ : label is "soft_lutpair47";
-  attribute SOFT_HLUTNM of \val_rm_out[17]_i_1\ : label is "soft_lutpair47";
+  attribute SOFT_HLUTNM of \val_rm_out[17]_i_1\ : label is "soft_lutpair48";
   attribute SOFT_HLUTNM of \val_rm_out[18]_i_1\ : label is "soft_lutpair48";
-  attribute SOFT_HLUTNM of \val_rm_out[19]_i_1\ : label is "soft_lutpair48";
-  attribute SOFT_HLUTNM of \val_rm_out[1]_i_1\ : label is "soft_lutpair39";
+  attribute SOFT_HLUTNM of \val_rm_out[19]_i_1\ : label is "soft_lutpair49";
+  attribute SOFT_HLUTNM of \val_rm_out[1]_i_1\ : label is "soft_lutpair40";
   attribute SOFT_HLUTNM of \val_rm_out[20]_i_1\ : label is "soft_lutpair49";
-  attribute SOFT_HLUTNM of \val_rm_out[21]_i_1\ : label is "soft_lutpair49";
+  attribute SOFT_HLUTNM of \val_rm_out[21]_i_1\ : label is "soft_lutpair50";
   attribute SOFT_HLUTNM of \val_rm_out[22]_i_1\ : label is "soft_lutpair50";
-  attribute SOFT_HLUTNM of \val_rm_out[23]_i_1\ : label is "soft_lutpair50";
+  attribute SOFT_HLUTNM of \val_rm_out[23]_i_1\ : label is "soft_lutpair51";
   attribute SOFT_HLUTNM of \val_rm_out[24]_i_1\ : label is "soft_lutpair51";
-  attribute SOFT_HLUTNM of \val_rm_out[25]_i_1\ : label is "soft_lutpair51";
+  attribute SOFT_HLUTNM of \val_rm_out[25]_i_1\ : label is "soft_lutpair52";
   attribute SOFT_HLUTNM of \val_rm_out[26]_i_1\ : label is "soft_lutpair52";
-  attribute SOFT_HLUTNM of \val_rm_out[27]_i_1\ : label is "soft_lutpair52";
+  attribute SOFT_HLUTNM of \val_rm_out[27]_i_1\ : label is "soft_lutpair53";
   attribute SOFT_HLUTNM of \val_rm_out[28]_i_1\ : label is "soft_lutpair53";
-  attribute SOFT_HLUTNM of \val_rm_out[29]_i_1\ : label is "soft_lutpair53";
+  attribute SOFT_HLUTNM of \val_rm_out[29]_i_1\ : label is "soft_lutpair54";
   attribute SOFT_HLUTNM of \val_rm_out[2]_i_1\ : label is "soft_lutpair40";
   attribute SOFT_HLUTNM of \val_rm_out[30]_i_1\ : label is "soft_lutpair54";
-  attribute SOFT_HLUTNM of \val_rm_out[31]_i_1\ : label is "soft_lutpair54";
-  attribute SOFT_HLUTNM of \val_rm_out[3]_i_1\ : label is "soft_lutpair40";
+  attribute SOFT_HLUTNM of \val_rm_out[31]_i_1\ : label is "soft_lutpair55";
+  attribute SOFT_HLUTNM of \val_rm_out[3]_i_1\ : label is "soft_lutpair41";
   attribute SOFT_HLUTNM of \val_rm_out[4]_i_1\ : label is "soft_lutpair41";
-  attribute SOFT_HLUTNM of \val_rm_out[5]_i_1\ : label is "soft_lutpair41";
+  attribute SOFT_HLUTNM of \val_rm_out[5]_i_1\ : label is "soft_lutpair42";
   attribute SOFT_HLUTNM of \val_rm_out[6]_i_1\ : label is "soft_lutpair42";
-  attribute SOFT_HLUTNM of \val_rm_out[7]_i_1\ : label is "soft_lutpair42";
+  attribute SOFT_HLUTNM of \val_rm_out[7]_i_1\ : label is "soft_lutpair43";
   attribute SOFT_HLUTNM of \val_rm_out[8]_i_1\ : label is "soft_lutpair43";
-  attribute SOFT_HLUTNM of \val_rm_out[9]_i_1\ : label is "soft_lutpair43";
+  attribute SOFT_HLUTNM of \val_rm_out[9]_i_1\ : label is "soft_lutpair44";
   attribute SOFT_HLUTNM of \val_rn_out[0]_i_1\ : label is "soft_lutpair23";
   attribute SOFT_HLUTNM of \val_rn_out[10]_i_1\ : label is "soft_lutpair28";
-  attribute SOFT_HLUTNM of \val_rn_out[11]_i_1\ : label is "soft_lutpair28";
+  attribute SOFT_HLUTNM of \val_rn_out[11]_i_1\ : label is "soft_lutpair29";
   attribute SOFT_HLUTNM of \val_rn_out[12]_i_1\ : label is "soft_lutpair29";
-  attribute SOFT_HLUTNM of \val_rn_out[13]_i_1\ : label is "soft_lutpair29";
+  attribute SOFT_HLUTNM of \val_rn_out[13]_i_1\ : label is "soft_lutpair30";
   attribute SOFT_HLUTNM of \val_rn_out[14]_i_1\ : label is "soft_lutpair30";
-  attribute SOFT_HLUTNM of \val_rn_out[15]_i_1\ : label is "soft_lutpair30";
+  attribute SOFT_HLUTNM of \val_rn_out[15]_i_1\ : label is "soft_lutpair31";
   attribute SOFT_HLUTNM of \val_rn_out[16]_i_1\ : label is "soft_lutpair31";
-  attribute SOFT_HLUTNM of \val_rn_out[17]_i_1\ : label is "soft_lutpair31";
+  attribute SOFT_HLUTNM of \val_rn_out[17]_i_1\ : label is "soft_lutpair32";
   attribute SOFT_HLUTNM of \val_rn_out[18]_i_1\ : label is "soft_lutpair32";
-  attribute SOFT_HLUTNM of \val_rn_out[19]_i_1\ : label is "soft_lutpair32";
-  attribute SOFT_HLUTNM of \val_rn_out[1]_i_1\ : label is "soft_lutpair23";
+  attribute SOFT_HLUTNM of \val_rn_out[19]_i_1\ : label is "soft_lutpair33";
+  attribute SOFT_HLUTNM of \val_rn_out[1]_i_1\ : label is "soft_lutpair24";
   attribute SOFT_HLUTNM of \val_rn_out[20]_i_1\ : label is "soft_lutpair33";
-  attribute SOFT_HLUTNM of \val_rn_out[21]_i_1\ : label is "soft_lutpair33";
+  attribute SOFT_HLUTNM of \val_rn_out[21]_i_1\ : label is "soft_lutpair34";
   attribute SOFT_HLUTNM of \val_rn_out[22]_i_1\ : label is "soft_lutpair34";
-  attribute SOFT_HLUTNM of \val_rn_out[23]_i_1\ : label is "soft_lutpair34";
+  attribute SOFT_HLUTNM of \val_rn_out[23]_i_1\ : label is "soft_lutpair35";
   attribute SOFT_HLUTNM of \val_rn_out[24]_i_1\ : label is "soft_lutpair35";
-  attribute SOFT_HLUTNM of \val_rn_out[25]_i_1\ : label is "soft_lutpair35";
+  attribute SOFT_HLUTNM of \val_rn_out[25]_i_1\ : label is "soft_lutpair36";
   attribute SOFT_HLUTNM of \val_rn_out[26]_i_1\ : label is "soft_lutpair36";
-  attribute SOFT_HLUTNM of \val_rn_out[27]_i_1\ : label is "soft_lutpair36";
+  attribute SOFT_HLUTNM of \val_rn_out[27]_i_1\ : label is "soft_lutpair37";
   attribute SOFT_HLUTNM of \val_rn_out[28]_i_1\ : label is "soft_lutpair37";
-  attribute SOFT_HLUTNM of \val_rn_out[29]_i_1\ : label is "soft_lutpair37";
+  attribute SOFT_HLUTNM of \val_rn_out[29]_i_1\ : label is "soft_lutpair38";
   attribute SOFT_HLUTNM of \val_rn_out[2]_i_1\ : label is "soft_lutpair24";
   attribute SOFT_HLUTNM of \val_rn_out[30]_i_1\ : label is "soft_lutpair38";
-  attribute SOFT_HLUTNM of \val_rn_out[31]_i_1\ : label is "soft_lutpair38";
-  attribute SOFT_HLUTNM of \val_rn_out[3]_i_1\ : label is "soft_lutpair24";
+  attribute SOFT_HLUTNM of \val_rn_out[31]_i_1\ : label is "soft_lutpair39";
+  attribute SOFT_HLUTNM of \val_rn_out[3]_i_1\ : label is "soft_lutpair25";
   attribute SOFT_HLUTNM of \val_rn_out[4]_i_1\ : label is "soft_lutpair25";
-  attribute SOFT_HLUTNM of \val_rn_out[5]_i_1\ : label is "soft_lutpair25";
+  attribute SOFT_HLUTNM of \val_rn_out[5]_i_1\ : label is "soft_lutpair26";
   attribute SOFT_HLUTNM of \val_rn_out[6]_i_1\ : label is "soft_lutpair26";
-  attribute SOFT_HLUTNM of \val_rn_out[7]_i_1\ : label is "soft_lutpair26";
+  attribute SOFT_HLUTNM of \val_rn_out[7]_i_1\ : label is "soft_lutpair27";
   attribute SOFT_HLUTNM of \val_rn_out[8]_i_1\ : label is "soft_lutpair27";
-  attribute SOFT_HLUTNM of \val_rn_out[9]_i_1\ : label is "soft_lutpair27";
-  attribute SOFT_HLUTNM of wb_en_out_i_2 : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \val_rn_out[9]_i_1\ : label is "soft_lutpair28";
+  attribute SOFT_HLUTNM of wb_en_out_i_2 : label is "soft_lutpair7";
 begin
 \PC_out[0]_i_1\: unisim.vcomponents.LUT2
     generic map(
@@ -876,6 +879,23 @@ b_out_reg: unisim.vcomponents.FDCE
       CLR => rst,
       D => b_out_i_1_n_0,
       Q => b_out
+    );
+carry_out_i_1: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"2"
+    )
+        port map (
+      I0 => carry_in,
+      I1 => flush,
+      O => carry_out_i_1_n_0
+    );
+carry_out_reg: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => wb_en_out_i_1_n_0,
+      CLR => rst,
+      D => carry_out_i_1_n_0,
+      Q => carry_out
     );
 \dst_out[0]_i_1\: unisim.vcomponents.LUT2
     generic map(
@@ -2824,6 +2844,7 @@ entity design_block_1_register_ID_0_0 is
     b : in STD_LOGIC;
     imm : in STD_LOGIC;
     s : in STD_LOGIC;
+    carry_in : in STD_LOGIC;
     exe_c : in STD_LOGIC_VECTOR ( 3 downto 0 );
     shift_op : in STD_LOGIC_VECTOR ( 11 downto 0 );
     signed_imm : in STD_LOGIC_VECTOR ( 23 downto 0 );
@@ -2837,6 +2858,7 @@ entity design_block_1_register_ID_0_0 is
     b_out : out STD_LOGIC;
     s_out : out STD_LOGIC;
     imm_out : out STD_LOGIC;
+    carry_out : out STD_LOGIC;
     exe_c_out : out STD_LOGIC_VECTOR ( 3 downto 0 );
     dst_out : out STD_LOGIC_VECTOR ( 3 downto 0 );
     PC_out : out STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -2871,6 +2893,8 @@ inst: entity work.design_block_1_register_ID_0_0_register_ID
       PC_out(31 downto 0) => PC_out(31 downto 0),
       b => b,
       b_out => b_out,
+      carry_in => carry_in,
+      carry_out => carry_out,
       clk => clk,
       dst(3 downto 0) => dst(3 downto 0),
       dst_out(3 downto 0) => dst_out(3 downto 0),

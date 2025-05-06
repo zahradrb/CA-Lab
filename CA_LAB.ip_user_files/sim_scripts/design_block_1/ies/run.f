@@ -1,4 +1,5 @@
 -makelib ies_lib/xil_defaultlib -sv \
+  "G:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
   "G:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 -endlib
 -makelib ies_lib/xpm \
@@ -21,16 +22,7 @@
 -endlib
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/design_block_1/ip/design_block_1_xlslice_0_0/sim/design_block_1_xlslice_0_0.v" \
--endlib
--makelib ies_lib/blk_mem_gen_v8_4_2 \
-  "../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/37c2/simulation/blk_mem_gen_v8_4.v" \
--endlib
--makelib ies_lib/xil_defaultlib \
-  "../../../bd/design_block_1/ip/design_block_1_blk_mem_gen_0_1/sim/design_block_1_blk_mem_gen_0_1.v" \
   "../../../bd/design_block_1/ip/design_block_1_registerIF_0_0/sim/design_block_1_registerIF_0_0.v" \
-  "../../../bd/design_block_1/ip/design_block_1_register_1_0/sim/design_block_1_register_1_0.v" \
-  "../../../bd/design_block_1/ip/design_block_1_register_2_0/sim/design_block_1_register_2_0.v" \
-  "../../../bd/design_block_1/ip/design_block_1_xlconstant_1_0/sim/design_block_1_xlconstant_1_0.v" \
   "../../../bd/design_block_1/ip/design_block_1_xlconstant_1_1/sim/design_block_1_xlconstant_1_1.v" \
   "../../../bd/design_block_1/ip/design_block_1_xlslice_1_0/sim/design_block_1_xlslice_1_0.v" \
   "../../../bd/design_block_1/ip/design_block_1_MUX_CU_0_0/sim/design_block_1_MUX_CU_0_0.v" \
@@ -49,9 +41,30 @@
   "../../../bd/design_block_1/ip/design_block_1_slice_dest_0/sim/design_block_1_slice_dest_0.v" \
   "../../../bd/design_block_1/ip/design_block_1_slice_dest_1/sim/design_block_1_slice_dest_1.v" \
   "../../../bd/design_block_1/ip/design_block_1_MUX_4_0_0/sim/design_block_1_MUX_4_0_0.v" \
-  "../../../bd/design_block_1/ip/design_block_1_const32bit0_1/sim/design_block_1_const32bit0_1.v" \
-  "../../../bd/design_block_1/ip/design_block_1_const4bit0temp_0/sim/design_block_1_const4bit0temp_0.v" \
-  "../../../bd/design_block_1/ip/design_block_1_const4bit0temp_1/sim/design_block_1_const4bit0temp_1.v" \
+  "../../../bd/design_block_1/ip/design_block_1_alu_0_0/sim/design_block_1_alu_0_0.v" \
+  "../../../bd/design_block_1/ip/design_block_1_or_1_0_0/sim/design_block_1_or_1_0_0.v" \
+  "../../../bd/design_block_1/ip/design_block_1_adder_0_1/sim/design_block_1_adder_0_1.v" \
+  "../../../bd/design_block_1/ip/design_block_1_val2_generator_0_0/sim/design_block_1_val2_generator_0_0.v" \
+  "../../../bd/design_block_1/ip/design_block_1_sign_extend_24_to_32_0_0/sim/design_block_1_sign_extend_24_to_32_0_0.v" \
+  "../../../bd/design_block_1/ip/design_block_1_register_EXE_0_0/sim/design_block_1_register_EXE_0_0.v" \
+  "../../../bd/design_block_1/ip/design_block_1_status_register_0_0/sim/design_block_1_status_register_0_0.v" \
+  "../../../bd/design_block_1/ip/design_block_1_slice_shiftop_2/sim/design_block_1_slice_shiftop_2.v" \
+  "../../../bd/design_block_1/ip/design_block_1_register_MEM_0_0/sim/design_block_1_register_MEM_0_0.v" \
+  "../../../bd/design_block_1/ip/design_block_1_MUX_0_1/sim/design_block_1_MUX_0_1.v" \
+  "../../../bd/design_block_1/ip/design_block_1_xlconstant_2_0/sim/design_block_1_xlconstant_2_0.v" \
+-endlib
+-makelib ies_lib/dist_mem_gen_v8_0_12 \
+  "../../../../CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/d46a/simulation/dist_mem_gen_v8_0.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/design_block_1/ip/design_block_1_dist_mem_gen_0_0/sim/design_block_1_dist_mem_gen_0_0.v" \
+  "../../../bd/design_block_1/ip/design_block_1_ila_0_0/sim/design_block_1_ila_0_0.v" \
+  "../../../bd/design_block_1/ip/design_block_1_hazardDetectionUnit_0_0/sim/design_block_1_hazardDetectionUnit_0_0.v" \
+  "../../../bd/design_block_1/ip/design_block_1_or_1_0_1/sim/design_block_1_or_1_0_1.v" \
+  "../../../bd/design_block_1/ip/design_block_1_or_1_1_0/sim/design_block_1_or_1_1_0.v" \
+  "../../../bd/design_block_1/ip/design_block_1_not_1_0_1/sim/design_block_1_not_1_0_1.v" \
+  "../../../bd/design_block_1/ip/design_block_1_dist_mem_gen_1_0/sim/design_block_1_dist_mem_gen_1_0.v" \
+  "../../../bd/design_block_1/ip/design_block_1_slice_carry_0/sim/design_block_1_slice_carry_0.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
   glbl.v

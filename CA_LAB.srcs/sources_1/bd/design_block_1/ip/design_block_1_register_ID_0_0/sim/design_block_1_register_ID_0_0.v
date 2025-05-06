@@ -65,6 +65,7 @@ module design_block_1_register_ID_0_0 (
   b,
   imm,
   s,
+  carry_in,
   exe_c,
   shift_op,
   signed_imm,
@@ -78,6 +79,7 @@ module design_block_1_register_ID_0_0 (
   b_out,
   s_out,
   imm_out,
+  carry_out,
   exe_c_out,
   dst_out,
   PC_out,
@@ -97,6 +99,7 @@ input wire mem_w_en;
 input wire b;
 input wire imm;
 input wire s;
+input wire carry_in;
 input wire [3 : 0] exe_c;
 input wire [11 : 0] shift_op;
 input wire [23 : 0] signed_imm;
@@ -114,6 +117,7 @@ output wire mem_w_en_out;
 output wire b_out;
 output wire s_out;
 output wire imm_out;
+output wire carry_out;
 output wire [3 : 0] exe_c_out;
 output wire [3 : 0] dst_out;
 output wire [31 : 0] PC_out;
@@ -133,6 +137,7 @@ output wire [23 : 0] signed_imm_out;
     .b(b),
     .imm(imm),
     .s(s),
+    .carry_in(carry_in),
     .exe_c(exe_c),
     .shift_op(shift_op),
     .signed_imm(signed_imm),
@@ -146,6 +151,7 @@ output wire [23 : 0] signed_imm_out;
     .b_out(b_out),
     .s_out(s_out),
     .imm_out(imm_out),
+    .carry_out(carry_out),
     .exe_c_out(exe_c_out),
     .dst_out(dst_out),
     .PC_out(PC_out),

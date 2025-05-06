@@ -12,97 +12,286 @@ source design_block_1_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'G:/Xilinx/Vivado/2018.3/data/ip'.
-add_files: Time (s): cpu = 00:00:06 ; elapsed = 00:00:27 . Memory (MB): peak = 405.891 ; gain = 81.855
+add_files: Time (s): cpu = 00:00:08 ; elapsed = 00:01:19 . Memory (MB): peak = 429.934 ; gain = 105.207
 Command: synth_design -top design_block_1_wrapper -part xc7z010clg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 3452 
+INFO: Helper process launched with PID 11000 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 502.637 ; gain = 95.023
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 529.961 ; gain = 98.246
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'design_block_1_wrapper' [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/hdl/design_block_1_wrapper.v:12]
 WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/hdl/design_block_1_wrapper.v:21]
 INFO: [Synth 8-6157] synthesizing module 'design_block_1' [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/synth/design_block_1.v:13]
-INFO: [Synth 8-6157] synthesizing module 'design_block_1_MUX_0_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-2420-DESKTOP-PITB4KD/realtime/design_block_1_MUX_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_block_1_MUX_0_0' (1#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-2420-DESKTOP-PITB4KD/realtime/design_block_1_MUX_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_block_1_PC_0_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-2420-DESKTOP-PITB4KD/realtime/design_block_1_PC_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_block_1_PC_0_0' (2#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-2420-DESKTOP-PITB4KD/realtime/design_block_1_PC_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_block_1_adder_0_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-2420-DESKTOP-PITB4KD/realtime/design_block_1_adder_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_block_1_adder_0_0' (3#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-2420-DESKTOP-PITB4KD/realtime/design_block_1_adder_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_block_1_blk_mem_gen_0_1' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-2420-DESKTOP-PITB4KD/realtime/design_block_1_blk_mem_gen_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_block_1_blk_mem_gen_0_1' (4#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-2420-DESKTOP-PITB4KD/realtime/design_block_1_blk_mem_gen_0_1_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_block_1_xlconstant_1_0' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_xlconstant_1_0/synth/design_block_1_xlconstant_1_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_5_xlconstant' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/4649/hdl/xlconstant_v1_1_vl_rfs.v:23]
-	Parameter CONST_VAL bound to: 0 - type: integer 
-	Parameter CONST_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_5_xlconstant' (5#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/4649/hdl/xlconstant_v1_1_vl_rfs.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'design_block_1_xlconstant_1_0' (6#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_xlconstant_1_0/synth/design_block_1_xlconstant_1_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'design_block_1_debouncer_0_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-2420-DESKTOP-PITB4KD/realtime/design_block_1_debouncer_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_block_1_debouncer_0_0' (7#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-2420-DESKTOP-PITB4KD/realtime/design_block_1_debouncer_0_0_stub.v:6]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/synth/design_block_1.v:63]
-INFO: [Synth 8-6157] synthesizing module 'design_block_1_ila_0_1' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-2420-DESKTOP-PITB4KD/realtime/design_block_1_ila_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_block_1_ila_0_1' (8#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-2420-DESKTOP-PITB4KD/realtime/design_block_1_ila_0_1_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_block_1_registerIF_0_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-2420-DESKTOP-PITB4KD/realtime/design_block_1_registerIF_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_block_1_registerIF_0_0' (9#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-2420-DESKTOP-PITB4KD/realtime/design_block_1_registerIF_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_block_1_register_0_1' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-2420-DESKTOP-PITB4KD/realtime/design_block_1_register_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_block_1_register_0_1' (10#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-2420-DESKTOP-PITB4KD/realtime/design_block_1_register_0_1_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_block_1_register_1_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-2420-DESKTOP-PITB4KD/realtime/design_block_1_register_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_block_1_register_1_0' (11#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-2420-DESKTOP-PITB4KD/realtime/design_block_1_register_1_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_block_1_register_2_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-2420-DESKTOP-PITB4KD/realtime/design_block_1_register_2_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_block_1_register_2_0' (12#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-2420-DESKTOP-PITB4KD/realtime/design_block_1_register_2_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_MUX_0_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_MUX_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_MUX_0_0' (1#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_MUX_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_MUX_0_1' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_MUX_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_MUX_0_1' (2#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_MUX_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_MUX_4_0_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_MUX_4_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_MUX_4_0_0' (3#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_MUX_4_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_MUX_CU_0_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_MUX_CU_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_MUX_CU_0_0' (4#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_MUX_CU_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_PC_0_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_PC_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_PC_0_0' (5#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_PC_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_adder_0_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_adder_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_adder_0_0' (6#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_adder_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_adder_0_1' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_adder_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_adder_0_1' (7#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_adder_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_alu_0_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_alu_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_alu_0_0' (8#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_alu_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_conditionCheck_0_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_conditionCheck_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_conditionCheck_0_0' (9#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_conditionCheck_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_controlUnit_0_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_controlUnit_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_controlUnit_0_0' (10#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_controlUnit_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_debouncer_0_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_debouncer_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_debouncer_0_0' (11#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_debouncer_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_dist_mem_gen_0_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_dist_mem_gen_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_dist_mem_gen_0_0' (12#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_dist_mem_gen_0_0_stub.v:6]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/synth/design_block_1.v:168]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_ila_0_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_ila_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_ila_0_0' (13#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_ila_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_not_1_0_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_not_1_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_not_1_0_0' (14#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_not_1_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_or_1_0_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_or_1_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_or_1_0_0' (15#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_or_1_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_registerFile_1_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_registerFile_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_registerFile_1_0' (16#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_registerFile_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_registerIF_0_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_registerIF_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_registerIF_0_0' (17#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_registerIF_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_register_EXE_0_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_register_EXE_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_register_EXE_0_0' (18#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_register_EXE_0_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'register_EXE_0' of module 'design_block_1_register_EXE_0_0' requires 16 connections, but only 14 given [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/synth/design_block_1.v:199]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_register_ID_0_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_register_ID_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_register_ID_0_0' (19#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_register_ID_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_register_MEM_0_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_register_MEM_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_register_MEM_0_0' (20#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_register_MEM_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_sign_extend_24_to_32_0_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_sign_extend_24_to_32_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_sign_extend_24_to_32_0_0' (21#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_sign_extend_24_to_32_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_slice_shiftop_2' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_slice_shiftop_2/synth/design_block_1_slice_shiftop_2.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_1_xlslice' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 4 - type: integer 
+	Parameter DIN_FROM bound to: 1 - type: integer 
+	Parameter DIN_TO bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_1_xlslice' (22#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_slice_shiftop_2' (23#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_slice_shiftop_2/synth/design_block_1_slice_shiftop_2.v:57]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_xlslice_1_0' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_xlslice_1_0/synth/design_block_1_xlslice_1_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_1_xlslice__parameterized0' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 32 - type: integer 
+	Parameter DIN_FROM bound to: 31 - type: integer 
+	Parameter DIN_TO bound to: 28 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_1_xlslice__parameterized0' (23#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_xlslice_1_0' (24#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_xlslice_1_0/synth/design_block_1_xlslice_1_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_slice_s_3' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_slice_s_3/synth/design_block_1_slice_s_3.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_1_xlslice__parameterized1' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 32 - type: integer 
+	Parameter DIN_FROM bound to: 15 - type: integer 
+	Parameter DIN_TO bound to: 12 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_1_xlslice__parameterized1' (24#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_slice_s_3' (25#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_slice_s_3/synth/design_block_1_slice_s_3.v:57]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_slice_shiftop_0' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_slice_shiftop_0/synth/design_block_1_slice_shiftop_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_1_xlslice__parameterized2' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 32 - type: integer 
+	Parameter DIN_FROM bound to: 25 - type: integer 
+	Parameter DIN_TO bound to: 25 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_1_xlslice__parameterized2' (25#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_slice_shiftop_0' (26#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_slice_shiftop_0/synth/design_block_1_slice_shiftop_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_slice_s_1' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_slice_s_1/synth/design_block_1_slice_s_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_1_xlslice__parameterized3' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 32 - type: integer 
+	Parameter DIN_FROM bound to: 27 - type: integer 
+	Parameter DIN_TO bound to: 26 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_1_xlslice__parameterized3' (26#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_slice_s_1' (27#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_slice_s_1/synth/design_block_1_slice_s_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_slice_s_0' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_slice_s_0/synth/design_block_1_slice_s_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_1_xlslice__parameterized4' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 32 - type: integer 
+	Parameter DIN_FROM bound to: 24 - type: integer 
+	Parameter DIN_TO bound to: 21 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_1_xlslice__parameterized4' (27#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_slice_s_0' (28#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_slice_s_0/synth/design_block_1_slice_s_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_slice_dest_1' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_slice_dest_1/synth/design_block_1_slice_dest_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_1_xlslice__parameterized5' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 32 - type: integer 
+	Parameter DIN_FROM bound to: 3 - type: integer 
+	Parameter DIN_TO bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_1_xlslice__parameterized5' (28#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_slice_dest_1' (29#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_slice_dest_1/synth/design_block_1_slice_dest_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_slice_dest_0' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_slice_dest_0/synth/design_block_1_slice_dest_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_1_xlslice__parameterized6' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 32 - type: integer 
+	Parameter DIN_FROM bound to: 19 - type: integer 
+	Parameter DIN_TO bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_1_xlslice__parameterized6' (29#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_slice_dest_0' (30#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_slice_dest_0/synth/design_block_1_slice_dest_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_xlslice_1_1' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_xlslice_1_1/synth/design_block_1_xlslice_1_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_1_xlslice__parameterized7' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 32 - type: integer 
+	Parameter DIN_FROM bound to: 20 - type: integer 
+	Parameter DIN_TO bound to: 20 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_1_xlslice__parameterized7' (30#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_xlslice_1_1' (31#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_xlslice_1_1/synth/design_block_1_xlslice_1_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_slice_s_2' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_slice_s_2/synth/design_block_1_slice_s_2.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_1_xlslice__parameterized8' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 32 - type: integer 
+	Parameter DIN_FROM bound to: 11 - type: integer 
+	Parameter DIN_TO bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_1_xlslice__parameterized8' (31#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_slice_s_2' (32#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_slice_s_2/synth/design_block_1_slice_s_2.v:57]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_slice_shiftop_1' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_slice_shiftop_1/synth/design_block_1_slice_shiftop_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_1_xlslice__parameterized9' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 32 - type: integer 
+	Parameter DIN_FROM bound to: 23 - type: integer 
+	Parameter DIN_TO bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_1_xlslice__parameterized9' (32#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_slice_shiftop_1' (33#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_slice_shiftop_1/synth/design_block_1_slice_shiftop_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_status_register_0_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_status_register_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_status_register_0_0' (34#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_status_register_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_val2_generator_0_0' [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_val2_generator_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_val2_generator_0_0' (35#1) [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/.Xil/Vivado-4800-DESKTOP-PITB4KD/realtime/design_block_1_val2_generator_0_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'design_block_1_xlconstant_0_0' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_xlconstant_0_0/synth/design_block_1_xlconstant_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_5_xlconstant__parameterized0' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/4649/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_5_xlconstant' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/4649/hdl/xlconstant_v1_1_vl_rfs.v:23]
 	Parameter CONST_VAL bound to: 1 - type: integer 
 	Parameter CONST_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_5_xlconstant__parameterized0' (12#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/4649/hdl/xlconstant_v1_1_vl_rfs.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'design_block_1_xlconstant_0_0' (13#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_xlconstant_0_0/synth/design_block_1_xlconstant_0_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_5_xlconstant' (36#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/4649/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_xlconstant_0_0' (37#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_xlconstant_0_0/synth/design_block_1_xlconstant_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'design_block_1_xlconstant_1_1' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_xlconstant_1_1/synth/design_block_1_xlconstant_1_1.v:57]
-INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_5_xlconstant__parameterized1' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/4649/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_5_xlconstant__parameterized0' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/4649/hdl/xlconstant_v1_1_vl_rfs.v:23]
 	Parameter CONST_VAL bound to: 0 - type: integer 
 	Parameter CONST_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_5_xlconstant__parameterized1' (13#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/4649/hdl/xlconstant_v1_1_vl_rfs.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'design_block_1_xlconstant_1_1' (14#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_xlconstant_1_1/synth/design_block_1_xlconstant_1_1.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_5_xlconstant__parameterized0' (37#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/4649/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_xlconstant_1_1' (38#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_xlconstant_1_1/synth/design_block_1_xlconstant_1_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'design_block_1_xlconstant_2_0' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_xlconstant_2_0/synth/design_block_1_xlconstant_2_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_5_xlconstant__parameterized1' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/4649/hdl/xlconstant_v1_1_vl_rfs.v:23]
+	Parameter CONST_VAL bound to: 0 - type: integer 
+	Parameter CONST_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_5_xlconstant__parameterized1' (38#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/4649/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_xlconstant_2_0' (39#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_xlconstant_2_0/synth/design_block_1_xlconstant_2_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'design_block_1_xlslice_0_0' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_xlslice_0_0/synth/design_block_1_xlslice_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_1_xlslice' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_1_xlslice__parameterized10' [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v:13]
 	Parameter DIN_WIDTH bound to: 32 - type: integer 
-	Parameter DIN_FROM bound to: 12 - type: integer 
+	Parameter DIN_FROM bound to: 8 - type: integer 
 	Parameter DIN_TO bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_1_xlslice' (15#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'design_block_1_xlslice_0_0' (16#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_xlslice_0_0/synth/design_block_1_xlslice_0_0.v:57]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'debouncer_0'. This will prevent further optimization [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/synth/design_block_1.v:59]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'register_2'. This will prevent further optimization [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/synth/design_block_1.v:95]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'register_1'. This will prevent further optimization [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/synth/design_block_1.v:88]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'register_0'. This will prevent further optimization [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/synth/design_block_1.v:81]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'registerIF_0'. This will prevent further optimization [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/synth/design_block_1.v:72]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ila_0'. This will prevent further optimization [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/synth/design_block_1.v:63]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'PC_0'. This will prevent further optimization [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/synth/design_block_1.v:43]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'adder_0'. This will prevent further optimization [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/synth/design_block_1.v:49]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'MUX_0'. This will prevent further optimization [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/synth/design_block_1.v:38]
-INFO: [Synth 8-6155] done synthesizing module 'design_block_1' (17#1) [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/synth/design_block_1.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'design_block_1_wrapper' (18#1) [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/hdl/design_block_1_wrapper.v:12]
-WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice has unconnected port Din[31]
-WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice has unconnected port Din[30]
-WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice has unconnected port Din[29]
-WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice has unconnected port Din[28]
-WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice has unconnected port Din[27]
-WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice has unconnected port Din[26]
-WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice has unconnected port Din[25]
-WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice has unconnected port Din[24]
-WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice has unconnected port Din[23]
-WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice has unconnected port Din[22]
-WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice has unconnected port Din[21]
-WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice has unconnected port Din[20]
-WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice has unconnected port Din[19]
-WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice has unconnected port Din[18]
-WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice has unconnected port Din[17]
-WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice has unconnected port Din[16]
-WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice has unconnected port Din[15]
-WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice has unconnected port Din[14]
-WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice has unconnected port Din[13]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_1_xlslice__parameterized10' (39#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_xlslice_0_0' (40#1) [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_xlslice_0_0/synth/design_block_1_xlslice_0_0.v:57]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'debouncer_0'. This will prevent further optimization [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/synth/design_block_1.v:158]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'status_register_0'. This will prevent further optimization [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/synth/design_block_1.v:298]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'register_MEM_0'. This will prevent further optimization [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/synth/design_block_1.v:247]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'register_ID_0'. This will prevent further optimization [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/synth/design_block_1.v:214]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'register_EXE_0'. This will prevent further optimization [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/synth/design_block_1.v:199]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'registerIF_0'. This will prevent further optimization [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/synth/design_block_1.v:190]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'registerFile_1'. This will prevent further optimization [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/synth/design_block_1.v:180]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ila_0'. This will prevent further optimization [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/synth/design_block_1.v:168]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'PC_0'. This will prevent further optimization [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/synth/design_block_1.v:123]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'alu_0'. This will prevent further optimization [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/synth/design_block_1.v:137]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'xlslice_0'. This will prevent further optimization [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/synth/design_block_1.v:316]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'adder_0'. This will prevent further optimization [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/synth/design_block_1.v:129]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1' (41#1) [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/synth/design_block_1.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'design_block_1_wrapper' (42#1) [G:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/hdl/design_block_1_wrapper.v:12]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized10 has unconnected port Din[31]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized10 has unconnected port Din[30]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized10 has unconnected port Din[29]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized10 has unconnected port Din[28]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized10 has unconnected port Din[27]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized10 has unconnected port Din[26]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized10 has unconnected port Din[25]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized10 has unconnected port Din[24]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized10 has unconnected port Din[23]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized10 has unconnected port Din[22]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized10 has unconnected port Din[21]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized10 has unconnected port Din[20]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized10 has unconnected port Din[19]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized10 has unconnected port Din[18]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized10 has unconnected port Din[17]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized10 has unconnected port Din[16]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized10 has unconnected port Din[15]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized10 has unconnected port Din[14]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized10 has unconnected port Din[13]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized10 has unconnected port Din[12]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized10 has unconnected port Din[11]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized10 has unconnected port Din[10]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized10 has unconnected port Din[9]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized9 has unconnected port Din[31]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized9 has unconnected port Din[30]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized9 has unconnected port Din[29]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized9 has unconnected port Din[28]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized9 has unconnected port Din[27]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized9 has unconnected port Din[26]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized9 has unconnected port Din[25]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized9 has unconnected port Din[24]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized8 has unconnected port Din[31]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized8 has unconnected port Din[30]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized8 has unconnected port Din[29]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized8 has unconnected port Din[28]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized8 has unconnected port Din[27]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized8 has unconnected port Din[26]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized8 has unconnected port Din[25]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized8 has unconnected port Din[24]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized8 has unconnected port Din[23]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized8 has unconnected port Din[22]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized8 has unconnected port Din[21]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized8 has unconnected port Din[20]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized8 has unconnected port Din[19]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized8 has unconnected port Din[18]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized8 has unconnected port Din[17]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized8 has unconnected port Din[16]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized8 has unconnected port Din[15]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized8 has unconnected port Din[14]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized8 has unconnected port Din[13]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized8 has unconnected port Din[12]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[31]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[30]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[29]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[28]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[27]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[26]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[25]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[24]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[23]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[22]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[21]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[19]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[18]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[17]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[16]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[15]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[14]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[13]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[12]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[11]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[10]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[9]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[8]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[7]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[6]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[5]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[4]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[3]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[2]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[1]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized7 has unconnected port Din[0]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized6 has unconnected port Din[31]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized6 has unconnected port Din[30]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized6 has unconnected port Din[29]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized6 has unconnected port Din[28]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized6 has unconnected port Din[27]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized6 has unconnected port Din[26]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized6 has unconnected port Din[25]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized6 has unconnected port Din[24]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized6 has unconnected port Din[23]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized6 has unconnected port Din[22]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized6 has unconnected port Din[21]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized6 has unconnected port Din[20]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized6 has unconnected port Din[15]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized6 has unconnected port Din[14]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized6 has unconnected port Din[13]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized6 has unconnected port Din[12]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized6 has unconnected port Din[11]
+WARNING: [Synth 8-3331] design xlslice_v1_0_1_xlslice__parameterized6 has unconnected port Din[10]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 558.492 ; gain = 150.879
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 586.816 ; gain = 155.102
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -115,10 +304,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 558.492 ; gain = 150.879
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 586.816 ; gain = 155.102
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 558.492 ; gain = 150.879
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 586.816 ; gain = 155.102
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -131,44 +320,70 @@ Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/de
 Finished Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_PC_0_0/design_block_1_PC_0_0/design_block_1_PC_0_0_in_context.xdc] for cell 'design_block_1_i/PC_0'
 Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_adder_0_0/design_block_1_adder_0_0/design_block_1_adder_0_0_in_context.xdc] for cell 'design_block_1_i/adder_0'
 Finished Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_adder_0_0/design_block_1_adder_0_0/design_block_1_adder_0_0_in_context.xdc] for cell 'design_block_1_i/adder_0'
-Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_blk_mem_gen_0_1/design_block_1_blk_mem_gen_0_1/design_block_1_blk_mem_gen_0_1_in_context.xdc] for cell 'design_block_1_i/blk_mem_gen_0'
-Finished Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_blk_mem_gen_0_1/design_block_1_blk_mem_gen_0_1/design_block_1_blk_mem_gen_0_1_in_context.xdc] for cell 'design_block_1_i/blk_mem_gen_0'
 Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_registerIF_0_0/design_block_1_registerIF_0_0/design_block_1_registerIF_0_0_in_context.xdc] for cell 'design_block_1_i/registerIF_0'
 Finished Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_registerIF_0_0/design_block_1_registerIF_0_0/design_block_1_registerIF_0_0_in_context.xdc] for cell 'design_block_1_i/registerIF_0'
-Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_register_0_1/design_block_1_register_0_1/design_block_1_register_0_1_in_context.xdc] for cell 'design_block_1_i/register_0'
-Finished Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_register_0_1/design_block_1_register_0_1/design_block_1_register_0_1_in_context.xdc] for cell 'design_block_1_i/register_0'
-Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_register_1_0/design_block_1_register_1_0/design_block_1_register_1_0_in_context.xdc] for cell 'design_block_1_i/register_1'
-Finished Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_register_1_0/design_block_1_register_1_0/design_block_1_register_1_0_in_context.xdc] for cell 'design_block_1_i/register_1'
-Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_register_2_0/design_block_1_register_2_0/design_block_1_register_2_0_in_context.xdc] for cell 'design_block_1_i/register_2'
-Finished Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_register_2_0/design_block_1_register_2_0/design_block_1_register_2_0_in_context.xdc] for cell 'design_block_1_i/register_2'
+Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_MUX_CU_0_0/design_block_1_MUX_CU_0_0/design_block_1_MUX_CU_0_0_in_context.xdc] for cell 'design_block_1_i/MUX_CU_0'
+Finished Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_MUX_CU_0_0/design_block_1_MUX_CU_0_0/design_block_1_MUX_CU_0_0_in_context.xdc] for cell 'design_block_1_i/MUX_CU_0'
+Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_register_ID_0_0/design_block_1_register_ID_0_0/design_block_1_register_ID_0_0_in_context.xdc] for cell 'design_block_1_i/register_ID_0'
+Finished Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_register_ID_0_0/design_block_1_register_ID_0_0/design_block_1_register_ID_0_0_in_context.xdc] for cell 'design_block_1_i/register_ID_0'
+Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_conditionCheck_0_0/design_block_1_conditionCheck_0_0/design_block_1_conditionCheck_0_0_in_context.xdc] for cell 'design_block_1_i/conditionCheck_0'
+Finished Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_conditionCheck_0_0/design_block_1_conditionCheck_0_0/design_block_1_conditionCheck_0_0_in_context.xdc] for cell 'design_block_1_i/conditionCheck_0'
+Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_not_1_0_0/design_block_1_not_1_0_0/design_block_1_not_1_0_0_in_context.xdc] for cell 'design_block_1_i/not_1_0'
+Finished Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_not_1_0_0/design_block_1_not_1_0_0/design_block_1_not_1_0_0_in_context.xdc] for cell 'design_block_1_i/not_1_0'
+Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_controlUnit_0_0/design_block_1_controlUnit_0_0/design_block_1_controlUnit_0_0_in_context.xdc] for cell 'design_block_1_i/controlUnit_0'
+Finished Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_controlUnit_0_0/design_block_1_controlUnit_0_0/design_block_1_controlUnit_0_0_in_context.xdc] for cell 'design_block_1_i/controlUnit_0'
+Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_registerFile_1_0/design_block_1_registerFile_1_0/design_block_1_registerFile_1_0_in_context.xdc] for cell 'design_block_1_i/registerFile_1'
+Finished Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_registerFile_1_0/design_block_1_registerFile_1_0/design_block_1_registerFile_1_0_in_context.xdc] for cell 'design_block_1_i/registerFile_1'
+Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_MUX_4_0_0/design_block_1_MUX_4_0_0/design_block_1_MUX_4_0_0_in_context.xdc] for cell 'design_block_1_i/MUX_4_0'
+Finished Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_MUX_4_0_0/design_block_1_MUX_4_0_0/design_block_1_MUX_4_0_0_in_context.xdc] for cell 'design_block_1_i/MUX_4_0'
+Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_alu_0_0/design_block_1_alu_0_0/design_block_1_alu_0_0_in_context.xdc] for cell 'design_block_1_i/alu_0'
+Finished Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_alu_0_0/design_block_1_alu_0_0/design_block_1_alu_0_0_in_context.xdc] for cell 'design_block_1_i/alu_0'
+Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_or_1_0_0/design_block_1_or_1_0_0/design_block_1_or_1_0_0_in_context.xdc] for cell 'design_block_1_i/or_1_0'
+Finished Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_or_1_0_0/design_block_1_or_1_0_0/design_block_1_or_1_0_0_in_context.xdc] for cell 'design_block_1_i/or_1_0'
+Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_adder_0_1/design_block_1_adder_0_1/design_block_1_adder_0_1_in_context.xdc] for cell 'design_block_1_i/adder_1'
+Finished Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_adder_0_1/design_block_1_adder_0_1/design_block_1_adder_0_1_in_context.xdc] for cell 'design_block_1_i/adder_1'
+Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_val2_generator_0_0/design_block_1_val2_generator_0_0/design_block_1_val2_generator_0_0_in_context.xdc] for cell 'design_block_1_i/val2_generator_0'
+Finished Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_val2_generator_0_0/design_block_1_val2_generator_0_0/design_block_1_val2_generator_0_0_in_context.xdc] for cell 'design_block_1_i/val2_generator_0'
+Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_sign_extend_24_to_32_0_0/design_block_1_sign_extend_24_to_32_0_0/design_block_1_sign_extend_24_to_32_0_0_in_context.xdc] for cell 'design_block_1_i/sign_extend_24_to_32_0'
+Finished Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_sign_extend_24_to_32_0_0/design_block_1_sign_extend_24_to_32_0_0/design_block_1_sign_extend_24_to_32_0_0_in_context.xdc] for cell 'design_block_1_i/sign_extend_24_to_32_0'
+Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_register_EXE_0_0/design_block_1_register_EXE_0_0/design_block_1_register_EXE_0_0_in_context.xdc] for cell 'design_block_1_i/register_EXE_0'
+Finished Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_register_EXE_0_0/design_block_1_register_EXE_0_0/design_block_1_register_EXE_0_0_in_context.xdc] for cell 'design_block_1_i/register_EXE_0'
+Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_status_register_0_0/design_block_1_status_register_0_0/design_block_1_status_register_0_0_in_context.xdc] for cell 'design_block_1_i/status_register_0'
+Finished Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_status_register_0_0/design_block_1_status_register_0_0/design_block_1_status_register_0_0_in_context.xdc] for cell 'design_block_1_i/status_register_0'
+Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_register_MEM_0_0/design_block_1_register_MEM_0_0/design_block_1_register_MEM_0_0_in_context.xdc] for cell 'design_block_1_i/register_MEM_0'
+Finished Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_register_MEM_0_0/design_block_1_register_MEM_0_0/design_block_1_register_MEM_0_0_in_context.xdc] for cell 'design_block_1_i/register_MEM_0'
+Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_MUX_0_1/design_block_1_MUX_0_1/design_block_1_MUX_0_1_in_context.xdc] for cell 'design_block_1_i/MUX_1'
+Finished Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_MUX_0_1/design_block_1_MUX_0_1/design_block_1_MUX_0_1_in_context.xdc] for cell 'design_block_1_i/MUX_1'
+Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_dist_mem_gen_0_0/design_block_1_dist_mem_gen_0_0/design_block_1_dist_mem_gen_0_0_in_context.xdc] for cell 'design_block_1_i/dist_mem_gen_0'
+Finished Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_dist_mem_gen_0_0/design_block_1_dist_mem_gen_0_0/design_block_1_dist_mem_gen_0_0_in_context.xdc] for cell 'design_block_1_i/dist_mem_gen_0'
+Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_ila_0_0/design_block_1_ila_0_0/design_block_1_ila_0_0_in_context.xdc] for cell 'design_block_1_i/ila_0'
+Finished Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_ila_0_0/design_block_1_ila_0_0/design_block_1_ila_0_0_in_context.xdc] for cell 'design_block_1_i/ila_0'
 Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_debouncer_0_0/design_block_1_debouncer_0_0/design_block_1_debouncer_0_0_in_context.xdc] for cell 'design_block_1_i/debouncer_0'
 Finished Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_debouncer_0_0/design_block_1_debouncer_0_0/design_block_1_debouncer_0_0_in_context.xdc] for cell 'design_block_1_i/debouncer_0'
-Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_ila_0_1/design_block_1_ila_0_1/design_block_1_ila_0_1_in_context.xdc] for cell 'design_block_1_i/ila_0'
-Finished Parsing XDC File [g:/CA lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_ila_0_1/design_block_1_ila_0_1/design_block_1_ila_0_1_in_context.xdc] for cell 'design_block_1_i/ila_0'
 Parsing XDC File [C:/Users/Novin.SYS/Desktop/pin_assignment.xdc]
 Finished Parsing XDC File [C:/Users/Novin.SYS/Desktop/pin_assignment.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Novin.SYS/Desktop/pin_assignment.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_block_1_wrapper_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/design_block_1_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/dont_touch.xdc]
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 851.512 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 892.199 ; gain = 0.000
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 851.531 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 892.246 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 851.531 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.048 . Memory (MB): peak = 851.531 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 892.246 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.045 . Memory (MB): peak = 892.246 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:20 . Memory (MB): peak = 851.531 ; gain = 443.918
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 892.246 ; gain = 460.531
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 851.531 ; gain = 443.918
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 892.246 ; gain = 460.531
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -179,20 +394,44 @@ Applied set_property DONT_TOUCH = true for design_block_1_i/PC_0. (constraint fi
 Applied set_property DONT_TOUCH = true for design_block_1_i/adder_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_block_1_i/xlconstant_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_block_1_i/xlslice_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for design_block_1_i/blk_mem_gen_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_block_1_i/registerIF_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for design_block_1_i/register_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for design_block_1_i/register_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for design_block_1_i/register_2. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for design_block_1_i/const32bit0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_block_1_i/xlconstant_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for design_block_1_i/debouncer_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/slice_cond. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/MUX_CU_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/register_ID_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/conditionCheck_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/not_1_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/slice_s. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/slice_opcode. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/slice_mode. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/controlUnit_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/slice_shiftop. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/slice_dest. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/registerFile_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/slice_imm. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/slice_signedImm. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/slice_rn. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/slice_rm. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/MUX_4_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/alu_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/or_1_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/val2_generator_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/sign_extend_24_to_32_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/register_EXE_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/status_register_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/slice_carry. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/register_MEM_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/MUX_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/xlconstant_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/dist_mem_gen_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_block_1_i/ila_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_block_1_i/debouncer_0. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 851.531 ; gain = 443.918
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 892.246 ; gain = 460.531
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 851.531 ; gain = 443.918
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 892.246 ; gain = 460.531
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -227,27 +466,8 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-3331] design design_block_1_xlslice_0_0 has unconnected port Din[31]
-WARNING: [Synth 8-3331] design design_block_1_xlslice_0_0 has unconnected port Din[30]
-WARNING: [Synth 8-3331] design design_block_1_xlslice_0_0 has unconnected port Din[29]
-WARNING: [Synth 8-3331] design design_block_1_xlslice_0_0 has unconnected port Din[28]
-WARNING: [Synth 8-3331] design design_block_1_xlslice_0_0 has unconnected port Din[27]
-WARNING: [Synth 8-3331] design design_block_1_xlslice_0_0 has unconnected port Din[26]
-WARNING: [Synth 8-3331] design design_block_1_xlslice_0_0 has unconnected port Din[25]
-WARNING: [Synth 8-3331] design design_block_1_xlslice_0_0 has unconnected port Din[24]
-WARNING: [Synth 8-3331] design design_block_1_xlslice_0_0 has unconnected port Din[23]
-WARNING: [Synth 8-3331] design design_block_1_xlslice_0_0 has unconnected port Din[22]
-WARNING: [Synth 8-3331] design design_block_1_xlslice_0_0 has unconnected port Din[21]
-WARNING: [Synth 8-3331] design design_block_1_xlslice_0_0 has unconnected port Din[20]
-WARNING: [Synth 8-3331] design design_block_1_xlslice_0_0 has unconnected port Din[19]
-WARNING: [Synth 8-3331] design design_block_1_xlslice_0_0 has unconnected port Din[18]
-WARNING: [Synth 8-3331] design design_block_1_xlslice_0_0 has unconnected port Din[17]
-WARNING: [Synth 8-3331] design design_block_1_xlslice_0_0 has unconnected port Din[16]
-WARNING: [Synth 8-3331] design design_block_1_xlslice_0_0 has unconnected port Din[15]
-WARNING: [Synth 8-3331] design design_block_1_xlslice_0_0 has unconnected port Din[14]
-WARNING: [Synth 8-3331] design design_block_1_xlslice_0_0 has unconnected port Din[13]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:22 . Memory (MB): peak = 851.531 ; gain = 443.918
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 892.246 ; gain = 460.531
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -259,13 +479,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:33 . Memory (MB): peak = 872.922 ; gain = 465.309
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 900.293 ; gain = 468.578
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:33 . Memory (MB): peak = 872.922 ; gain = 465.309
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 900.367 ; gain = 468.652
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -277,7 +497,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:33 . Memory (MB): peak = 882.914 ; gain = 475.301
+Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 910.895 ; gain = 479.180
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -301,7 +521,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:34 . Memory (MB): peak = 882.914 ; gain = 475.301
+Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 910.895 ; gain = 479.180
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -314,7 +534,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:34 . Memory (MB): peak = 882.914 ; gain = 475.301
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 910.895 ; gain = 479.180
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -326,96 +546,133 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:34 . Memory (MB): peak = 882.914 ; gain = 475.301
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 910.895 ; gain = 479.180
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:34 . Memory (MB): peak = 882.914 ; gain = 475.301
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 910.895 ; gain = 479.180
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:34 . Memory (MB): peak = 882.914 ; gain = 475.301
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 910.895 ; gain = 479.180
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:34 . Memory (MB): peak = 882.914 ; gain = 475.301
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 910.895 ; gain = 479.180
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 Report BlackBoxes: 
-+------+-------------------------------+----------+
-|      |BlackBox name                  |Instances |
-+------+-------------------------------+----------+
-|1     |design_block_1_MUX_0_0         |         1|
-|2     |design_block_1_PC_0_0          |         1|
-|3     |design_block_1_adder_0_0       |         1|
-|4     |design_block_1_blk_mem_gen_0_1 |         1|
-|5     |design_block_1_debouncer_0_0   |         1|
-|6     |design_block_1_ila_0_1         |         1|
-|7     |design_block_1_registerIF_0_0  |         1|
-|8     |design_block_1_register_0_1    |         1|
-|9     |design_block_1_register_1_0    |         1|
-|10    |design_block_1_register_2_0    |         1|
-+------+-------------------------------+----------+
++------+----------------------------------------+----------+
+|      |BlackBox name                           |Instances |
++------+----------------------------------------+----------+
+|1     |design_block_1_MUX_0_0                  |         1|
+|2     |design_block_1_MUX_0_1                  |         1|
+|3     |design_block_1_MUX_4_0_0                |         1|
+|4     |design_block_1_MUX_CU_0_0               |         1|
+|5     |design_block_1_PC_0_0                   |         1|
+|6     |design_block_1_adder_0_0                |         1|
+|7     |design_block_1_adder_0_1                |         1|
+|8     |design_block_1_alu_0_0                  |         1|
+|9     |design_block_1_conditionCheck_0_0       |         1|
+|10    |design_block_1_controlUnit_0_0          |         1|
+|11    |design_block_1_debouncer_0_0            |         1|
+|12    |design_block_1_dist_mem_gen_0_0         |         1|
+|13    |design_block_1_ila_0_0                  |         1|
+|14    |design_block_1_not_1_0_0                |         1|
+|15    |design_block_1_or_1_0_0                 |         1|
+|16    |design_block_1_registerFile_1_0         |         1|
+|17    |design_block_1_registerIF_0_0           |         1|
+|18    |design_block_1_register_EXE_0_0         |         1|
+|19    |design_block_1_register_ID_0_0          |         1|
+|20    |design_block_1_register_MEM_0_0         |         1|
+|21    |design_block_1_sign_extend_24_to_32_0_0 |         1|
+|22    |design_block_1_status_register_0_0      |         1|
+|23    |design_block_1_val2_generator_0_0       |         1|
++------+----------------------------------------+----------+
 
 Report Cell Usage: 
-+------+-------------------------------+------+
-|      |Cell                           |Count |
-+------+-------------------------------+------+
-|1     |design_block_1_MUX_0_0         |     1|
-|2     |design_block_1_PC_0_0          |     1|
-|3     |design_block_1_adder_0_0       |     1|
-|4     |design_block_1_blk_mem_gen_0_1 |     1|
-|5     |design_block_1_debouncer_0_0   |     1|
-|6     |design_block_1_ila_0_1         |     1|
-|7     |design_block_1_registerIF_0_0  |     1|
-|8     |design_block_1_register_0_1    |     1|
-|9     |design_block_1_register_1_0    |     1|
-|10    |design_block_1_register_2_0    |     1|
-|11    |IBUF                           |     2|
-+------+-------------------------------+------+
++------+----------------------------------------+------+
+|      |Cell                                    |Count |
++------+----------------------------------------+------+
+|1     |design_block_1_MUX_0_0                  |     1|
+|2     |design_block_1_MUX_0_1                  |     1|
+|3     |design_block_1_MUX_4_0_0                |     1|
+|4     |design_block_1_MUX_CU_0_0               |     1|
+|5     |design_block_1_PC_0_0                   |     1|
+|6     |design_block_1_adder_0_0                |     1|
+|7     |design_block_1_adder_0_1                |     1|
+|8     |design_block_1_alu_0_0                  |     1|
+|9     |design_block_1_conditionCheck_0_0       |     1|
+|10    |design_block_1_controlUnit_0_0          |     1|
+|11    |design_block_1_debouncer_0_0            |     1|
+|12    |design_block_1_dist_mem_gen_0_0         |     1|
+|13    |design_block_1_ila_0_0                  |     1|
+|14    |design_block_1_not_1_0_0                |     1|
+|15    |design_block_1_or_1_0_0                 |     1|
+|16    |design_block_1_registerFile_1_0         |     1|
+|17    |design_block_1_registerIF_0_0           |     1|
+|18    |design_block_1_register_EXE_0_0         |     1|
+|19    |design_block_1_register_ID_0_0          |     1|
+|20    |design_block_1_register_MEM_0_0         |     1|
+|21    |design_block_1_sign_extend_24_to_32_0_0 |     1|
+|22    |design_block_1_status_register_0_0      |     1|
+|23    |design_block_1_val2_generator_0_0       |     1|
+|24    |IBUF                                    |     2|
++------+----------------------------------------+------+
 
 Report Instance Areas: 
-+------+-------------------+------------------------------+------+
-|      |Instance           |Module                        |Cells |
-+------+-------------------+------------------------------+------+
-|1     |top                |                              |   291|
-|2     |  design_block_1_i |design_block_1                |   289|
-|3     |    const32bit0    |design_block_1_xlconstant_1_0 |     0|
-|4     |    xlconstant_0   |design_block_1_xlconstant_0_0 |     0|
-|5     |    xlconstant_1   |design_block_1_xlconstant_1_1 |     0|
-|6     |    xlslice_0      |design_block_1_xlslice_0_0    |     0|
-+------+-------------------+------------------------------+------+
++------+--------------------+-------------------------------+------+
+|      |Instance            |Module                         |Cells |
++------+--------------------+-------------------------------+------+
+|1     |top                 |                               |   755|
+|2     |  design_block_1_i  |design_block_1                 |   753|
+|3     |    slice_carry     |design_block_1_slice_shiftop_2 |     0|
+|4     |    slice_cond      |design_block_1_xlslice_1_0     |     0|
+|5     |    slice_dest      |design_block_1_slice_s_3       |     0|
+|6     |    slice_imm       |design_block_1_slice_shiftop_0 |     0|
+|7     |    slice_mode      |design_block_1_slice_s_1       |     0|
+|8     |    slice_opcode    |design_block_1_slice_s_0       |     0|
+|9     |    slice_rm        |design_block_1_slice_dest_1    |     0|
+|10    |    slice_rn        |design_block_1_slice_dest_0    |     0|
+|11    |    slice_s         |design_block_1_xlslice_1_1     |     0|
+|12    |    slice_shiftop   |design_block_1_slice_s_2       |     0|
+|13    |    slice_signedImm |design_block_1_slice_shiftop_1 |     0|
+|14    |    xlconstant_0    |design_block_1_xlconstant_0_0  |     0|
+|15    |    xlconstant_1    |design_block_1_xlconstant_1_1  |     0|
+|16    |    xlconstant_2    |design_block_1_xlconstant_2_0  |     0|
+|17    |    xlslice_0       |design_block_1_xlslice_0_0     |     0|
++------+--------------------+-------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:34 . Memory (MB): peak = 882.914 ; gain = 475.301
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 910.895 ; gain = 479.180
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 19 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 882.914 ; gain = 182.262
-Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:35 . Memory (MB): peak = 882.914 ; gain = 475.301
+Synthesis finished with 0 errors, 0 critical warnings and 286 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 910.895 ; gain = 173.750
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 910.895 ; gain = 479.180
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 892.992 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 926.277 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-62 Infos, 40 Warnings, 0 Critical Warnings and 0 Errors encountered.
+136 Infos, 103 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:38 . Memory (MB): peak = 892.992 ; gain = 487.102
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 926.277 ; gain = 496.344
 INFO: [Common 17-600] The following parameters have non-default value.
 tcl.collectionResultDisplayLimit
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 892.992 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 926.277 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'G:/CA lab/CA_LAB/CA_LAB.runs/synth_1/design_block_1_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_block_1_wrapper_utilization_synth.rpt -pb design_block_1_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Apr  8 17:46:28 2025...
+INFO: [Common 17-206] Exiting Vivado at Tue May  6 17:14:47 2025...

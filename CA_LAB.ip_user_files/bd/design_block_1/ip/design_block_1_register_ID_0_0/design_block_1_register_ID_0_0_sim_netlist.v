@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Tue Apr 22 17:50:13 2025
+// Date        : Tue May  6 16:58:06 2025
 // Host        : DESKTOP-PITB4KD running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim {G:/CA
 //               lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_register_ID_0_0/design_block_1_register_ID_0_0_sim_netlist.v}
@@ -26,6 +26,7 @@ module design_block_1_register_ID_0_0
     b,
     imm,
     s,
+    carry_in,
     exe_c,
     shift_op,
     signed_imm,
@@ -39,6 +40,7 @@ module design_block_1_register_ID_0_0
     b_out,
     s_out,
     imm_out,
+    carry_out,
     exe_c_out,
     dst_out,
     PC_out,
@@ -56,6 +58,7 @@ module design_block_1_register_ID_0_0
   input b;
   input imm;
   input s;
+  input carry_in;
   input [3:0]exe_c;
   input [11:0]shift_op;
   input [23:0]signed_imm;
@@ -69,6 +72,7 @@ module design_block_1_register_ID_0_0
   output b_out;
   output s_out;
   output imm_out;
+  output carry_out;
   output [3:0]exe_c_out;
   output [3:0]dst_out;
   output [31:0]PC_out;
@@ -81,6 +85,8 @@ module design_block_1_register_ID_0_0
   wire [31:0]PC_out;
   wire b;
   wire b_out;
+  wire carry_in;
+  wire carry_out;
   wire clk;
   wire [3:0]dst;
   wire [3:0]dst_out;
@@ -113,6 +119,8 @@ module design_block_1_register_ID_0_0
         .PC_out(PC_out),
         .b(b),
         .b_out(b_out),
+        .carry_in(carry_in),
+        .carry_out(carry_out),
         .clk(clk),
         .dst(dst),
         .dst_out(dst_out),
@@ -149,6 +157,7 @@ module design_block_1_register_ID_0_0_register_ID
     b_out,
     s_out,
     imm_out,
+    carry_out,
     exe_c_out,
     dst_out,
     PC_out,
@@ -160,6 +169,7 @@ module design_block_1_register_ID_0_0_register_ID
     freeze,
     dst,
     exe_c,
+    carry_in,
     imm,
     s,
     b,
@@ -179,6 +189,7 @@ module design_block_1_register_ID_0_0_register_ID
   output b_out;
   output s_out;
   output imm_out;
+  output carry_out;
   output [3:0]exe_c_out;
   output [3:0]dst_out;
   output [31:0]PC_out;
@@ -190,6 +201,7 @@ module design_block_1_register_ID_0_0_register_ID
   input freeze;
   input [3:0]dst;
   input [3:0]exe_c;
+  input carry_in;
   input imm;
   input s;
   input b;
@@ -209,6 +221,9 @@ module design_block_1_register_ID_0_0_register_ID
   wire b;
   wire b_out;
   wire b_out_i_1_n_0;
+  wire carry_in;
+  wire carry_out;
+  wire carry_out_i_1_n_0;
   wire clk;
   wire [3:0]dst;
   wire [3:0]dst_out;
@@ -365,7 +380,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(PC[10]),
         .I1(flush),
         .O(p_0_in[10]));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \PC_out[11]_i_1 
@@ -379,7 +394,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(PC[12]),
         .I1(flush),
         .O(p_0_in[12]));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \PC_out[13]_i_1 
@@ -393,7 +408,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(PC[14]),
         .I1(flush),
         .O(p_0_in[14]));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \PC_out[15]_i_1 
@@ -407,7 +422,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(PC[16]),
         .I1(flush),
         .O(p_0_in[16]));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \PC_out[17]_i_1 
@@ -421,14 +436,14 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(PC[18]),
         .I1(flush),
         .O(p_0_in[18]));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \PC_out[19]_i_1 
        (.I0(PC[19]),
         .I1(flush),
         .O(p_0_in[19]));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \PC_out[1]_i_1 
@@ -442,7 +457,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(PC[20]),
         .I1(flush),
         .O(p_0_in[20]));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \PC_out[21]_i_1 
@@ -456,7 +471,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(PC[22]),
         .I1(flush),
         .O(p_0_in[22]));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \PC_out[23]_i_1 
@@ -470,7 +485,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(PC[24]),
         .I1(flush),
         .O(p_0_in[24]));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \PC_out[25]_i_1 
@@ -484,7 +499,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(PC[26]),
         .I1(flush),
         .O(p_0_in[26]));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \PC_out[27]_i_1 
@@ -498,7 +513,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(PC[28]),
         .I1(flush),
         .O(p_0_in[28]));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \PC_out[29]_i_1 
@@ -519,14 +534,14 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(PC[30]),
         .I1(flush),
         .O(p_0_in[30]));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \PC_out[31]_i_1 
        (.I0(PC[31]),
         .I1(flush),
         .O(p_0_in[31]));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \PC_out[3]_i_1 
@@ -540,7 +555,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(PC[4]),
         .I1(flush),
         .O(p_0_in[4]));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \PC_out[5]_i_1 
@@ -554,7 +569,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(PC[6]),
         .I1(flush),
         .O(p_0_in[6]));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \PC_out[7]_i_1 
@@ -568,7 +583,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(PC[8]),
         .I1(flush),
         .O(p_0_in[8]));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \PC_out[9]_i_1 
@@ -780,6 +795,19 @@ module design_block_1_register_ID_0_0_register_ID
         .CLR(rst),
         .D(b_out_i_1_n_0),
         .Q(b_out));
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT2 #(
+    .INIT(4'h2)) 
+    carry_out_i_1
+       (.I0(carry_in),
+        .I1(flush),
+        .O(carry_out_i_1_n_0));
+  FDCE carry_out_reg
+       (.C(clk),
+        .CE(wb_en_out_i_1_n_0),
+        .CLR(rst),
+        .D(carry_out_i_1_n_0),
+        .Q(carry_out));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT2 #(
     .INIT(4'h2)) 
@@ -910,7 +938,7 @@ module design_block_1_register_ID_0_0_register_ID
         .CLR(rst),
         .D(mem_r_en_out_i_1_n_0),
         .Q(mem_r_en_out));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT2 #(
     .INIT(4'h2)) 
     mem_w_en_out_i_1
@@ -923,7 +951,7 @@ module design_block_1_register_ID_0_0_register_ID
         .CLR(rst),
         .D(mem_w_en_out_i_1_n_0),
         .Q(mem_w_en_out));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT2 #(
     .INIT(4'h2)) 
     s_out_i_1
@@ -950,14 +978,14 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(shift_op[10]),
         .I1(flush),
         .O(\shift_op_out[10]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair60" *) 
+  (* SOFT_HLUTNM = "soft_lutpair61" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \shift_op_out[11]_i_1 
        (.I0(shift_op[11]),
         .I1(flush),
         .O(\shift_op_out[11]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair55" *) 
+  (* SOFT_HLUTNM = "soft_lutpair56" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \shift_op_out[1]_i_1 
@@ -971,7 +999,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(shift_op[2]),
         .I1(flush),
         .O(\shift_op_out[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair56" *) 
+  (* SOFT_HLUTNM = "soft_lutpair57" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \shift_op_out[3]_i_1 
@@ -985,7 +1013,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(shift_op[4]),
         .I1(flush),
         .O(\shift_op_out[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair57" *) 
+  (* SOFT_HLUTNM = "soft_lutpair58" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \shift_op_out[5]_i_1 
@@ -999,7 +1027,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(shift_op[6]),
         .I1(flush),
         .O(\shift_op_out[6]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair58" *) 
+  (* SOFT_HLUTNM = "soft_lutpair59" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \shift_op_out[7]_i_1 
@@ -1013,7 +1041,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(shift_op[8]),
         .I1(flush),
         .O(\shift_op_out[8]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair59" *) 
+  (* SOFT_HLUTNM = "soft_lutpair60" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \shift_op_out[9]_i_1 
@@ -1106,7 +1134,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(signed_imm[10]),
         .I1(flush),
         .O(\signed_imm_out[10]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair66" *) 
+  (* SOFT_HLUTNM = "soft_lutpair67" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \signed_imm_out[11]_i_1 
@@ -1120,7 +1148,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(signed_imm[12]),
         .I1(flush),
         .O(\signed_imm_out[12]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair67" *) 
+  (* SOFT_HLUTNM = "soft_lutpair68" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \signed_imm_out[13]_i_1 
@@ -1134,7 +1162,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(signed_imm[14]),
         .I1(flush),
         .O(\signed_imm_out[14]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair68" *) 
+  (* SOFT_HLUTNM = "soft_lutpair69" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \signed_imm_out[15]_i_1 
@@ -1148,7 +1176,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(signed_imm[16]),
         .I1(flush),
         .O(\signed_imm_out[16]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair69" *) 
+  (* SOFT_HLUTNM = "soft_lutpair70" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \signed_imm_out[17]_i_1 
@@ -1162,14 +1190,14 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(signed_imm[18]),
         .I1(flush),
         .O(\signed_imm_out[18]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair70" *) 
+  (* SOFT_HLUTNM = "soft_lutpair71" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \signed_imm_out[19]_i_1 
        (.I0(signed_imm[19]),
         .I1(flush),
         .O(\signed_imm_out[19]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair61" *) 
+  (* SOFT_HLUTNM = "soft_lutpair62" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \signed_imm_out[1]_i_1 
@@ -1183,7 +1211,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(signed_imm[20]),
         .I1(flush),
         .O(\signed_imm_out[20]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair71" *) 
+  (* SOFT_HLUTNM = "soft_lutpair72" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \signed_imm_out[21]_i_1 
@@ -1197,7 +1225,6 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(signed_imm[22]),
         .I1(flush),
         .O(\signed_imm_out[22]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair72" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \signed_imm_out[23]_i_1 
@@ -1211,7 +1238,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(signed_imm[2]),
         .I1(flush),
         .O(\signed_imm_out[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair62" *) 
+  (* SOFT_HLUTNM = "soft_lutpair63" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \signed_imm_out[3]_i_1 
@@ -1225,7 +1252,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(signed_imm[4]),
         .I1(flush),
         .O(\signed_imm_out[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair63" *) 
+  (* SOFT_HLUTNM = "soft_lutpair64" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \signed_imm_out[5]_i_1 
@@ -1239,7 +1266,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(signed_imm[6]),
         .I1(flush),
         .O(\signed_imm_out[6]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair64" *) 
+  (* SOFT_HLUTNM = "soft_lutpair65" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \signed_imm_out[7]_i_1 
@@ -1253,7 +1280,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(signed_imm[8]),
         .I1(flush),
         .O(\signed_imm_out[8]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair65" *) 
+  (* SOFT_HLUTNM = "soft_lutpair66" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \signed_imm_out[9]_i_1 
@@ -1418,7 +1445,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rm[10]),
         .I1(flush),
         .O(\val_rm_out[10]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair44" *) 
+  (* SOFT_HLUTNM = "soft_lutpair45" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rm_out[11]_i_1 
@@ -1432,7 +1459,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rm[12]),
         .I1(flush),
         .O(\val_rm_out[12]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair45" *) 
+  (* SOFT_HLUTNM = "soft_lutpair46" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rm_out[13]_i_1 
@@ -1446,7 +1473,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rm[14]),
         .I1(flush),
         .O(\val_rm_out[14]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair46" *) 
+  (* SOFT_HLUTNM = "soft_lutpair47" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rm_out[15]_i_1 
@@ -1460,7 +1487,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rm[16]),
         .I1(flush),
         .O(\val_rm_out[16]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair47" *) 
+  (* SOFT_HLUTNM = "soft_lutpair48" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rm_out[17]_i_1 
@@ -1474,14 +1501,14 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rm[18]),
         .I1(flush),
         .O(\val_rm_out[18]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair48" *) 
+  (* SOFT_HLUTNM = "soft_lutpair49" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rm_out[19]_i_1 
        (.I0(val_rm[19]),
         .I1(flush),
         .O(\val_rm_out[19]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair39" *) 
+  (* SOFT_HLUTNM = "soft_lutpair40" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rm_out[1]_i_1 
@@ -1495,7 +1522,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rm[20]),
         .I1(flush),
         .O(\val_rm_out[20]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair49" *) 
+  (* SOFT_HLUTNM = "soft_lutpair50" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rm_out[21]_i_1 
@@ -1509,7 +1536,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rm[22]),
         .I1(flush),
         .O(\val_rm_out[22]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair50" *) 
+  (* SOFT_HLUTNM = "soft_lutpair51" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rm_out[23]_i_1 
@@ -1523,7 +1550,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rm[24]),
         .I1(flush),
         .O(\val_rm_out[24]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair51" *) 
+  (* SOFT_HLUTNM = "soft_lutpair52" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rm_out[25]_i_1 
@@ -1537,7 +1564,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rm[26]),
         .I1(flush),
         .O(\val_rm_out[26]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair52" *) 
+  (* SOFT_HLUTNM = "soft_lutpair53" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rm_out[27]_i_1 
@@ -1551,7 +1578,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rm[28]),
         .I1(flush),
         .O(\val_rm_out[28]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair53" *) 
+  (* SOFT_HLUTNM = "soft_lutpair54" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rm_out[29]_i_1 
@@ -1572,14 +1599,14 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rm[30]),
         .I1(flush),
         .O(\val_rm_out[30]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair54" *) 
+  (* SOFT_HLUTNM = "soft_lutpair55" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rm_out[31]_i_1 
        (.I0(val_rm[31]),
         .I1(flush),
         .O(\val_rm_out[31]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair40" *) 
+  (* SOFT_HLUTNM = "soft_lutpair41" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rm_out[3]_i_1 
@@ -1593,7 +1620,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rm[4]),
         .I1(flush),
         .O(\val_rm_out[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair41" *) 
+  (* SOFT_HLUTNM = "soft_lutpair42" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rm_out[5]_i_1 
@@ -1607,7 +1634,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rm[6]),
         .I1(flush),
         .O(\val_rm_out[6]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair42" *) 
+  (* SOFT_HLUTNM = "soft_lutpair43" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rm_out[7]_i_1 
@@ -1621,7 +1648,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rm[8]),
         .I1(flush),
         .O(\val_rm_out[8]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair43" *) 
+  (* SOFT_HLUTNM = "soft_lutpair44" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rm_out[9]_i_1 
@@ -1834,7 +1861,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rn[10]),
         .I1(flush),
         .O(\val_rn_out[10]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
+  (* SOFT_HLUTNM = "soft_lutpair29" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rn_out[11]_i_1 
@@ -1848,7 +1875,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rn[12]),
         .I1(flush),
         .O(\val_rn_out[12]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair29" *) 
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rn_out[13]_i_1 
@@ -1862,7 +1889,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rn[14]),
         .I1(flush),
         .O(\val_rn_out[14]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rn_out[15]_i_1 
@@ -1876,7 +1903,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rn[16]),
         .I1(flush),
         .O(\val_rn_out[16]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rn_out[17]_i_1 
@@ -1890,14 +1917,14 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rn[18]),
         .I1(flush),
         .O(\val_rn_out[18]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  (* SOFT_HLUTNM = "soft_lutpair33" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rn_out[19]_i_1 
        (.I0(val_rn[19]),
         .I1(flush),
         .O(\val_rn_out[19]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rn_out[1]_i_1 
@@ -1911,7 +1938,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rn[20]),
         .I1(flush),
         .O(\val_rn_out[20]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
+  (* SOFT_HLUTNM = "soft_lutpair34" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rn_out[21]_i_1 
@@ -1925,7 +1952,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rn[22]),
         .I1(flush),
         .O(\val_rn_out[22]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  (* SOFT_HLUTNM = "soft_lutpair35" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rn_out[23]_i_1 
@@ -1939,7 +1966,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rn[24]),
         .I1(flush),
         .O(\val_rn_out[24]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  (* SOFT_HLUTNM = "soft_lutpair36" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rn_out[25]_i_1 
@@ -1953,7 +1980,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rn[26]),
         .I1(flush),
         .O(\val_rn_out[26]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair36" *) 
+  (* SOFT_HLUTNM = "soft_lutpair37" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rn_out[27]_i_1 
@@ -1967,7 +1994,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rn[28]),
         .I1(flush),
         .O(\val_rn_out[28]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair37" *) 
+  (* SOFT_HLUTNM = "soft_lutpair38" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rn_out[29]_i_1 
@@ -1988,14 +2015,14 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rn[30]),
         .I1(flush),
         .O(\val_rn_out[30]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair38" *) 
+  (* SOFT_HLUTNM = "soft_lutpair39" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rn_out[31]_i_1 
        (.I0(val_rn[31]),
         .I1(flush),
         .O(\val_rn_out[31]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rn_out[3]_i_1 
@@ -2009,7 +2036,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rn[4]),
         .I1(flush),
         .O(\val_rn_out[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rn_out[5]_i_1 
@@ -2023,7 +2050,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rn[6]),
         .I1(flush),
         .O(\val_rn_out[6]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
+  (* SOFT_HLUTNM = "soft_lutpair27" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rn_out[7]_i_1 
@@ -2037,7 +2064,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(val_rn[8]),
         .I1(flush),
         .O(\val_rn_out[8]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \val_rn_out[9]_i_1 
@@ -2242,7 +2269,7 @@ module design_block_1_register_ID_0_0_register_ID
        (.I0(flush),
         .I1(freeze),
         .O(wb_en_out_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT2 #(
     .INIT(4'h2)) 
     wb_en_out_i_2

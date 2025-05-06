@@ -9,10 +9,45 @@ reg [31:0] register [0:14];
 
 assign val_rn = register[adr_rn];
 assign val_rm = register[adr_rm];
-// init all registers with their index
+
+// initial begin
+//     register[0] <= 32'd0;
+//     register[1] <= 32'd1;
+//     register[2] <= 32'd2;
+//     register[3] <= 32'd3;
+//     register[4] <= 32'd4;
+//     register[5] <= 32'd5;
+//     register[6] <= 32'd6;
+//     register[7] <= 32'd7;
+//     register[8] <= 32'd8;
+//     register[9] <= 32'd9;
+//     register[10] <= 32'd10;
+//     register[11] <= 32'd11;
+//     register[12] <= 32'd12;
+//     register[13] <= 32'd13;
+//     register[14] <= 32'd14;
+//     register[15] <= 32'd15;
+// end
+
+
 always @(negedge clk, posedge rst) begin
-    if (rst && wb_en) begin
-        register[wb_dest] <= 32'b0;
+    if (rst) begin
+        register[0] <= 32'd0;
+        register[1] <= 32'd1;
+        register[2] <= 32'd2;
+        register[3] <= 32'd3;
+        register[4] <= 32'd4;
+        register[5] <= 32'd5;
+        register[6] <= 32'd6;
+        register[7] <= 32'd7;
+        register[8] <= 32'd8;
+        register[9] <= 32'd9;
+        register[10] <= 32'd10;
+        register[11] <= 32'd11;
+        register[12] <= 32'd12;
+        register[13] <= 32'd13;
+        register[14] <= 32'd14;
+        register[15] <= 32'd15;
     end
     else if (wb_en) begin
         register[wb_dest] <= wb_res;
@@ -61,11 +96,11 @@ output reg [3:0]exe_c,
 output mem_r_en, mem_w_en, wb_en, s_out, b
 );
 
-assign b = (mode == 2'b10); 
+assign b = (mode == 2'b10);                 //branch
 assign s_out = s;
-assign mem_w_en = (mode == 2'b01 && ~s);
-assign mem_r_en = (mode == 2'b01 && s);
-assign wb_en = ~(opcode == 4'b1010 || opcode == 4'b1000 || (mode == 2'b01 && ~s)) && ~b;
+assign mem_w_en = (mode == 2'b01 && ~s);    //store
+assign mem_r_en = (mode == 2'b01 && s);     //load
+assign wb_en = ~(opcode == 4'b1010 || opcode == 4'b1000 || (mode == 2'b01 && ~s)) && ~b;    //everything except compare, test, branch and store
 
 always@(mode,opcode,s)
 begin
@@ -128,9 +163,9 @@ endmodule
 
 module register_ID(
     input [31:0] PC, [31:0] val_rn, [31:0] val_rm, [3:0] dst,
-    input wb_en, mem_r_en, mem_w_en, b, imm, s, [3:0]exe_c, [11:0] shift_op, [23:0] signed_imm,
+    input wb_en, mem_r_en, mem_w_en, b, imm, s, carry_in, [3:0]exe_c, [11:0] shift_op, [23:0] signed_imm,
     input freeze, flush, rst, clk,
-    output reg wb_en_out, mem_r_en_out, mem_w_en_out, b_out, s_out, imm_out,
+    output reg wb_en_out, mem_r_en_out, mem_w_en_out, b_out, s_out, imm_out, carry_out,
     output reg [3:0] exe_c_out, dst_out,
     output reg [31:0] PC_out, val_rn_out, val_rm_out,
     output reg [11:0] shift_op_out,
@@ -144,6 +179,7 @@ module register_ID(
             exe_c_out<=4'b0;
             b_out<=1'b0;
             s_out<=1'b0;
+            carry_out<=1'b0;
             PC_out <= 32'b0;
             val_rn_out<=32'b0;
             val_rm_out<=32'b0;
@@ -159,6 +195,7 @@ module register_ID(
             exe_c_out<=exe_c;
             b_out<=b;
             s_out<=s;
+            carry_out<=carry_in;
             PC_out <= PC;
             val_rn_out<=val_rn;
             val_rm_out<=val_rm;
