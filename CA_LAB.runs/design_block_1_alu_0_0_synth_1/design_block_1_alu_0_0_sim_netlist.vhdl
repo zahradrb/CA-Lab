@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Tue May  6 16:24:36 2025
+-- Date        : Tue May 13 16:19:06 2025
 -- Host        : DESKTOP-PITB4KD running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_block_1_alu_0_0_sim_netlist.vhdl
@@ -1073,11 +1073,11 @@ begin
     );
 \result0__131_carry_i_5\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"9"
+      INIT => X"6"
     )
         port map (
-      I0 => C,
-      I1 => in1(0),
+      I0 => in1(0),
+      I1 => C,
       O => \result0__131_carry_i_5_n_0\
     );
 \result0__65_carry\: unisim.vcomponents.CARRY4

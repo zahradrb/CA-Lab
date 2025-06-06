@@ -63,7 +63,9 @@ module design_block_1_hazardDetectionUnit_0_0 (
   rn,
   rm,
   two_src,
-  hazard
+  hazard,
+  en_forward,
+  exe_mem_r_en
 );
 
 input wire [3 : 0] mem_dest;
@@ -74,6 +76,8 @@ input wire [3 : 0] rn;
 input wire [3 : 0] rm;
 input wire two_src;
 output wire hazard;
+input wire en_forward;
+input wire exe_mem_r_en;
 
   hazardDetectionUnit inst (
     .mem_dest(mem_dest),
@@ -83,6 +87,8 @@ output wire hazard;
     .rn(rn),
     .rm(rm),
     .two_src(two_src),
-    .hazard(hazard)
+    .hazard(hazard),
+    .en_forward(en_forward),
+    .exe_mem_r_en(exe_mem_r_en)
   );
 endmodule

@@ -80,6 +80,10 @@ vlog -work xil_defaultlib -64 -incr "+incdir+../../../../CA_LAB.srcs/sources_1/b
 "../../../bd/design_block_1/ip/design_block_1_not_1_0_1/sim/design_block_1_not_1_0_1.v" \
 "../../../bd/design_block_1/ip/design_block_1_dist_mem_gen_1_0/sim/design_block_1_dist_mem_gen_1_0.v" \
 "../../../bd/design_block_1/ip/design_block_1_slice_carry_0/sim/design_block_1_slice_carry_0.v" \
+"../../../bd/design_block_1/ip/design_block_1_forwardingUnit_0_0/sim/design_block_1_forwardingUnit_0_0.v" \
+"../../../bd/design_block_1/ip/design_block_1_mux3input_0_0/sim/design_block_1_mux3input_0_0.v" \
+"../../../bd/design_block_1/ip/design_block_1_mux3input_1_0/sim/design_block_1_mux3input_1_0.v" \
+"../../../bd/design_block_1/ip/design_block_1_xlconstant_1_0/sim/design_block_1_xlconstant_1_0.v" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

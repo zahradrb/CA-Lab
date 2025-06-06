@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Tue May  6 17:14:47 2025
+| Date         : Tue May 27 17:22:55 2025
 | Host         : DESKTOP-PITB4KD running 64-bit major release  (build 9200)
 | Command      : report_utilization -file design_block_1_wrapper_utilization_synth.rpt -pb design_block_1_wrapper_utilization_synth.pb
 | Design       : design_block_1_wrapper
@@ -156,6 +156,7 @@ Table of Contents
 +-----------------------------------------+------+
 |                 Ref Name                | Used |
 +-----------------------------------------+------+
+| design_block_1_vio_0_0                  |    1 |
 | design_block_1_val2_generator_0_0       |    1 |
 | design_block_1_status_register_0_0      |    1 |
 | design_block_1_sign_extend_24_to_32_0_0 |    1 |
@@ -164,9 +165,17 @@ Table of Contents
 | design_block_1_register_EXE_0_0         |    1 |
 | design_block_1_registerIF_0_0           |    1 |
 | design_block_1_registerFile_1_0         |    1 |
+| design_block_1_or_1_1_0                 |    1 |
+| design_block_1_or_1_0_1                 |    1 |
 | design_block_1_or_1_0_0                 |    1 |
+| design_block_1_not_1_0_1                |    1 |
 | design_block_1_not_1_0_0                |    1 |
+| design_block_1_mux3input_1_0            |    1 |
+| design_block_1_mux3input_0_0            |    1 |
 | design_block_1_ila_0_0                  |    1 |
+| design_block_1_hazardDetectionUnit_0_0  |    1 |
+| design_block_1_forwardingUnit_0_0       |    1 |
+| design_block_1_dist_mem_gen_1_0         |    1 |
 | design_block_1_dist_mem_gen_0_0         |    1 |
 | design_block_1_debouncer_0_0            |    1 |
 | design_block_1_controlUnit_0_0          |    1 |

@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Tue May  6 16:24:37 2025
+// Date        : Tue May 13 16:19:07 2025
 // Host        : DESKTOP-PITB4KD running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim {G:/CA
 //               lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_alu_0_0/design_block_1_alu_0_0_sim_netlist.v}
@@ -877,10 +877,10 @@ module design_block_1_alu_0_0_alu
         .I1(in1[1]),
         .O(result0__131_carry_i_4_n_0));
   LUT2 #(
-    .INIT(4'h9)) 
+    .INIT(4'h6)) 
     result0__131_carry_i_5
-       (.I0(C),
-        .I1(in1[0]),
+       (.I0(in1[0]),
+        .I1(C),
         .O(result0__131_carry_i_5_n_0));
   CARRY4 result0__65_carry
        (.CI(1'b0),

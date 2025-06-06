@@ -38,7 +38,7 @@ module alu(exe_cmd, in1, in2, C, result, status_bits);
 					overflow = (in1[31] && in2[31] && ~result[31]) || (~in1[31] && ~in2[31] && result[31]);
 				end
 			`ADC: begin
-					{carry, result} = in1 + in2 + C;
+					{carry, result} = in1 + in2 + (C ? 32'b1 : 32'b0);
 					overflow = (in1[31] && in2[31] && ~result[31]) || (~in1[31] && ~in2[31] && result[31]);
 				end
 			`SUB: begin
@@ -46,7 +46,7 @@ module alu(exe_cmd, in1, in2, C, result, status_bits);
 					overflow = (in1[31] && ~in2[31] && ~result[31]) || (~in1[31] && in2[31] && result[31]);
 				end
 			`SBC: begin
-					{carry, result} = in1 - in2 - C;
+					{carry, result} = in1 - in2 - (C ? 32'b0 : 32'b1);
 					overflow = (in1[31] && ~in2[31] && ~result[31]) || (~in1[31] && in2[31] && result[31]);
 				end
 			`ANDD: result = in1 & in2;

@@ -60,6 +60,8 @@ module design_block_1_register_ID_0_0 (
   val_rn,
   val_rm,
   dst,
+  src1,
+  src2,
   wb_en,
   mem_r_en,
   mem_w_en,
@@ -83,6 +85,8 @@ module design_block_1_register_ID_0_0 (
   carry_out,
   exe_c_out,
   dst_out,
+  src1_out,
+  src2_out,
   PC_out,
   val_rn_out,
   val_rm_out,
@@ -94,6 +98,8 @@ input wire [31 : 0] PC;
 input wire [31 : 0] val_rn;
 input wire [31 : 0] val_rm;
 input wire [3 : 0] dst;
+input wire [3 : 0] src1;
+input wire [3 : 0] src2;
 input wire wb_en;
 input wire mem_r_en;
 input wire mem_w_en;
@@ -121,6 +127,8 @@ output wire imm_out;
 output wire carry_out;
 output wire [3 : 0] exe_c_out;
 output wire [3 : 0] dst_out;
+output wire [3 : 0] src1_out;
+output wire [3 : 0] src2_out;
 output wire [31 : 0] PC_out;
 output wire [31 : 0] val_rn_out;
 output wire [31 : 0] val_rm_out;
@@ -132,6 +140,8 @@ output wire [23 : 0] signed_imm_out;
     .val_rn(val_rn),
     .val_rm(val_rm),
     .dst(dst),
+    .src1(src1),
+    .src2(src2),
     .wb_en(wb_en),
     .mem_r_en(mem_r_en),
     .mem_w_en(mem_w_en),
@@ -155,6 +165,8 @@ output wire [23 : 0] signed_imm_out;
     .carry_out(carry_out),
     .exe_c_out(exe_c_out),
     .dst_out(dst_out),
+    .src1_out(src1_out),
+    .src2_out(src2_out),
     .PC_out(PC_out),
     .val_rn_out(val_rn_out),
     .val_rm_out(val_rm_out),

@@ -64,7 +64,13 @@ module design_block_1_registerFile_1_0 (
   wb_dest,
   wb_res,
   val_rn,
-  val_rm
+  val_rm,
+  r1,
+  r2,
+  r3,
+  r4,
+  r5,
+  r6
 );
 
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_block_1_clk, INSERT_VIP 0" *)
@@ -80,6 +86,12 @@ input wire [3 : 0] wb_dest;
 input wire [31 : 0] wb_res;
 output wire [31 : 0] val_rn;
 output wire [31 : 0] val_rm;
+output wire [31 : 0] r1;
+output wire [31 : 0] r2;
+output wire [31 : 0] r3;
+output wire [31 : 0] r4;
+output wire [31 : 0] r5;
+output wire [31 : 0] r6;
 
   registerFile inst (
     .clk(clk),
@@ -90,6 +102,12 @@ output wire [31 : 0] val_rm;
     .wb_dest(wb_dest),
     .wb_res(wb_res),
     .val_rn(val_rn),
-    .val_rm(val_rm)
+    .val_rm(val_rm),
+    .r1(r1),
+    .r2(r2),
+    .r3(r3),
+    .r4(r4),
+    .r5(r5),
+    .r6(r6)
   );
 endmodule

@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Tue May  6 17:49:44 2025
+//Date        : Tue May 27 17:18:50 2025
 //Host        : DESKTOP-PITB4KD running 64-bit major release  (build 9200)
 //Command     : generate_target design_block_1.bd
 //Design      : design_block_1
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_block_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_block_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=43,numReposBlks=43,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=24,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_block_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_block_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_block_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=48,numReposBlks=48,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=28,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_block_1.hwdef" *) 
 module design_block_1
    (clk,
     rst);
@@ -40,12 +40,21 @@ module design_block_1
   wire controlUnit_0_wb_en;
   wire [31:0]dist_mem_gen_0_spo;
   wire [31:0]dist_mem_gen_1_spo;
+  wire [1:0]forwardingUnit_0_sel_src1;
+  wire [1:0]forwardingUnit_0_sel_src2;
   wire hazardDetectionUnit_0_hazard;
+  wire [31:0]mux3input_1_o;
   wire not_1_0_o;
   wire not_1_1_o;
   wire or_1_0_o;
   wire or_1_1_o;
   wire or_1_2_o;
+  wire [31:0]registerFile_1_r1;
+  wire [31:0]registerFile_1_r2;
+  wire [31:0]registerFile_1_r3;
+  wire [31:0]registerFile_1_r4;
+  wire [31:0]registerFile_1_r5;
+  wire [31:0]registerFile_1_r6;
   wire [31:0]registerFile_1_val_rm;
   wire [31:0]registerFile_1_val_rn;
   wire [31:0]registerIF_0_PC_out;
@@ -67,7 +76,10 @@ module design_block_1
   wire register_ID_0_s_out;
   wire [11:0]register_ID_0_shift_op_out;
   wire [23:0]register_ID_0_signed_imm_out;
+  wire [3:0]register_ID_0_src1_out;
+  wire [3:0]register_ID_0_src2_out;
   wire [31:0]register_ID_0_val_rm_out;
+  wire [31:0]register_ID_0_val_rm_out1;
   wire [31:0]register_ID_0_val_rn_out;
   wire register_ID_0_wb_en_out;
   wire [31:0]register_MEM_0_alu_res_out;
@@ -75,7 +87,8 @@ module design_block_1
   wire [3:0]register_MEM_0_dst_out;
   wire register_MEM_0_mem_r_en_out;
   wire register_MEM_0_wb_en_out;
-  wire rst_1;
+  wire [0:0]rst_1;
+  wire rst_2;
   wire [31:0]sign_extend_24_to_32_0_out;
   wire [9:0]slice_carry1_Dout;
   wire [0:0]slice_carry_Dout;
@@ -93,11 +106,12 @@ module design_block_1
   wire [31:0]xlconstant_0_dout;
   wire [0:0]xlconstant_1_dout1;
   wire [31:0]xlconstant_2_dout;
+  wire [0:0]xlconstant_3_dout;
   wire [8:0]xlslice_0_Dout;
   wire [3:0]xlslice_1_Dout;
 
   assign clk_0_1 = clk;
-  assign rst_1 = rst;
+  assign rst_2 = rst;
   design_block_1_MUX_0_0 MUX_0
        (.a(adder_0_out),
         .b(adder_1_res),
@@ -144,7 +158,7 @@ module design_block_1
   design_block_1_alu_0_0 alu_0
        (.C(register_ID_0_carry_out),
         .exe_cmd(register_ID_0_exe_c_out),
-        .in1(register_ID_0_val_rn_out),
+        .in1(mux3input_1_o),
         .in2(val2_generator_0_val2),
         .result(alu_0_result),
         .status_bits(alu_0_status_bits));
@@ -162,6 +176,10 @@ module design_block_1
         .s(slice_s_Dout),
         .s_out(controlUnit_0_s_out),
         .wb_en(controlUnit_0_wb_en));
+  design_block_1_debouncer_0_0 debouncer_0
+       (.CLK_I(clk_0_1),
+        .SIGNAL_I(rst_2),
+        .SIGNAL_O(rst_1));
   design_block_1_dist_mem_gen_0_0 dist_mem_gen_0
        (.a(xlslice_0_Dout),
         .clk(clk_0_1),
@@ -174,8 +192,20 @@ module design_block_1
         .d(register_EXE_0_val_rm_out),
         .spo(dist_mem_gen_1_spo),
         .we(register_EXE_0_mem_w_en_out));
+  design_block_1_forwardingUnit_0_0 forwardingUnit_0
+       (.en_forward(xlconstant_3_dout),
+        .mem_dest(register_EXE_0_dst_out),
+        .mem_wb_en(register_EXE_0_wb_en_out),
+        .sel_src1(forwardingUnit_0_sel_src1),
+        .sel_src2(forwardingUnit_0_sel_src2),
+        .src1(register_ID_0_src1_out),
+        .src2(register_ID_0_src2_out),
+        .wb_dest(register_MEM_0_dst_out),
+        .wb_wb_en(register_MEM_0_wb_en_out));
   design_block_1_hazardDetectionUnit_0_0 hazardDetectionUnit_0
-       (.exe_dest(register_ID_0_dst_out),
+       (.en_forward(xlconstant_3_dout),
+        .exe_dest(register_ID_0_dst_out),
+        .exe_mem_r_en(register_ID_0_mem_r_en_out),
         .exe_wb_en(register_ID_0_wb_en_out),
         .hazard(hazardDetectionUnit_0_hazard),
         .mem_dest(register_EXE_0_dst_out),
@@ -186,8 +216,25 @@ module design_block_1
   design_block_1_ila_0_0 ila_0
        (.clk(clk_0_1),
         .probe0(rst_1),
-        .probe1(alu_0_result),
-        .probe2(PC_0_res));
+        .probe1(registerFile_1_r1),
+        .probe2(registerFile_1_r2),
+        .probe3(registerFile_1_r3),
+        .probe4(registerFile_1_r4),
+        .probe5(registerFile_1_r5),
+        .probe6(registerFile_1_r6),
+        .probe7(PC_0_res));
+  design_block_1_mux3input_0_0 mux3input_0
+       (.in1(register_ID_0_val_rm_out1),
+        .in2(register_EXE_0_alu_res_out),
+        .in3(MUX_1_res),
+        .o(register_ID_0_val_rm_out),
+        .sel(forwardingUnit_0_sel_src2));
+  design_block_1_mux3input_1_0 mux3input_1
+       (.in1(register_ID_0_val_rn_out),
+        .in2(register_EXE_0_alu_res_out),
+        .in3(MUX_1_res),
+        .o(mux3input_1_o),
+        .sel(forwardingUnit_0_sel_src1));
   design_block_1_not_1_0_0 not_1_0
        (.a(conditionCheck_0_res),
         .o(not_1_0_o));
@@ -210,6 +257,12 @@ module design_block_1
        (.adr_rm(MUX_4_0_res),
         .adr_rn(slice_rn_Dout),
         .clk(clk_0_1),
+        .r1(registerFile_1_r1),
+        .r2(registerFile_1_r2),
+        .r3(registerFile_1_r3),
+        .r4(registerFile_1_r4),
+        .r5(registerFile_1_r5),
+        .r6(registerFile_1_r6),
         .rst(rst_1),
         .val_rm(registerFile_1_val_rm),
         .val_rn(registerFile_1_val_rn),
@@ -269,8 +322,12 @@ module design_block_1
         .shift_op_out(register_ID_0_shift_op_out),
         .signed_imm(slice_signedImm_Dout),
         .signed_imm_out(register_ID_0_signed_imm_out),
+        .src1(slice_rn_Dout),
+        .src1_out(register_ID_0_src1_out),
+        .src2(MUX_4_0_res),
+        .src2_out(register_ID_0_src2_out),
         .val_rm(registerFile_1_val_rm),
-        .val_rm_out(register_ID_0_val_rm_out),
+        .val_rm_out(register_ID_0_val_rm_out1),
         .val_rn(registerFile_1_val_rn),
         .val_rn_out(register_ID_0_val_rn_out),
         .wb_en(MUX_CU_0_wb_en_out[0]),
@@ -341,6 +398,9 @@ module design_block_1
         .imm(register_ID_0_imm_out),
         .shift_op(register_ID_0_shift_op_out),
         .val2(val2_generator_0_val2));
+  design_block_1_vio_0_0 vio_0
+       (.clk(clk_0_1),
+        .probe_out0(xlconstant_3_dout));
   design_block_1_xlconstant_0_0 xlconstant_0
        (.dout(xlconstant_0_dout));
   design_block_1_xlconstant_1_1 xlconstant_1

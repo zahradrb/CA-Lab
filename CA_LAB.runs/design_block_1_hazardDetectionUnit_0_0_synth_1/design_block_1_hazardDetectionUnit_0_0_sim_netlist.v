@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Tue May  6 17:51:29 2025
+// Date        : Tue May 27 17:05:35 2025
 // Host        : DESKTOP-PITB4KD running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_block_1_hazardDetectionUnit_0_0_sim_netlist.v
@@ -23,7 +23,9 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
     rn,
     rm,
     two_src,
-    hazard);
+    hazard,
+    en_forward,
+    exe_mem_r_en);
   input [3:0]mem_dest;
   input mem_wb_en;
   input [3:0]exe_dest;
@@ -32,17 +34,22 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
   input [3:0]rm;
   input two_src;
   output hazard;
+  input en_forward;
+  input exe_mem_r_en;
 
+  wire en_forward;
   wire [3:0]exe_dest;
+  wire exe_mem_r_en;
   wire exe_wb_en;
   wire hazard;
-  wire hazard_INST_0_i_1_n_0;
-  wire hazard_INST_0_i_2_n_0;
-  wire hazard_INST_0_i_3_n_0;
-  wire hazard_INST_0_i_4_n_0;
+  wire hazard12_out;
+  wire hazard34_out;
   wire hazard_INST_0_i_5_n_0;
   wire hazard_INST_0_i_6_n_0;
   wire hazard_INST_0_i_7_n_0;
+  wire hazard_INST_0_i_8_n_0;
+  wire \inst/hazard20_out ;
+  wire \inst/hazard2__1 ;
   wire [3:0]mem_dest;
   wire mem_wb_en;
   wire [3:0]rm;
@@ -50,82 +57,89 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
   wire two_src;
 
   LUT6 #(
-    .INIT(64'hFFFFFFFFEAAAAAEA)) 
+    .INIT(64'hBBBBBBBBBB33BB30)) 
     hazard_INST_0
-       (.I0(hazard_INST_0_i_1_n_0),
-        .I1(hazard_INST_0_i_2_n_0),
-        .I2(exe_wb_en),
-        .I3(exe_dest[3]),
-        .I4(rn[3]),
-        .I5(hazard_INST_0_i_3_n_0),
+       (.I0(exe_mem_r_en),
+        .I1(en_forward),
+        .I2(hazard12_out),
+        .I3(\inst/hazard2__1 ),
+        .I4(hazard34_out),
+        .I5(\inst/hazard20_out ),
         .O(hazard));
   LUT5 #(
     .INIT(32'h82000000)) 
     hazard_INST_0_i_1
-       (.I0(hazard_INST_0_i_4_n_0),
-        .I1(exe_dest[3]),
-        .I2(rm[3]),
-        .I3(two_src),
-        .I4(exe_wb_en),
-        .O(hazard_INST_0_i_1_n_0));
-  LUT6 #(
-    .INIT(64'h9009000000009009)) 
-    hazard_INST_0_i_2
-       (.I0(exe_dest[2]),
-        .I1(rn[2]),
-        .I2(exe_dest[1]),
-        .I3(rn[1]),
-        .I4(rn[0]),
-        .I5(exe_dest[0]),
-        .O(hazard_INST_0_i_2_n_0));
-  LUT6 #(
-    .INIT(64'hFFFF900090009000)) 
-    hazard_INST_0_i_3
-       (.I0(rn[3]),
-        .I1(mem_dest[3]),
-        .I2(mem_wb_en),
+       (.I0(two_src),
+        .I1(rm[3]),
+        .I2(mem_dest[3]),
         .I3(hazard_INST_0_i_5_n_0),
-        .I4(hazard_INST_0_i_6_n_0),
-        .I5(hazard_INST_0_i_7_n_0),
-        .O(hazard_INST_0_i_3_n_0));
-  LUT6 #(
-    .INIT(64'h9009000000009009)) 
+        .I4(mem_wb_en),
+        .O(hazard12_out));
+  LUT4 #(
+    .INIT(16'h8200)) 
+    hazard_INST_0_i_2
+       (.I0(hazard_INST_0_i_6_n_0),
+        .I1(exe_dest[3]),
+        .I2(rn[3]),
+        .I3(exe_wb_en),
+        .O(\inst/hazard2__1 ));
+  LUT4 #(
+    .INIT(16'h8200)) 
+    hazard_INST_0_i_3
+       (.I0(hazard_INST_0_i_7_n_0),
+        .I1(mem_dest[3]),
+        .I2(rn[3]),
+        .I3(mem_wb_en),
+        .O(hazard34_out));
+  LUT5 #(
+    .INIT(32'h82000000)) 
     hazard_INST_0_i_4
-       (.I0(exe_dest[2]),
-        .I1(rm[2]),
-        .I2(exe_dest[1]),
-        .I3(rm[1]),
-        .I4(rm[0]),
-        .I5(exe_dest[0]),
-        .O(hazard_INST_0_i_4_n_0));
+       (.I0(two_src),
+        .I1(rm[3]),
+        .I2(exe_dest[3]),
+        .I3(hazard_INST_0_i_8_n_0),
+        .I4(exe_wb_en),
+        .O(\inst/hazard20_out ));
   LUT6 #(
     .INIT(64'h9009000000009009)) 
     hazard_INST_0_i_5
-       (.I0(mem_dest[2]),
-        .I1(rn[2]),
-        .I2(mem_dest[1]),
-        .I3(rn[1]),
-        .I4(rn[0]),
-        .I5(mem_dest[0]),
+       (.I0(rm[0]),
+        .I1(mem_dest[0]),
+        .I2(mem_dest[2]),
+        .I3(rm[2]),
+        .I4(mem_dest[1]),
+        .I5(rm[1]),
         .O(hazard_INST_0_i_5_n_0));
-  LUT4 #(
-    .INIT(16'h8008)) 
+  LUT6 #(
+    .INIT(64'h9009000000009009)) 
     hazard_INST_0_i_6
-       (.I0(mem_wb_en),
-        .I1(two_src),
-        .I2(mem_dest[3]),
-        .I3(rm[3]),
+       (.I0(rn[0]),
+        .I1(exe_dest[0]),
+        .I2(exe_dest[2]),
+        .I3(rn[2]),
+        .I4(exe_dest[1]),
+        .I5(rn[1]),
         .O(hazard_INST_0_i_6_n_0));
   LUT6 #(
     .INIT(64'h9009000000009009)) 
     hazard_INST_0_i_7
-       (.I0(rm[2]),
-        .I1(mem_dest[2]),
-        .I2(rm[1]),
-        .I3(mem_dest[1]),
-        .I4(mem_dest[0]),
-        .I5(rm[0]),
+       (.I0(rn[0]),
+        .I1(mem_dest[0]),
+        .I2(mem_dest[2]),
+        .I3(rn[2]),
+        .I4(mem_dest[1]),
+        .I5(rn[1]),
         .O(hazard_INST_0_i_7_n_0));
+  LUT6 #(
+    .INIT(64'h9009000000009009)) 
+    hazard_INST_0_i_8
+       (.I0(rm[0]),
+        .I1(exe_dest[0]),
+        .I2(exe_dest[2]),
+        .I3(rm[2]),
+        .I4(exe_dest[1]),
+        .I5(rm[1]),
+        .O(hazard_INST_0_i_8_n_0));
 endmodule
 `ifndef GLBL
 `define GLBL

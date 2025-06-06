@@ -1,6 +1,6 @@
 webtalk_init -webtalk_dir G:/CA lab/CA_LAB/CA_LAB.sim/sim_1/behav/xsim/xsim.dir/ARM_tb_behav/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Tue May  6 17:59:56 2025" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Tue May 27 17:55:29 2025" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "XSIM v2018.3 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "2405991" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "WIN64" -context "software_version_and_target_device"
@@ -14,7 +14,7 @@ webtalk_add_data -client project -key target_package -value "not_applicable" -co
 webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
 webtalk_add_data -client project -key random_id -value "65e46bc6-985e-4621-a7a5-5ec6042459aa" -context "software_version_and_target_device"
 webtalk_add_data -client project -key project_id -value "9815e1b1fcb942e7a5234bdc9d84c6d4" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_iteration -value "48" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "72" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_name -value "Microsoft Windows 8 or later , 64-bit" -context "user_environment"
 webtalk_add_data -client project -key os_release -value "major release  (build 9200)" -context "user_environment"
 webtalk_add_data -client project -key cpu_name -value "AMD Ryzen 7 3700U with Radeon Vega Mobile Gfx  " -context "user_environment"
@@ -22,11 +22,13 @@ webtalk_add_data -client project -key cpu_speed -value "2296 MHz" -context "user
 webtalk_add_data -client project -key total_processors -value "1" -context "user_environment"
 webtalk_add_data -client project -key system_ram -value "6.000 GB" -context "user_environment"
 webtalk_register_client -client xsim
+webtalk_add_data -client xsim -key runall -value "true" -context "xsim\\command_line_options"
+webtalk_add_data -client xsim -key runall -value "true" -context "xsim\\command_line_options"
 webtalk_add_data -client xsim -key Command -value "xsim" -context "xsim\\command_line_options"
 webtalk_add_data -client xsim -key trace_waveform -value "true" -context "xsim\\usage"
-webtalk_add_data -client xsim -key runtime -value "1020 ns" -context "xsim\\usage"
+webtalk_add_data -client xsim -key runtime -value "10020 ns" -context "xsim\\usage"
 webtalk_add_data -client xsim -key iteration -value "0" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Time -value "0.22_sec" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Memory -value "8076_KB" -context "xsim\\usage"
-webtalk_transmit -clientid 1211247276 -regid "" -xml G:/CA lab/CA_LAB/CA_LAB.sim/sim_1/behav/xsim/xsim.dir/ARM_tb_behav/webtalk/usage_statistics_ext_xsim.xml -html G:/CA lab/CA_LAB/CA_LAB.sim/sim_1/behav/xsim/xsim.dir/ARM_tb_behav/webtalk/usage_statistics_ext_xsim.html -wdm G:/CA lab/CA_LAB/CA_LAB.sim/sim_1/behav/xsim/xsim.dir/ARM_tb_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
+webtalk_add_data -client xsim -key Simulation_Time -value "0.11_sec" -context "xsim\\usage"
+webtalk_add_data -client xsim -key Simulation_Memory -value "7364_KB" -context "xsim\\usage"
+webtalk_transmit -clientid 2072955411 -regid "" -xml G:/CA lab/CA_LAB/CA_LAB.sim/sim_1/behav/xsim/xsim.dir/ARM_tb_behav/webtalk/usage_statistics_ext_xsim.xml -html G:/CA lab/CA_LAB/CA_LAB.sim/sim_1/behav/xsim/xsim.dir/ARM_tb_behav/webtalk/usage_statistics_ext_xsim.html -wdm G:/CA lab/CA_LAB/CA_LAB.sim/sim_1/behav/xsim/xsim.dir/ARM_tb_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
 webtalk_terminate

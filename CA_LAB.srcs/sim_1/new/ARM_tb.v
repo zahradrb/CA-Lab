@@ -40,7 +40,7 @@ module ARM_tb(
         rst = 1;
         #10
         rst = 0;
-        #1000 $stop;
+        #10000 $stop;
     end
 
     always #5 clk = ~clk;

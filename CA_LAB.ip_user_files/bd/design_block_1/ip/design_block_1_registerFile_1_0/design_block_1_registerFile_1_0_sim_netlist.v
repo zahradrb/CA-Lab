@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Tue May  6 16:59:30 2025
+// Date        : Tue May 27 16:19:00 2025
 // Host        : DESKTOP-PITB4KD running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim {G:/CA
 //               lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_registerFile_1_0/design_block_1_registerFile_1_0_sim_netlist.v}
@@ -24,7 +24,13 @@ module design_block_1_registerFile_1_0
     wb_dest,
     wb_res,
     val_rn,
-    val_rm);
+    val_rm,
+    r1,
+    r2,
+    r3,
+    r4,
+    r5,
+    r6);
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_block_1_clk, INSERT_VIP 0" *) input clk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input rst;
   input wb_en;
@@ -34,10 +40,22 @@ module design_block_1_registerFile_1_0
   input [31:0]wb_res;
   output [31:0]val_rn;
   output [31:0]val_rm;
+  output [31:0]r1;
+  output [31:0]r2;
+  output [31:0]r3;
+  output [31:0]r4;
+  output [31:0]r5;
+  output [31:0]r6;
 
   wire [3:0]adr_rm;
   wire [3:0]adr_rn;
   wire clk;
+  wire [31:0]r1;
+  wire [31:0]r2;
+  wire [31:0]r3;
+  wire [31:0]r4;
+  wire [31:0]r5;
+  wire [31:0]r6;
   wire rst;
   wire [31:0]val_rm;
   wire [31:0]val_rn;
@@ -49,6 +67,12 @@ module design_block_1_registerFile_1_0
        (.adr_rm(adr_rm),
         .adr_rn(adr_rn),
         .clk(clk),
+        .r1(r1),
+        .r2(r2),
+        .r3(r3),
+        .r4(r4),
+        .r5(r5),
+        .r6(r6),
         .rst(rst),
         .val_rm(val_rm),
         .val_rn(val_rn),
@@ -59,7 +83,13 @@ endmodule
 
 (* ORIG_REF_NAME = "registerFile" *) 
 module design_block_1_registerFile_1_0_registerFile
-   (val_rn,
+   (r1,
+    r2,
+    r3,
+    r4,
+    r5,
+    r6,
+    val_rn,
     val_rm,
     wb_res,
     clk,
@@ -68,6 +98,12 @@ module design_block_1_registerFile_1_0_registerFile
     adr_rm,
     wb_en,
     wb_dest);
+  output [31:0]r1;
+  output [31:0]r2;
+  output [31:0]r3;
+  output [31:0]r4;
+  output [31:0]r5;
+  output [31:0]r6;
   output [31:0]val_rn;
   output [31:0]val_rm;
   input [31:0]wb_res;
@@ -81,6 +117,12 @@ module design_block_1_registerFile_1_0_registerFile
   wire [3:0]adr_rm;
   wire [3:0]adr_rn;
   wire clk;
+  wire [31:0]r1;
+  wire [31:0]r2;
+  wire [31:0]r3;
+  wire [31:0]r4;
+  wire [31:0]r5;
+  wire [31:0]r6;
   wire register;
   wire \register[10][31]_i_1_n_0 ;
   wire \register[11][31]_i_1_n_0 ;
@@ -102,12 +144,6 @@ module design_block_1_registerFile_1_0_registerFile
   wire [31:0]\register_reg[12] ;
   wire [31:0]\register_reg[13] ;
   wire [31:0]\register_reg[14] ;
-  wire [31:0]\register_reg[1] ;
-  wire [31:0]\register_reg[2] ;
-  wire [31:0]\register_reg[3] ;
-  wire [31:0]\register_reg[4] ;
-  wire [31:0]\register_reg[5] ;
-  wire [31:0]\register_reg[6] ;
   wire [31:0]\register_reg[7] ;
   wire [31:0]\register_reg[8] ;
   wire [31:0]\register_reg[9] ;
@@ -2180,7 +2216,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .D(wb_res[0]),
         .PRE(rst),
-        .Q(\register_reg[1] [0]));
+        .Q(r1[0]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][10] 
@@ -2188,7 +2224,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[10]),
-        .Q(\register_reg[1] [10]));
+        .Q(r1[10]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][11] 
@@ -2196,7 +2232,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[11]),
-        .Q(\register_reg[1] [11]));
+        .Q(r1[11]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][12] 
@@ -2204,7 +2240,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[12]),
-        .Q(\register_reg[1] [12]));
+        .Q(r1[12]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][13] 
@@ -2212,7 +2248,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[13]),
-        .Q(\register_reg[1] [13]));
+        .Q(r1[13]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][14] 
@@ -2220,7 +2256,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[14]),
-        .Q(\register_reg[1] [14]));
+        .Q(r1[14]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][15] 
@@ -2228,7 +2264,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[15]),
-        .Q(\register_reg[1] [15]));
+        .Q(r1[15]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][16] 
@@ -2236,7 +2272,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[16]),
-        .Q(\register_reg[1] [16]));
+        .Q(r1[16]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][17] 
@@ -2244,7 +2280,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[17]),
-        .Q(\register_reg[1] [17]));
+        .Q(r1[17]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][18] 
@@ -2252,7 +2288,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[18]),
-        .Q(\register_reg[1] [18]));
+        .Q(r1[18]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][19] 
@@ -2260,7 +2296,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[19]),
-        .Q(\register_reg[1] [19]));
+        .Q(r1[19]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][1] 
@@ -2268,7 +2304,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[1]),
-        .Q(\register_reg[1] [1]));
+        .Q(r1[1]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][20] 
@@ -2276,7 +2312,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[20]),
-        .Q(\register_reg[1] [20]));
+        .Q(r1[20]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][21] 
@@ -2284,7 +2320,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[21]),
-        .Q(\register_reg[1] [21]));
+        .Q(r1[21]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][22] 
@@ -2292,7 +2328,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[22]),
-        .Q(\register_reg[1] [22]));
+        .Q(r1[22]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][23] 
@@ -2300,7 +2336,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[23]),
-        .Q(\register_reg[1] [23]));
+        .Q(r1[23]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][24] 
@@ -2308,7 +2344,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[24]),
-        .Q(\register_reg[1] [24]));
+        .Q(r1[24]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][25] 
@@ -2316,7 +2352,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[25]),
-        .Q(\register_reg[1] [25]));
+        .Q(r1[25]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][26] 
@@ -2324,7 +2360,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[26]),
-        .Q(\register_reg[1] [26]));
+        .Q(r1[26]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][27] 
@@ -2332,7 +2368,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[27]),
-        .Q(\register_reg[1] [27]));
+        .Q(r1[27]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][28] 
@@ -2340,7 +2376,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[28]),
-        .Q(\register_reg[1] [28]));
+        .Q(r1[28]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][29] 
@@ -2348,7 +2384,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[29]),
-        .Q(\register_reg[1] [29]));
+        .Q(r1[29]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][2] 
@@ -2356,7 +2392,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[2]),
-        .Q(\register_reg[1] [2]));
+        .Q(r1[2]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][30] 
@@ -2364,7 +2400,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[30]),
-        .Q(\register_reg[1] [30]));
+        .Q(r1[30]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][31] 
@@ -2372,7 +2408,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[31]),
-        .Q(\register_reg[1] [31]));
+        .Q(r1[31]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][3] 
@@ -2380,7 +2416,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[3]),
-        .Q(\register_reg[1] [3]));
+        .Q(r1[3]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][4] 
@@ -2388,7 +2424,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[4]),
-        .Q(\register_reg[1] [4]));
+        .Q(r1[4]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][5] 
@@ -2396,7 +2432,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[5]),
-        .Q(\register_reg[1] [5]));
+        .Q(r1[5]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][6] 
@@ -2404,7 +2440,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[6]),
-        .Q(\register_reg[1] [6]));
+        .Q(r1[6]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][7] 
@@ -2412,7 +2448,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[7]),
-        .Q(\register_reg[1] [7]));
+        .Q(r1[7]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][8] 
@@ -2420,7 +2456,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[8]),
-        .Q(\register_reg[1] [8]));
+        .Q(r1[8]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[1][9] 
@@ -2428,7 +2464,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[1][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[9]),
-        .Q(\register_reg[1] [9]));
+        .Q(r1[9]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][0] 
@@ -2436,7 +2472,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[0]),
-        .Q(\register_reg[2] [0]));
+        .Q(r2[0]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][10] 
@@ -2444,7 +2480,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[10]),
-        .Q(\register_reg[2] [10]));
+        .Q(r2[10]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][11] 
@@ -2452,7 +2488,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[11]),
-        .Q(\register_reg[2] [11]));
+        .Q(r2[11]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][12] 
@@ -2460,7 +2496,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[12]),
-        .Q(\register_reg[2] [12]));
+        .Q(r2[12]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][13] 
@@ -2468,7 +2504,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[13]),
-        .Q(\register_reg[2] [13]));
+        .Q(r2[13]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][14] 
@@ -2476,7 +2512,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[14]),
-        .Q(\register_reg[2] [14]));
+        .Q(r2[14]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][15] 
@@ -2484,7 +2520,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[15]),
-        .Q(\register_reg[2] [15]));
+        .Q(r2[15]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][16] 
@@ -2492,7 +2528,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[16]),
-        .Q(\register_reg[2] [16]));
+        .Q(r2[16]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][17] 
@@ -2500,7 +2536,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[17]),
-        .Q(\register_reg[2] [17]));
+        .Q(r2[17]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][18] 
@@ -2508,7 +2544,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[18]),
-        .Q(\register_reg[2] [18]));
+        .Q(r2[18]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][19] 
@@ -2516,7 +2552,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[19]),
-        .Q(\register_reg[2] [19]));
+        .Q(r2[19]));
   FDPE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][1] 
@@ -2524,7 +2560,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .D(wb_res[1]),
         .PRE(rst),
-        .Q(\register_reg[2] [1]));
+        .Q(r2[1]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][20] 
@@ -2532,7 +2568,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[20]),
-        .Q(\register_reg[2] [20]));
+        .Q(r2[20]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][21] 
@@ -2540,7 +2576,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[21]),
-        .Q(\register_reg[2] [21]));
+        .Q(r2[21]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][22] 
@@ -2548,7 +2584,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[22]),
-        .Q(\register_reg[2] [22]));
+        .Q(r2[22]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][23] 
@@ -2556,7 +2592,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[23]),
-        .Q(\register_reg[2] [23]));
+        .Q(r2[23]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][24] 
@@ -2564,7 +2600,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[24]),
-        .Q(\register_reg[2] [24]));
+        .Q(r2[24]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][25] 
@@ -2572,7 +2608,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[25]),
-        .Q(\register_reg[2] [25]));
+        .Q(r2[25]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][26] 
@@ -2580,7 +2616,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[26]),
-        .Q(\register_reg[2] [26]));
+        .Q(r2[26]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][27] 
@@ -2588,7 +2624,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[27]),
-        .Q(\register_reg[2] [27]));
+        .Q(r2[27]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][28] 
@@ -2596,7 +2632,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[28]),
-        .Q(\register_reg[2] [28]));
+        .Q(r2[28]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][29] 
@@ -2604,7 +2640,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[29]),
-        .Q(\register_reg[2] [29]));
+        .Q(r2[29]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][2] 
@@ -2612,7 +2648,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[2]),
-        .Q(\register_reg[2] [2]));
+        .Q(r2[2]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][30] 
@@ -2620,7 +2656,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[30]),
-        .Q(\register_reg[2] [30]));
+        .Q(r2[30]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][31] 
@@ -2628,7 +2664,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[31]),
-        .Q(\register_reg[2] [31]));
+        .Q(r2[31]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][3] 
@@ -2636,7 +2672,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[3]),
-        .Q(\register_reg[2] [3]));
+        .Q(r2[3]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][4] 
@@ -2644,7 +2680,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[4]),
-        .Q(\register_reg[2] [4]));
+        .Q(r2[4]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][5] 
@@ -2652,7 +2688,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[5]),
-        .Q(\register_reg[2] [5]));
+        .Q(r2[5]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][6] 
@@ -2660,7 +2696,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[6]),
-        .Q(\register_reg[2] [6]));
+        .Q(r2[6]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][7] 
@@ -2668,7 +2704,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[7]),
-        .Q(\register_reg[2] [7]));
+        .Q(r2[7]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][8] 
@@ -2676,7 +2712,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[8]),
-        .Q(\register_reg[2] [8]));
+        .Q(r2[8]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[2][9] 
@@ -2684,7 +2720,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[2][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[9]),
-        .Q(\register_reg[2] [9]));
+        .Q(r2[9]));
   FDPE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][0] 
@@ -2692,7 +2728,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .D(wb_res[0]),
         .PRE(rst),
-        .Q(\register_reg[3] [0]));
+        .Q(r3[0]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][10] 
@@ -2700,7 +2736,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[10]),
-        .Q(\register_reg[3] [10]));
+        .Q(r3[10]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][11] 
@@ -2708,7 +2744,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[11]),
-        .Q(\register_reg[3] [11]));
+        .Q(r3[11]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][12] 
@@ -2716,7 +2752,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[12]),
-        .Q(\register_reg[3] [12]));
+        .Q(r3[12]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][13] 
@@ -2724,7 +2760,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[13]),
-        .Q(\register_reg[3] [13]));
+        .Q(r3[13]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][14] 
@@ -2732,7 +2768,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[14]),
-        .Q(\register_reg[3] [14]));
+        .Q(r3[14]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][15] 
@@ -2740,7 +2776,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[15]),
-        .Q(\register_reg[3] [15]));
+        .Q(r3[15]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][16] 
@@ -2748,7 +2784,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[16]),
-        .Q(\register_reg[3] [16]));
+        .Q(r3[16]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][17] 
@@ -2756,7 +2792,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[17]),
-        .Q(\register_reg[3] [17]));
+        .Q(r3[17]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][18] 
@@ -2764,7 +2800,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[18]),
-        .Q(\register_reg[3] [18]));
+        .Q(r3[18]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][19] 
@@ -2772,7 +2808,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[19]),
-        .Q(\register_reg[3] [19]));
+        .Q(r3[19]));
   FDPE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][1] 
@@ -2780,7 +2816,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .D(wb_res[1]),
         .PRE(rst),
-        .Q(\register_reg[3] [1]));
+        .Q(r3[1]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][20] 
@@ -2788,7 +2824,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[20]),
-        .Q(\register_reg[3] [20]));
+        .Q(r3[20]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][21] 
@@ -2796,7 +2832,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[21]),
-        .Q(\register_reg[3] [21]));
+        .Q(r3[21]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][22] 
@@ -2804,7 +2840,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[22]),
-        .Q(\register_reg[3] [22]));
+        .Q(r3[22]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][23] 
@@ -2812,7 +2848,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[23]),
-        .Q(\register_reg[3] [23]));
+        .Q(r3[23]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][24] 
@@ -2820,7 +2856,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[24]),
-        .Q(\register_reg[3] [24]));
+        .Q(r3[24]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][25] 
@@ -2828,7 +2864,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[25]),
-        .Q(\register_reg[3] [25]));
+        .Q(r3[25]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][26] 
@@ -2836,7 +2872,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[26]),
-        .Q(\register_reg[3] [26]));
+        .Q(r3[26]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][27] 
@@ -2844,7 +2880,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[27]),
-        .Q(\register_reg[3] [27]));
+        .Q(r3[27]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][28] 
@@ -2852,7 +2888,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[28]),
-        .Q(\register_reg[3] [28]));
+        .Q(r3[28]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][29] 
@@ -2860,7 +2896,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[29]),
-        .Q(\register_reg[3] [29]));
+        .Q(r3[29]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][2] 
@@ -2868,7 +2904,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[2]),
-        .Q(\register_reg[3] [2]));
+        .Q(r3[2]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][30] 
@@ -2876,7 +2912,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[30]),
-        .Q(\register_reg[3] [30]));
+        .Q(r3[30]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][31] 
@@ -2884,7 +2920,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[31]),
-        .Q(\register_reg[3] [31]));
+        .Q(r3[31]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][3] 
@@ -2892,7 +2928,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[3]),
-        .Q(\register_reg[3] [3]));
+        .Q(r3[3]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][4] 
@@ -2900,7 +2936,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[4]),
-        .Q(\register_reg[3] [4]));
+        .Q(r3[4]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][5] 
@@ -2908,7 +2944,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[5]),
-        .Q(\register_reg[3] [5]));
+        .Q(r3[5]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][6] 
@@ -2916,7 +2952,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[6]),
-        .Q(\register_reg[3] [6]));
+        .Q(r3[6]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][7] 
@@ -2924,7 +2960,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[7]),
-        .Q(\register_reg[3] [7]));
+        .Q(r3[7]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][8] 
@@ -2932,7 +2968,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[8]),
-        .Q(\register_reg[3] [8]));
+        .Q(r3[8]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[3][9] 
@@ -2940,7 +2976,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[3][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[9]),
-        .Q(\register_reg[3] [9]));
+        .Q(r3[9]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][0] 
@@ -2948,7 +2984,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[0]),
-        .Q(\register_reg[4] [0]));
+        .Q(r4[0]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][10] 
@@ -2956,7 +2992,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[10]),
-        .Q(\register_reg[4] [10]));
+        .Q(r4[10]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][11] 
@@ -2964,7 +3000,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[11]),
-        .Q(\register_reg[4] [11]));
+        .Q(r4[11]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][12] 
@@ -2972,7 +3008,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[12]),
-        .Q(\register_reg[4] [12]));
+        .Q(r4[12]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][13] 
@@ -2980,7 +3016,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[13]),
-        .Q(\register_reg[4] [13]));
+        .Q(r4[13]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][14] 
@@ -2988,7 +3024,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[14]),
-        .Q(\register_reg[4] [14]));
+        .Q(r4[14]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][15] 
@@ -2996,7 +3032,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[15]),
-        .Q(\register_reg[4] [15]));
+        .Q(r4[15]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][16] 
@@ -3004,7 +3040,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[16]),
-        .Q(\register_reg[4] [16]));
+        .Q(r4[16]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][17] 
@@ -3012,7 +3048,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[17]),
-        .Q(\register_reg[4] [17]));
+        .Q(r4[17]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][18] 
@@ -3020,7 +3056,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[18]),
-        .Q(\register_reg[4] [18]));
+        .Q(r4[18]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][19] 
@@ -3028,7 +3064,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[19]),
-        .Q(\register_reg[4] [19]));
+        .Q(r4[19]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][1] 
@@ -3036,7 +3072,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[1]),
-        .Q(\register_reg[4] [1]));
+        .Q(r4[1]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][20] 
@@ -3044,7 +3080,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[20]),
-        .Q(\register_reg[4] [20]));
+        .Q(r4[20]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][21] 
@@ -3052,7 +3088,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[21]),
-        .Q(\register_reg[4] [21]));
+        .Q(r4[21]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][22] 
@@ -3060,7 +3096,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[22]),
-        .Q(\register_reg[4] [22]));
+        .Q(r4[22]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][23] 
@@ -3068,7 +3104,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[23]),
-        .Q(\register_reg[4] [23]));
+        .Q(r4[23]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][24] 
@@ -3076,7 +3112,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[24]),
-        .Q(\register_reg[4] [24]));
+        .Q(r4[24]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][25] 
@@ -3084,7 +3120,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[25]),
-        .Q(\register_reg[4] [25]));
+        .Q(r4[25]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][26] 
@@ -3092,7 +3128,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[26]),
-        .Q(\register_reg[4] [26]));
+        .Q(r4[26]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][27] 
@@ -3100,7 +3136,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[27]),
-        .Q(\register_reg[4] [27]));
+        .Q(r4[27]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][28] 
@@ -3108,7 +3144,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[28]),
-        .Q(\register_reg[4] [28]));
+        .Q(r4[28]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][29] 
@@ -3116,7 +3152,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[29]),
-        .Q(\register_reg[4] [29]));
+        .Q(r4[29]));
   FDPE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][2] 
@@ -3124,7 +3160,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .D(wb_res[2]),
         .PRE(rst),
-        .Q(\register_reg[4] [2]));
+        .Q(r4[2]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][30] 
@@ -3132,7 +3168,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[30]),
-        .Q(\register_reg[4] [30]));
+        .Q(r4[30]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][31] 
@@ -3140,7 +3176,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[31]),
-        .Q(\register_reg[4] [31]));
+        .Q(r4[31]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][3] 
@@ -3148,7 +3184,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[3]),
-        .Q(\register_reg[4] [3]));
+        .Q(r4[3]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][4] 
@@ -3156,7 +3192,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[4]),
-        .Q(\register_reg[4] [4]));
+        .Q(r4[4]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][5] 
@@ -3164,7 +3200,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[5]),
-        .Q(\register_reg[4] [5]));
+        .Q(r4[5]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][6] 
@@ -3172,7 +3208,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[6]),
-        .Q(\register_reg[4] [6]));
+        .Q(r4[6]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][7] 
@@ -3180,7 +3216,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[7]),
-        .Q(\register_reg[4] [7]));
+        .Q(r4[7]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][8] 
@@ -3188,7 +3224,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[8]),
-        .Q(\register_reg[4] [8]));
+        .Q(r4[8]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[4][9] 
@@ -3196,7 +3232,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[4][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[9]),
-        .Q(\register_reg[4] [9]));
+        .Q(r4[9]));
   FDPE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][0] 
@@ -3204,7 +3240,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .D(wb_res[0]),
         .PRE(rst),
-        .Q(\register_reg[5] [0]));
+        .Q(r5[0]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][10] 
@@ -3212,7 +3248,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[10]),
-        .Q(\register_reg[5] [10]));
+        .Q(r5[10]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][11] 
@@ -3220,7 +3256,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[11]),
-        .Q(\register_reg[5] [11]));
+        .Q(r5[11]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][12] 
@@ -3228,7 +3264,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[12]),
-        .Q(\register_reg[5] [12]));
+        .Q(r5[12]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][13] 
@@ -3236,7 +3272,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[13]),
-        .Q(\register_reg[5] [13]));
+        .Q(r5[13]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][14] 
@@ -3244,7 +3280,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[14]),
-        .Q(\register_reg[5] [14]));
+        .Q(r5[14]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][15] 
@@ -3252,7 +3288,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[15]),
-        .Q(\register_reg[5] [15]));
+        .Q(r5[15]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][16] 
@@ -3260,7 +3296,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[16]),
-        .Q(\register_reg[5] [16]));
+        .Q(r5[16]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][17] 
@@ -3268,7 +3304,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[17]),
-        .Q(\register_reg[5] [17]));
+        .Q(r5[17]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][18] 
@@ -3276,7 +3312,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[18]),
-        .Q(\register_reg[5] [18]));
+        .Q(r5[18]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][19] 
@@ -3284,7 +3320,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[19]),
-        .Q(\register_reg[5] [19]));
+        .Q(r5[19]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][1] 
@@ -3292,7 +3328,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[1]),
-        .Q(\register_reg[5] [1]));
+        .Q(r5[1]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][20] 
@@ -3300,7 +3336,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[20]),
-        .Q(\register_reg[5] [20]));
+        .Q(r5[20]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][21] 
@@ -3308,7 +3344,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[21]),
-        .Q(\register_reg[5] [21]));
+        .Q(r5[21]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][22] 
@@ -3316,7 +3352,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[22]),
-        .Q(\register_reg[5] [22]));
+        .Q(r5[22]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][23] 
@@ -3324,7 +3360,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[23]),
-        .Q(\register_reg[5] [23]));
+        .Q(r5[23]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][24] 
@@ -3332,7 +3368,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[24]),
-        .Q(\register_reg[5] [24]));
+        .Q(r5[24]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][25] 
@@ -3340,7 +3376,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[25]),
-        .Q(\register_reg[5] [25]));
+        .Q(r5[25]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][26] 
@@ -3348,7 +3384,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[26]),
-        .Q(\register_reg[5] [26]));
+        .Q(r5[26]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][27] 
@@ -3356,7 +3392,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[27]),
-        .Q(\register_reg[5] [27]));
+        .Q(r5[27]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][28] 
@@ -3364,7 +3400,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[28]),
-        .Q(\register_reg[5] [28]));
+        .Q(r5[28]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][29] 
@@ -3372,7 +3408,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[29]),
-        .Q(\register_reg[5] [29]));
+        .Q(r5[29]));
   FDPE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][2] 
@@ -3380,7 +3416,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .D(wb_res[2]),
         .PRE(rst),
-        .Q(\register_reg[5] [2]));
+        .Q(r5[2]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][30] 
@@ -3388,7 +3424,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[30]),
-        .Q(\register_reg[5] [30]));
+        .Q(r5[30]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][31] 
@@ -3396,7 +3432,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[31]),
-        .Q(\register_reg[5] [31]));
+        .Q(r5[31]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][3] 
@@ -3404,7 +3440,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[3]),
-        .Q(\register_reg[5] [3]));
+        .Q(r5[3]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][4] 
@@ -3412,7 +3448,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[4]),
-        .Q(\register_reg[5] [4]));
+        .Q(r5[4]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][5] 
@@ -3420,7 +3456,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[5]),
-        .Q(\register_reg[5] [5]));
+        .Q(r5[5]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][6] 
@@ -3428,7 +3464,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[6]),
-        .Q(\register_reg[5] [6]));
+        .Q(r5[6]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][7] 
@@ -3436,7 +3472,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[7]),
-        .Q(\register_reg[5] [7]));
+        .Q(r5[7]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][8] 
@@ -3444,7 +3480,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[8]),
-        .Q(\register_reg[5] [8]));
+        .Q(r5[8]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[5][9] 
@@ -3452,7 +3488,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[5][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[9]),
-        .Q(\register_reg[5] [9]));
+        .Q(r5[9]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][0] 
@@ -3460,7 +3496,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[0]),
-        .Q(\register_reg[6] [0]));
+        .Q(r6[0]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][10] 
@@ -3468,7 +3504,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[10]),
-        .Q(\register_reg[6] [10]));
+        .Q(r6[10]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][11] 
@@ -3476,7 +3512,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[11]),
-        .Q(\register_reg[6] [11]));
+        .Q(r6[11]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][12] 
@@ -3484,7 +3520,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[12]),
-        .Q(\register_reg[6] [12]));
+        .Q(r6[12]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][13] 
@@ -3492,7 +3528,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[13]),
-        .Q(\register_reg[6] [13]));
+        .Q(r6[13]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][14] 
@@ -3500,7 +3536,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[14]),
-        .Q(\register_reg[6] [14]));
+        .Q(r6[14]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][15] 
@@ -3508,7 +3544,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[15]),
-        .Q(\register_reg[6] [15]));
+        .Q(r6[15]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][16] 
@@ -3516,7 +3552,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[16]),
-        .Q(\register_reg[6] [16]));
+        .Q(r6[16]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][17] 
@@ -3524,7 +3560,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[17]),
-        .Q(\register_reg[6] [17]));
+        .Q(r6[17]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][18] 
@@ -3532,7 +3568,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[18]),
-        .Q(\register_reg[6] [18]));
+        .Q(r6[18]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][19] 
@@ -3540,7 +3576,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[19]),
-        .Q(\register_reg[6] [19]));
+        .Q(r6[19]));
   FDPE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][1] 
@@ -3548,7 +3584,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .D(wb_res[1]),
         .PRE(rst),
-        .Q(\register_reg[6] [1]));
+        .Q(r6[1]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][20] 
@@ -3556,7 +3592,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[20]),
-        .Q(\register_reg[6] [20]));
+        .Q(r6[20]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][21] 
@@ -3564,7 +3600,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[21]),
-        .Q(\register_reg[6] [21]));
+        .Q(r6[21]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][22] 
@@ -3572,7 +3608,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[22]),
-        .Q(\register_reg[6] [22]));
+        .Q(r6[22]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][23] 
@@ -3580,7 +3616,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[23]),
-        .Q(\register_reg[6] [23]));
+        .Q(r6[23]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][24] 
@@ -3588,7 +3624,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[24]),
-        .Q(\register_reg[6] [24]));
+        .Q(r6[24]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][25] 
@@ -3596,7 +3632,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[25]),
-        .Q(\register_reg[6] [25]));
+        .Q(r6[25]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][26] 
@@ -3604,7 +3640,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[26]),
-        .Q(\register_reg[6] [26]));
+        .Q(r6[26]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][27] 
@@ -3612,7 +3648,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[27]),
-        .Q(\register_reg[6] [27]));
+        .Q(r6[27]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][28] 
@@ -3620,7 +3656,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[28]),
-        .Q(\register_reg[6] [28]));
+        .Q(r6[28]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][29] 
@@ -3628,7 +3664,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[29]),
-        .Q(\register_reg[6] [29]));
+        .Q(r6[29]));
   FDPE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][2] 
@@ -3636,7 +3672,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .D(wb_res[2]),
         .PRE(rst),
-        .Q(\register_reg[6] [2]));
+        .Q(r6[2]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][30] 
@@ -3644,7 +3680,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[30]),
-        .Q(\register_reg[6] [30]));
+        .Q(r6[30]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][31] 
@@ -3652,7 +3688,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[31]),
-        .Q(\register_reg[6] [31]));
+        .Q(r6[31]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][3] 
@@ -3660,7 +3696,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[3]),
-        .Q(\register_reg[6] [3]));
+        .Q(r6[3]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][4] 
@@ -3668,7 +3704,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[4]),
-        .Q(\register_reg[6] [4]));
+        .Q(r6[4]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][5] 
@@ -3676,7 +3712,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[5]),
-        .Q(\register_reg[6] [5]));
+        .Q(r6[5]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][6] 
@@ -3684,7 +3720,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[6]),
-        .Q(\register_reg[6] [6]));
+        .Q(r6[6]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][7] 
@@ -3692,7 +3728,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[7]),
-        .Q(\register_reg[6] [7]));
+        .Q(r6[7]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][8] 
@@ -3700,7 +3736,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[8]),
-        .Q(\register_reg[6] [8]));
+        .Q(r6[8]));
   FDCE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[6][9] 
@@ -3708,7 +3744,7 @@ module design_block_1_registerFile_1_0_registerFile
         .CE(\register[6][31]_i_1_n_0 ),
         .CLR(rst),
         .D(wb_res[9]),
-        .Q(\register_reg[6] [9]));
+        .Q(r6[9]));
   FDPE #(
     .IS_C_INVERTED(1'b1)) 
     \register_reg[7][0] 
@@ -4495,10 +4531,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[0]_INST_0_i_3 
-       (.I0(\register_reg[3] [0]),
-        .I1(\register_reg[2] [0]),
+       (.I0(r3[0]),
+        .I1(r2[0]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [0]),
+        .I3(r1[0]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [0]),
         .O(\val_rm[0]_INST_0_i_3_n_0 ));
@@ -4506,11 +4542,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[0]_INST_0_i_4 
        (.I0(\register_reg[7] [0]),
-        .I1(\register_reg[6] [0]),
+        .I1(r6[0]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [0]),
+        .I3(r5[0]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [0]),
+        .I5(r4[0]),
         .O(\val_rm[0]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -4549,10 +4585,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[10]_INST_0_i_3 
-       (.I0(\register_reg[3] [10]),
-        .I1(\register_reg[2] [10]),
+       (.I0(r3[10]),
+        .I1(r2[10]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [10]),
+        .I3(r1[10]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [10]),
         .O(\val_rm[10]_INST_0_i_3_n_0 ));
@@ -4560,11 +4596,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[10]_INST_0_i_4 
        (.I0(\register_reg[7] [10]),
-        .I1(\register_reg[6] [10]),
+        .I1(r6[10]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [10]),
+        .I3(r5[10]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [10]),
+        .I5(r4[10]),
         .O(\val_rm[10]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -4603,10 +4639,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[11]_INST_0_i_3 
-       (.I0(\register_reg[3] [11]),
-        .I1(\register_reg[2] [11]),
+       (.I0(r3[11]),
+        .I1(r2[11]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [11]),
+        .I3(r1[11]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [11]),
         .O(\val_rm[11]_INST_0_i_3_n_0 ));
@@ -4614,11 +4650,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[11]_INST_0_i_4 
        (.I0(\register_reg[7] [11]),
-        .I1(\register_reg[6] [11]),
+        .I1(r6[11]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [11]),
+        .I3(r5[11]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [11]),
+        .I5(r4[11]),
         .O(\val_rm[11]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -4657,10 +4693,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[12]_INST_0_i_3 
-       (.I0(\register_reg[3] [12]),
-        .I1(\register_reg[2] [12]),
+       (.I0(r3[12]),
+        .I1(r2[12]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [12]),
+        .I3(r1[12]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [12]),
         .O(\val_rm[12]_INST_0_i_3_n_0 ));
@@ -4668,11 +4704,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[12]_INST_0_i_4 
        (.I0(\register_reg[7] [12]),
-        .I1(\register_reg[6] [12]),
+        .I1(r6[12]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [12]),
+        .I3(r5[12]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [12]),
+        .I5(r4[12]),
         .O(\val_rm[12]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -4711,10 +4747,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[13]_INST_0_i_3 
-       (.I0(\register_reg[3] [13]),
-        .I1(\register_reg[2] [13]),
+       (.I0(r3[13]),
+        .I1(r2[13]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [13]),
+        .I3(r1[13]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [13]),
         .O(\val_rm[13]_INST_0_i_3_n_0 ));
@@ -4722,11 +4758,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[13]_INST_0_i_4 
        (.I0(\register_reg[7] [13]),
-        .I1(\register_reg[6] [13]),
+        .I1(r6[13]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [13]),
+        .I3(r5[13]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [13]),
+        .I5(r4[13]),
         .O(\val_rm[13]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -4765,10 +4801,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[14]_INST_0_i_3 
-       (.I0(\register_reg[3] [14]),
-        .I1(\register_reg[2] [14]),
+       (.I0(r3[14]),
+        .I1(r2[14]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [14]),
+        .I3(r1[14]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [14]),
         .O(\val_rm[14]_INST_0_i_3_n_0 ));
@@ -4776,11 +4812,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[14]_INST_0_i_4 
        (.I0(\register_reg[7] [14]),
-        .I1(\register_reg[6] [14]),
+        .I1(r6[14]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [14]),
+        .I3(r5[14]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [14]),
+        .I5(r4[14]),
         .O(\val_rm[14]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -4819,10 +4855,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[15]_INST_0_i_3 
-       (.I0(\register_reg[3] [15]),
-        .I1(\register_reg[2] [15]),
+       (.I0(r3[15]),
+        .I1(r2[15]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [15]),
+        .I3(r1[15]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [15]),
         .O(\val_rm[15]_INST_0_i_3_n_0 ));
@@ -4830,11 +4866,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[15]_INST_0_i_4 
        (.I0(\register_reg[7] [15]),
-        .I1(\register_reg[6] [15]),
+        .I1(r6[15]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [15]),
+        .I3(r5[15]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [15]),
+        .I5(r4[15]),
         .O(\val_rm[15]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -4873,10 +4909,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[16]_INST_0_i_3 
-       (.I0(\register_reg[3] [16]),
-        .I1(\register_reg[2] [16]),
+       (.I0(r3[16]),
+        .I1(r2[16]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [16]),
+        .I3(r1[16]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [16]),
         .O(\val_rm[16]_INST_0_i_3_n_0 ));
@@ -4884,11 +4920,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[16]_INST_0_i_4 
        (.I0(\register_reg[7] [16]),
-        .I1(\register_reg[6] [16]),
+        .I1(r6[16]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [16]),
+        .I3(r5[16]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [16]),
+        .I5(r4[16]),
         .O(\val_rm[16]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -4927,10 +4963,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[17]_INST_0_i_3 
-       (.I0(\register_reg[3] [17]),
-        .I1(\register_reg[2] [17]),
+       (.I0(r3[17]),
+        .I1(r2[17]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [17]),
+        .I3(r1[17]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [17]),
         .O(\val_rm[17]_INST_0_i_3_n_0 ));
@@ -4938,11 +4974,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[17]_INST_0_i_4 
        (.I0(\register_reg[7] [17]),
-        .I1(\register_reg[6] [17]),
+        .I1(r6[17]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [17]),
+        .I3(r5[17]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [17]),
+        .I5(r4[17]),
         .O(\val_rm[17]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -4981,10 +5017,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[18]_INST_0_i_3 
-       (.I0(\register_reg[3] [18]),
-        .I1(\register_reg[2] [18]),
+       (.I0(r3[18]),
+        .I1(r2[18]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [18]),
+        .I3(r1[18]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [18]),
         .O(\val_rm[18]_INST_0_i_3_n_0 ));
@@ -4992,11 +5028,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[18]_INST_0_i_4 
        (.I0(\register_reg[7] [18]),
-        .I1(\register_reg[6] [18]),
+        .I1(r6[18]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [18]),
+        .I3(r5[18]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [18]),
+        .I5(r4[18]),
         .O(\val_rm[18]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -5035,10 +5071,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[19]_INST_0_i_3 
-       (.I0(\register_reg[3] [19]),
-        .I1(\register_reg[2] [19]),
+       (.I0(r3[19]),
+        .I1(r2[19]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [19]),
+        .I3(r1[19]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [19]),
         .O(\val_rm[19]_INST_0_i_3_n_0 ));
@@ -5046,11 +5082,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[19]_INST_0_i_4 
        (.I0(\register_reg[7] [19]),
-        .I1(\register_reg[6] [19]),
+        .I1(r6[19]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [19]),
+        .I3(r5[19]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [19]),
+        .I5(r4[19]),
         .O(\val_rm[19]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -5089,10 +5125,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[1]_INST_0_i_3 
-       (.I0(\register_reg[3] [1]),
-        .I1(\register_reg[2] [1]),
+       (.I0(r3[1]),
+        .I1(r2[1]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [1]),
+        .I3(r1[1]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [1]),
         .O(\val_rm[1]_INST_0_i_3_n_0 ));
@@ -5100,11 +5136,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[1]_INST_0_i_4 
        (.I0(\register_reg[7] [1]),
-        .I1(\register_reg[6] [1]),
+        .I1(r6[1]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [1]),
+        .I3(r5[1]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [1]),
+        .I5(r4[1]),
         .O(\val_rm[1]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -5143,10 +5179,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[20]_INST_0_i_3 
-       (.I0(\register_reg[3] [20]),
-        .I1(\register_reg[2] [20]),
+       (.I0(r3[20]),
+        .I1(r2[20]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [20]),
+        .I3(r1[20]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [20]),
         .O(\val_rm[20]_INST_0_i_3_n_0 ));
@@ -5154,11 +5190,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[20]_INST_0_i_4 
        (.I0(\register_reg[7] [20]),
-        .I1(\register_reg[6] [20]),
+        .I1(r6[20]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [20]),
+        .I3(r5[20]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [20]),
+        .I5(r4[20]),
         .O(\val_rm[20]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -5197,10 +5233,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[21]_INST_0_i_3 
-       (.I0(\register_reg[3] [21]),
-        .I1(\register_reg[2] [21]),
+       (.I0(r3[21]),
+        .I1(r2[21]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [21]),
+        .I3(r1[21]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [21]),
         .O(\val_rm[21]_INST_0_i_3_n_0 ));
@@ -5208,11 +5244,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[21]_INST_0_i_4 
        (.I0(\register_reg[7] [21]),
-        .I1(\register_reg[6] [21]),
+        .I1(r6[21]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [21]),
+        .I3(r5[21]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [21]),
+        .I5(r4[21]),
         .O(\val_rm[21]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -5251,10 +5287,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[22]_INST_0_i_3 
-       (.I0(\register_reg[3] [22]),
-        .I1(\register_reg[2] [22]),
+       (.I0(r3[22]),
+        .I1(r2[22]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [22]),
+        .I3(r1[22]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [22]),
         .O(\val_rm[22]_INST_0_i_3_n_0 ));
@@ -5262,11 +5298,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[22]_INST_0_i_4 
        (.I0(\register_reg[7] [22]),
-        .I1(\register_reg[6] [22]),
+        .I1(r6[22]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [22]),
+        .I3(r5[22]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [22]),
+        .I5(r4[22]),
         .O(\val_rm[22]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -5305,10 +5341,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[23]_INST_0_i_3 
-       (.I0(\register_reg[3] [23]),
-        .I1(\register_reg[2] [23]),
+       (.I0(r3[23]),
+        .I1(r2[23]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [23]),
+        .I3(r1[23]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [23]),
         .O(\val_rm[23]_INST_0_i_3_n_0 ));
@@ -5316,11 +5352,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[23]_INST_0_i_4 
        (.I0(\register_reg[7] [23]),
-        .I1(\register_reg[6] [23]),
+        .I1(r6[23]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [23]),
+        .I3(r5[23]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [23]),
+        .I5(r4[23]),
         .O(\val_rm[23]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -5359,10 +5395,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[24]_INST_0_i_3 
-       (.I0(\register_reg[3] [24]),
-        .I1(\register_reg[2] [24]),
+       (.I0(r3[24]),
+        .I1(r2[24]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [24]),
+        .I3(r1[24]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [24]),
         .O(\val_rm[24]_INST_0_i_3_n_0 ));
@@ -5370,11 +5406,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[24]_INST_0_i_4 
        (.I0(\register_reg[7] [24]),
-        .I1(\register_reg[6] [24]),
+        .I1(r6[24]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [24]),
+        .I3(r5[24]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [24]),
+        .I5(r4[24]),
         .O(\val_rm[24]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -5413,10 +5449,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[25]_INST_0_i_3 
-       (.I0(\register_reg[3] [25]),
-        .I1(\register_reg[2] [25]),
+       (.I0(r3[25]),
+        .I1(r2[25]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [25]),
+        .I3(r1[25]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [25]),
         .O(\val_rm[25]_INST_0_i_3_n_0 ));
@@ -5424,11 +5460,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[25]_INST_0_i_4 
        (.I0(\register_reg[7] [25]),
-        .I1(\register_reg[6] [25]),
+        .I1(r6[25]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [25]),
+        .I3(r5[25]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [25]),
+        .I5(r4[25]),
         .O(\val_rm[25]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -5467,10 +5503,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[26]_INST_0_i_3 
-       (.I0(\register_reg[3] [26]),
-        .I1(\register_reg[2] [26]),
+       (.I0(r3[26]),
+        .I1(r2[26]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [26]),
+        .I3(r1[26]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [26]),
         .O(\val_rm[26]_INST_0_i_3_n_0 ));
@@ -5478,11 +5514,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[26]_INST_0_i_4 
        (.I0(\register_reg[7] [26]),
-        .I1(\register_reg[6] [26]),
+        .I1(r6[26]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [26]),
+        .I3(r5[26]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [26]),
+        .I5(r4[26]),
         .O(\val_rm[26]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -5521,10 +5557,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[27]_INST_0_i_3 
-       (.I0(\register_reg[3] [27]),
-        .I1(\register_reg[2] [27]),
+       (.I0(r3[27]),
+        .I1(r2[27]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [27]),
+        .I3(r1[27]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [27]),
         .O(\val_rm[27]_INST_0_i_3_n_0 ));
@@ -5532,11 +5568,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[27]_INST_0_i_4 
        (.I0(\register_reg[7] [27]),
-        .I1(\register_reg[6] [27]),
+        .I1(r6[27]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [27]),
+        .I3(r5[27]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [27]),
+        .I5(r4[27]),
         .O(\val_rm[27]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -5575,10 +5611,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[28]_INST_0_i_3 
-       (.I0(\register_reg[3] [28]),
-        .I1(\register_reg[2] [28]),
+       (.I0(r3[28]),
+        .I1(r2[28]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [28]),
+        .I3(r1[28]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [28]),
         .O(\val_rm[28]_INST_0_i_3_n_0 ));
@@ -5586,11 +5622,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[28]_INST_0_i_4 
        (.I0(\register_reg[7] [28]),
-        .I1(\register_reg[6] [28]),
+        .I1(r6[28]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [28]),
+        .I3(r5[28]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [28]),
+        .I5(r4[28]),
         .O(\val_rm[28]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -5629,10 +5665,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[29]_INST_0_i_3 
-       (.I0(\register_reg[3] [29]),
-        .I1(\register_reg[2] [29]),
+       (.I0(r3[29]),
+        .I1(r2[29]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [29]),
+        .I3(r1[29]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [29]),
         .O(\val_rm[29]_INST_0_i_3_n_0 ));
@@ -5640,11 +5676,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[29]_INST_0_i_4 
        (.I0(\register_reg[7] [29]),
-        .I1(\register_reg[6] [29]),
+        .I1(r6[29]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [29]),
+        .I3(r5[29]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [29]),
+        .I5(r4[29]),
         .O(\val_rm[29]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -5683,10 +5719,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[2]_INST_0_i_3 
-       (.I0(\register_reg[3] [2]),
-        .I1(\register_reg[2] [2]),
+       (.I0(r3[2]),
+        .I1(r2[2]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [2]),
+        .I3(r1[2]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [2]),
         .O(\val_rm[2]_INST_0_i_3_n_0 ));
@@ -5694,11 +5730,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[2]_INST_0_i_4 
        (.I0(\register_reg[7] [2]),
-        .I1(\register_reg[6] [2]),
+        .I1(r6[2]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [2]),
+        .I3(r5[2]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [2]),
+        .I5(r4[2]),
         .O(\val_rm[2]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -5737,10 +5773,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[30]_INST_0_i_3 
-       (.I0(\register_reg[3] [30]),
-        .I1(\register_reg[2] [30]),
+       (.I0(r3[30]),
+        .I1(r2[30]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [30]),
+        .I3(r1[30]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [30]),
         .O(\val_rm[30]_INST_0_i_3_n_0 ));
@@ -5748,11 +5784,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[30]_INST_0_i_4 
        (.I0(\register_reg[7] [30]),
-        .I1(\register_reg[6] [30]),
+        .I1(r6[30]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [30]),
+        .I3(r5[30]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [30]),
+        .I5(r4[30]),
         .O(\val_rm[30]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -5791,10 +5827,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[31]_INST_0_i_3 
-       (.I0(\register_reg[3] [31]),
-        .I1(\register_reg[2] [31]),
+       (.I0(r3[31]),
+        .I1(r2[31]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [31]),
+        .I3(r1[31]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [31]),
         .O(\val_rm[31]_INST_0_i_3_n_0 ));
@@ -5802,11 +5838,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[31]_INST_0_i_4 
        (.I0(\register_reg[7] [31]),
-        .I1(\register_reg[6] [31]),
+        .I1(r6[31]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [31]),
+        .I3(r5[31]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [31]),
+        .I5(r4[31]),
         .O(\val_rm[31]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -5845,10 +5881,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[3]_INST_0_i_3 
-       (.I0(\register_reg[3] [3]),
-        .I1(\register_reg[2] [3]),
+       (.I0(r3[3]),
+        .I1(r2[3]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [3]),
+        .I3(r1[3]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [3]),
         .O(\val_rm[3]_INST_0_i_3_n_0 ));
@@ -5856,11 +5892,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[3]_INST_0_i_4 
        (.I0(\register_reg[7] [3]),
-        .I1(\register_reg[6] [3]),
+        .I1(r6[3]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [3]),
+        .I3(r5[3]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [3]),
+        .I5(r4[3]),
         .O(\val_rm[3]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -5899,10 +5935,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[4]_INST_0_i_3 
-       (.I0(\register_reg[3] [4]),
-        .I1(\register_reg[2] [4]),
+       (.I0(r3[4]),
+        .I1(r2[4]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [4]),
+        .I3(r1[4]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [4]),
         .O(\val_rm[4]_INST_0_i_3_n_0 ));
@@ -5910,11 +5946,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[4]_INST_0_i_4 
        (.I0(\register_reg[7] [4]),
-        .I1(\register_reg[6] [4]),
+        .I1(r6[4]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [4]),
+        .I3(r5[4]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [4]),
+        .I5(r4[4]),
         .O(\val_rm[4]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -5953,10 +5989,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[5]_INST_0_i_3 
-       (.I0(\register_reg[3] [5]),
-        .I1(\register_reg[2] [5]),
+       (.I0(r3[5]),
+        .I1(r2[5]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [5]),
+        .I3(r1[5]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [5]),
         .O(\val_rm[5]_INST_0_i_3_n_0 ));
@@ -5964,11 +6000,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[5]_INST_0_i_4 
        (.I0(\register_reg[7] [5]),
-        .I1(\register_reg[6] [5]),
+        .I1(r6[5]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [5]),
+        .I3(r5[5]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [5]),
+        .I5(r4[5]),
         .O(\val_rm[5]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -6007,10 +6043,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[6]_INST_0_i_3 
-       (.I0(\register_reg[3] [6]),
-        .I1(\register_reg[2] [6]),
+       (.I0(r3[6]),
+        .I1(r2[6]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [6]),
+        .I3(r1[6]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [6]),
         .O(\val_rm[6]_INST_0_i_3_n_0 ));
@@ -6018,11 +6054,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[6]_INST_0_i_4 
        (.I0(\register_reg[7] [6]),
-        .I1(\register_reg[6] [6]),
+        .I1(r6[6]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [6]),
+        .I3(r5[6]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [6]),
+        .I5(r4[6]),
         .O(\val_rm[6]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -6061,10 +6097,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[7]_INST_0_i_3 
-       (.I0(\register_reg[3] [7]),
-        .I1(\register_reg[2] [7]),
+       (.I0(r3[7]),
+        .I1(r2[7]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [7]),
+        .I3(r1[7]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [7]),
         .O(\val_rm[7]_INST_0_i_3_n_0 ));
@@ -6072,11 +6108,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[7]_INST_0_i_4 
        (.I0(\register_reg[7] [7]),
-        .I1(\register_reg[6] [7]),
+        .I1(r6[7]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [7]),
+        .I3(r5[7]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [7]),
+        .I5(r4[7]),
         .O(\val_rm[7]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -6115,10 +6151,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[8]_INST_0_i_3 
-       (.I0(\register_reg[3] [8]),
-        .I1(\register_reg[2] [8]),
+       (.I0(r3[8]),
+        .I1(r2[8]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [8]),
+        .I3(r1[8]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [8]),
         .O(\val_rm[8]_INST_0_i_3_n_0 ));
@@ -6126,11 +6162,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[8]_INST_0_i_4 
        (.I0(\register_reg[7] [8]),
-        .I1(\register_reg[6] [8]),
+        .I1(r6[8]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [8]),
+        .I3(r5[8]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [8]),
+        .I5(r4[8]),
         .O(\val_rm[8]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -6169,10 +6205,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[9]_INST_0_i_3 
-       (.I0(\register_reg[3] [9]),
-        .I1(\register_reg[2] [9]),
+       (.I0(r3[9]),
+        .I1(r2[9]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[1] [9]),
+        .I3(r1[9]),
         .I4(adr_rm[0]),
         .I5(\register_reg[0] [9]),
         .O(\val_rm[9]_INST_0_i_3_n_0 ));
@@ -6180,11 +6216,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rm[9]_INST_0_i_4 
        (.I0(\register_reg[7] [9]),
-        .I1(\register_reg[6] [9]),
+        .I1(r6[9]),
         .I2(adr_rm[1]),
-        .I3(\register_reg[5] [9]),
+        .I3(r5[9]),
         .I4(adr_rm[0]),
-        .I5(\register_reg[4] [9]),
+        .I5(r4[9]),
         .O(\val_rm[9]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -6223,10 +6259,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[0]_INST_0_i_3 
-       (.I0(\register_reg[3] [0]),
-        .I1(\register_reg[2] [0]),
+       (.I0(r3[0]),
+        .I1(r2[0]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [0]),
+        .I3(r1[0]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [0]),
         .O(\val_rn[0]_INST_0_i_3_n_0 ));
@@ -6234,11 +6270,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[0]_INST_0_i_4 
        (.I0(\register_reg[7] [0]),
-        .I1(\register_reg[6] [0]),
+        .I1(r6[0]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [0]),
+        .I3(r5[0]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [0]),
+        .I5(r4[0]),
         .O(\val_rn[0]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -6277,10 +6313,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[10]_INST_0_i_3 
-       (.I0(\register_reg[3] [10]),
-        .I1(\register_reg[2] [10]),
+       (.I0(r3[10]),
+        .I1(r2[10]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [10]),
+        .I3(r1[10]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [10]),
         .O(\val_rn[10]_INST_0_i_3_n_0 ));
@@ -6288,11 +6324,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[10]_INST_0_i_4 
        (.I0(\register_reg[7] [10]),
-        .I1(\register_reg[6] [10]),
+        .I1(r6[10]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [10]),
+        .I3(r5[10]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [10]),
+        .I5(r4[10]),
         .O(\val_rn[10]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -6331,10 +6367,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[11]_INST_0_i_3 
-       (.I0(\register_reg[3] [11]),
-        .I1(\register_reg[2] [11]),
+       (.I0(r3[11]),
+        .I1(r2[11]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [11]),
+        .I3(r1[11]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [11]),
         .O(\val_rn[11]_INST_0_i_3_n_0 ));
@@ -6342,11 +6378,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[11]_INST_0_i_4 
        (.I0(\register_reg[7] [11]),
-        .I1(\register_reg[6] [11]),
+        .I1(r6[11]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [11]),
+        .I3(r5[11]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [11]),
+        .I5(r4[11]),
         .O(\val_rn[11]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -6385,10 +6421,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[12]_INST_0_i_3 
-       (.I0(\register_reg[3] [12]),
-        .I1(\register_reg[2] [12]),
+       (.I0(r3[12]),
+        .I1(r2[12]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [12]),
+        .I3(r1[12]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [12]),
         .O(\val_rn[12]_INST_0_i_3_n_0 ));
@@ -6396,11 +6432,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[12]_INST_0_i_4 
        (.I0(\register_reg[7] [12]),
-        .I1(\register_reg[6] [12]),
+        .I1(r6[12]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [12]),
+        .I3(r5[12]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [12]),
+        .I5(r4[12]),
         .O(\val_rn[12]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -6439,10 +6475,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[13]_INST_0_i_3 
-       (.I0(\register_reg[3] [13]),
-        .I1(\register_reg[2] [13]),
+       (.I0(r3[13]),
+        .I1(r2[13]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [13]),
+        .I3(r1[13]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [13]),
         .O(\val_rn[13]_INST_0_i_3_n_0 ));
@@ -6450,11 +6486,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[13]_INST_0_i_4 
        (.I0(\register_reg[7] [13]),
-        .I1(\register_reg[6] [13]),
+        .I1(r6[13]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [13]),
+        .I3(r5[13]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [13]),
+        .I5(r4[13]),
         .O(\val_rn[13]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -6493,10 +6529,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[14]_INST_0_i_3 
-       (.I0(\register_reg[3] [14]),
-        .I1(\register_reg[2] [14]),
+       (.I0(r3[14]),
+        .I1(r2[14]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [14]),
+        .I3(r1[14]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [14]),
         .O(\val_rn[14]_INST_0_i_3_n_0 ));
@@ -6504,11 +6540,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[14]_INST_0_i_4 
        (.I0(\register_reg[7] [14]),
-        .I1(\register_reg[6] [14]),
+        .I1(r6[14]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [14]),
+        .I3(r5[14]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [14]),
+        .I5(r4[14]),
         .O(\val_rn[14]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -6547,10 +6583,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[15]_INST_0_i_3 
-       (.I0(\register_reg[3] [15]),
-        .I1(\register_reg[2] [15]),
+       (.I0(r3[15]),
+        .I1(r2[15]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [15]),
+        .I3(r1[15]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [15]),
         .O(\val_rn[15]_INST_0_i_3_n_0 ));
@@ -6558,11 +6594,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[15]_INST_0_i_4 
        (.I0(\register_reg[7] [15]),
-        .I1(\register_reg[6] [15]),
+        .I1(r6[15]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [15]),
+        .I3(r5[15]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [15]),
+        .I5(r4[15]),
         .O(\val_rn[15]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -6601,10 +6637,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[16]_INST_0_i_3 
-       (.I0(\register_reg[3] [16]),
-        .I1(\register_reg[2] [16]),
+       (.I0(r3[16]),
+        .I1(r2[16]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [16]),
+        .I3(r1[16]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [16]),
         .O(\val_rn[16]_INST_0_i_3_n_0 ));
@@ -6612,11 +6648,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[16]_INST_0_i_4 
        (.I0(\register_reg[7] [16]),
-        .I1(\register_reg[6] [16]),
+        .I1(r6[16]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [16]),
+        .I3(r5[16]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [16]),
+        .I5(r4[16]),
         .O(\val_rn[16]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -6655,10 +6691,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[17]_INST_0_i_3 
-       (.I0(\register_reg[3] [17]),
-        .I1(\register_reg[2] [17]),
+       (.I0(r3[17]),
+        .I1(r2[17]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [17]),
+        .I3(r1[17]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [17]),
         .O(\val_rn[17]_INST_0_i_3_n_0 ));
@@ -6666,11 +6702,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[17]_INST_0_i_4 
        (.I0(\register_reg[7] [17]),
-        .I1(\register_reg[6] [17]),
+        .I1(r6[17]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [17]),
+        .I3(r5[17]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [17]),
+        .I5(r4[17]),
         .O(\val_rn[17]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -6709,10 +6745,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[18]_INST_0_i_3 
-       (.I0(\register_reg[3] [18]),
-        .I1(\register_reg[2] [18]),
+       (.I0(r3[18]),
+        .I1(r2[18]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [18]),
+        .I3(r1[18]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [18]),
         .O(\val_rn[18]_INST_0_i_3_n_0 ));
@@ -6720,11 +6756,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[18]_INST_0_i_4 
        (.I0(\register_reg[7] [18]),
-        .I1(\register_reg[6] [18]),
+        .I1(r6[18]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [18]),
+        .I3(r5[18]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [18]),
+        .I5(r4[18]),
         .O(\val_rn[18]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -6763,10 +6799,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[19]_INST_0_i_3 
-       (.I0(\register_reg[3] [19]),
-        .I1(\register_reg[2] [19]),
+       (.I0(r3[19]),
+        .I1(r2[19]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [19]),
+        .I3(r1[19]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [19]),
         .O(\val_rn[19]_INST_0_i_3_n_0 ));
@@ -6774,11 +6810,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[19]_INST_0_i_4 
        (.I0(\register_reg[7] [19]),
-        .I1(\register_reg[6] [19]),
+        .I1(r6[19]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [19]),
+        .I3(r5[19]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [19]),
+        .I5(r4[19]),
         .O(\val_rn[19]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -6817,10 +6853,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[1]_INST_0_i_3 
-       (.I0(\register_reg[3] [1]),
-        .I1(\register_reg[2] [1]),
+       (.I0(r3[1]),
+        .I1(r2[1]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [1]),
+        .I3(r1[1]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [1]),
         .O(\val_rn[1]_INST_0_i_3_n_0 ));
@@ -6828,11 +6864,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[1]_INST_0_i_4 
        (.I0(\register_reg[7] [1]),
-        .I1(\register_reg[6] [1]),
+        .I1(r6[1]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [1]),
+        .I3(r5[1]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [1]),
+        .I5(r4[1]),
         .O(\val_rn[1]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -6871,10 +6907,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[20]_INST_0_i_3 
-       (.I0(\register_reg[3] [20]),
-        .I1(\register_reg[2] [20]),
+       (.I0(r3[20]),
+        .I1(r2[20]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [20]),
+        .I3(r1[20]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [20]),
         .O(\val_rn[20]_INST_0_i_3_n_0 ));
@@ -6882,11 +6918,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[20]_INST_0_i_4 
        (.I0(\register_reg[7] [20]),
-        .I1(\register_reg[6] [20]),
+        .I1(r6[20]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [20]),
+        .I3(r5[20]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [20]),
+        .I5(r4[20]),
         .O(\val_rn[20]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -6925,10 +6961,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[21]_INST_0_i_3 
-       (.I0(\register_reg[3] [21]),
-        .I1(\register_reg[2] [21]),
+       (.I0(r3[21]),
+        .I1(r2[21]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [21]),
+        .I3(r1[21]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [21]),
         .O(\val_rn[21]_INST_0_i_3_n_0 ));
@@ -6936,11 +6972,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[21]_INST_0_i_4 
        (.I0(\register_reg[7] [21]),
-        .I1(\register_reg[6] [21]),
+        .I1(r6[21]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [21]),
+        .I3(r5[21]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [21]),
+        .I5(r4[21]),
         .O(\val_rn[21]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -6979,10 +7015,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[22]_INST_0_i_3 
-       (.I0(\register_reg[3] [22]),
-        .I1(\register_reg[2] [22]),
+       (.I0(r3[22]),
+        .I1(r2[22]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [22]),
+        .I3(r1[22]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [22]),
         .O(\val_rn[22]_INST_0_i_3_n_0 ));
@@ -6990,11 +7026,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[22]_INST_0_i_4 
        (.I0(\register_reg[7] [22]),
-        .I1(\register_reg[6] [22]),
+        .I1(r6[22]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [22]),
+        .I3(r5[22]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [22]),
+        .I5(r4[22]),
         .O(\val_rn[22]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -7033,10 +7069,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[23]_INST_0_i_3 
-       (.I0(\register_reg[3] [23]),
-        .I1(\register_reg[2] [23]),
+       (.I0(r3[23]),
+        .I1(r2[23]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [23]),
+        .I3(r1[23]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [23]),
         .O(\val_rn[23]_INST_0_i_3_n_0 ));
@@ -7044,11 +7080,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[23]_INST_0_i_4 
        (.I0(\register_reg[7] [23]),
-        .I1(\register_reg[6] [23]),
+        .I1(r6[23]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [23]),
+        .I3(r5[23]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [23]),
+        .I5(r4[23]),
         .O(\val_rn[23]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -7087,10 +7123,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[24]_INST_0_i_3 
-       (.I0(\register_reg[3] [24]),
-        .I1(\register_reg[2] [24]),
+       (.I0(r3[24]),
+        .I1(r2[24]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [24]),
+        .I3(r1[24]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [24]),
         .O(\val_rn[24]_INST_0_i_3_n_0 ));
@@ -7098,11 +7134,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[24]_INST_0_i_4 
        (.I0(\register_reg[7] [24]),
-        .I1(\register_reg[6] [24]),
+        .I1(r6[24]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [24]),
+        .I3(r5[24]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [24]),
+        .I5(r4[24]),
         .O(\val_rn[24]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -7141,10 +7177,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[25]_INST_0_i_3 
-       (.I0(\register_reg[3] [25]),
-        .I1(\register_reg[2] [25]),
+       (.I0(r3[25]),
+        .I1(r2[25]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [25]),
+        .I3(r1[25]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [25]),
         .O(\val_rn[25]_INST_0_i_3_n_0 ));
@@ -7152,11 +7188,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[25]_INST_0_i_4 
        (.I0(\register_reg[7] [25]),
-        .I1(\register_reg[6] [25]),
+        .I1(r6[25]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [25]),
+        .I3(r5[25]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [25]),
+        .I5(r4[25]),
         .O(\val_rn[25]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -7195,10 +7231,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[26]_INST_0_i_3 
-       (.I0(\register_reg[3] [26]),
-        .I1(\register_reg[2] [26]),
+       (.I0(r3[26]),
+        .I1(r2[26]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [26]),
+        .I3(r1[26]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [26]),
         .O(\val_rn[26]_INST_0_i_3_n_0 ));
@@ -7206,11 +7242,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[26]_INST_0_i_4 
        (.I0(\register_reg[7] [26]),
-        .I1(\register_reg[6] [26]),
+        .I1(r6[26]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [26]),
+        .I3(r5[26]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [26]),
+        .I5(r4[26]),
         .O(\val_rn[26]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -7249,10 +7285,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[27]_INST_0_i_3 
-       (.I0(\register_reg[3] [27]),
-        .I1(\register_reg[2] [27]),
+       (.I0(r3[27]),
+        .I1(r2[27]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [27]),
+        .I3(r1[27]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [27]),
         .O(\val_rn[27]_INST_0_i_3_n_0 ));
@@ -7260,11 +7296,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[27]_INST_0_i_4 
        (.I0(\register_reg[7] [27]),
-        .I1(\register_reg[6] [27]),
+        .I1(r6[27]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [27]),
+        .I3(r5[27]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [27]),
+        .I5(r4[27]),
         .O(\val_rn[27]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -7303,10 +7339,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[28]_INST_0_i_3 
-       (.I0(\register_reg[3] [28]),
-        .I1(\register_reg[2] [28]),
+       (.I0(r3[28]),
+        .I1(r2[28]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [28]),
+        .I3(r1[28]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [28]),
         .O(\val_rn[28]_INST_0_i_3_n_0 ));
@@ -7314,11 +7350,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[28]_INST_0_i_4 
        (.I0(\register_reg[7] [28]),
-        .I1(\register_reg[6] [28]),
+        .I1(r6[28]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [28]),
+        .I3(r5[28]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [28]),
+        .I5(r4[28]),
         .O(\val_rn[28]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -7357,10 +7393,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[29]_INST_0_i_3 
-       (.I0(\register_reg[3] [29]),
-        .I1(\register_reg[2] [29]),
+       (.I0(r3[29]),
+        .I1(r2[29]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [29]),
+        .I3(r1[29]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [29]),
         .O(\val_rn[29]_INST_0_i_3_n_0 ));
@@ -7368,11 +7404,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[29]_INST_0_i_4 
        (.I0(\register_reg[7] [29]),
-        .I1(\register_reg[6] [29]),
+        .I1(r6[29]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [29]),
+        .I3(r5[29]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [29]),
+        .I5(r4[29]),
         .O(\val_rn[29]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -7411,10 +7447,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[2]_INST_0_i_3 
-       (.I0(\register_reg[3] [2]),
-        .I1(\register_reg[2] [2]),
+       (.I0(r3[2]),
+        .I1(r2[2]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [2]),
+        .I3(r1[2]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [2]),
         .O(\val_rn[2]_INST_0_i_3_n_0 ));
@@ -7422,11 +7458,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[2]_INST_0_i_4 
        (.I0(\register_reg[7] [2]),
-        .I1(\register_reg[6] [2]),
+        .I1(r6[2]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [2]),
+        .I3(r5[2]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [2]),
+        .I5(r4[2]),
         .O(\val_rn[2]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -7465,10 +7501,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[30]_INST_0_i_3 
-       (.I0(\register_reg[3] [30]),
-        .I1(\register_reg[2] [30]),
+       (.I0(r3[30]),
+        .I1(r2[30]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [30]),
+        .I3(r1[30]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [30]),
         .O(\val_rn[30]_INST_0_i_3_n_0 ));
@@ -7476,11 +7512,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[30]_INST_0_i_4 
        (.I0(\register_reg[7] [30]),
-        .I1(\register_reg[6] [30]),
+        .I1(r6[30]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [30]),
+        .I3(r5[30]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [30]),
+        .I5(r4[30]),
         .O(\val_rn[30]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -7519,10 +7555,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[31]_INST_0_i_3 
-       (.I0(\register_reg[3] [31]),
-        .I1(\register_reg[2] [31]),
+       (.I0(r3[31]),
+        .I1(r2[31]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [31]),
+        .I3(r1[31]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [31]),
         .O(\val_rn[31]_INST_0_i_3_n_0 ));
@@ -7530,11 +7566,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[31]_INST_0_i_4 
        (.I0(\register_reg[7] [31]),
-        .I1(\register_reg[6] [31]),
+        .I1(r6[31]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [31]),
+        .I3(r5[31]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [31]),
+        .I5(r4[31]),
         .O(\val_rn[31]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -7573,10 +7609,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[3]_INST_0_i_3 
-       (.I0(\register_reg[3] [3]),
-        .I1(\register_reg[2] [3]),
+       (.I0(r3[3]),
+        .I1(r2[3]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [3]),
+        .I3(r1[3]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [3]),
         .O(\val_rn[3]_INST_0_i_3_n_0 ));
@@ -7584,11 +7620,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[3]_INST_0_i_4 
        (.I0(\register_reg[7] [3]),
-        .I1(\register_reg[6] [3]),
+        .I1(r6[3]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [3]),
+        .I3(r5[3]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [3]),
+        .I5(r4[3]),
         .O(\val_rn[3]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -7627,10 +7663,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[4]_INST_0_i_3 
-       (.I0(\register_reg[3] [4]),
-        .I1(\register_reg[2] [4]),
+       (.I0(r3[4]),
+        .I1(r2[4]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [4]),
+        .I3(r1[4]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [4]),
         .O(\val_rn[4]_INST_0_i_3_n_0 ));
@@ -7638,11 +7674,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[4]_INST_0_i_4 
        (.I0(\register_reg[7] [4]),
-        .I1(\register_reg[6] [4]),
+        .I1(r6[4]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [4]),
+        .I3(r5[4]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [4]),
+        .I5(r4[4]),
         .O(\val_rn[4]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -7681,10 +7717,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[5]_INST_0_i_3 
-       (.I0(\register_reg[3] [5]),
-        .I1(\register_reg[2] [5]),
+       (.I0(r3[5]),
+        .I1(r2[5]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [5]),
+        .I3(r1[5]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [5]),
         .O(\val_rn[5]_INST_0_i_3_n_0 ));
@@ -7692,11 +7728,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[5]_INST_0_i_4 
        (.I0(\register_reg[7] [5]),
-        .I1(\register_reg[6] [5]),
+        .I1(r6[5]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [5]),
+        .I3(r5[5]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [5]),
+        .I5(r4[5]),
         .O(\val_rn[5]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -7735,10 +7771,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[6]_INST_0_i_3 
-       (.I0(\register_reg[3] [6]),
-        .I1(\register_reg[2] [6]),
+       (.I0(r3[6]),
+        .I1(r2[6]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [6]),
+        .I3(r1[6]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [6]),
         .O(\val_rn[6]_INST_0_i_3_n_0 ));
@@ -7746,11 +7782,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[6]_INST_0_i_4 
        (.I0(\register_reg[7] [6]),
-        .I1(\register_reg[6] [6]),
+        .I1(r6[6]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [6]),
+        .I3(r5[6]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [6]),
+        .I5(r4[6]),
         .O(\val_rn[6]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -7789,10 +7825,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[7]_INST_0_i_3 
-       (.I0(\register_reg[3] [7]),
-        .I1(\register_reg[2] [7]),
+       (.I0(r3[7]),
+        .I1(r2[7]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [7]),
+        .I3(r1[7]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [7]),
         .O(\val_rn[7]_INST_0_i_3_n_0 ));
@@ -7800,11 +7836,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[7]_INST_0_i_4 
        (.I0(\register_reg[7] [7]),
-        .I1(\register_reg[6] [7]),
+        .I1(r6[7]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [7]),
+        .I3(r5[7]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [7]),
+        .I5(r4[7]),
         .O(\val_rn[7]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -7843,10 +7879,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[8]_INST_0_i_3 
-       (.I0(\register_reg[3] [8]),
-        .I1(\register_reg[2] [8]),
+       (.I0(r3[8]),
+        .I1(r2[8]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [8]),
+        .I3(r1[8]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [8]),
         .O(\val_rn[8]_INST_0_i_3_n_0 ));
@@ -7854,11 +7890,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[8]_INST_0_i_4 
        (.I0(\register_reg[7] [8]),
-        .I1(\register_reg[6] [8]),
+        .I1(r6[8]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [8]),
+        .I3(r5[8]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [8]),
+        .I5(r4[8]),
         .O(\val_rn[8]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -7897,10 +7933,10 @@ module design_block_1_registerFile_1_0_registerFile
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[9]_INST_0_i_3 
-       (.I0(\register_reg[3] [9]),
-        .I1(\register_reg[2] [9]),
+       (.I0(r3[9]),
+        .I1(r2[9]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[1] [9]),
+        .I3(r1[9]),
         .I4(adr_rn[0]),
         .I5(\register_reg[0] [9]),
         .O(\val_rn[9]_INST_0_i_3_n_0 ));
@@ -7908,11 +7944,11 @@ module design_block_1_registerFile_1_0_registerFile
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \val_rn[9]_INST_0_i_4 
        (.I0(\register_reg[7] [9]),
-        .I1(\register_reg[6] [9]),
+        .I1(r6[9]),
         .I2(adr_rn[1]),
-        .I3(\register_reg[5] [9]),
+        .I3(r5[9]),
         .I4(adr_rn[0]),
-        .I5(\register_reg[4] [9]),
+        .I5(r4[9]),
         .O(\val_rn[9]_INST_0_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 

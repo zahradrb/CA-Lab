@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Tue May  6 16:28:19 2025
+-- Date        : Tue May 13 16:20:31 2025
 -- Host        : DESKTOP-PITB4KD running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub {G:/CA
 --               lab/CA_LAB/CA_LAB.srcs/sources_1/bd/design_block_1/ip/design_block_1_status_register_0_0/design_block_1_status_register_0_0_stub.vhdl}

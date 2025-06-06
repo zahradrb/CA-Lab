@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# MUX, MUX, MUX_4, MUX_CU, PC, adder, adder, alu, conditionCheck, controlUnit, hazardDetectionUnit, not_1, not_1, or_1, or_1, or_1, registerFile, registerIF, register_EXE, register_ID, register_MEM, sign_extend_24_to_32, status_register, val2_generator
+# MUX, MUX, MUX_4, MUX_CU, PC, adder, adder, alu, conditionCheck, controlUnit, debouncer, forwardingUnit, hazardDetectionUnit, mux3input, mux3input, not_1, not_1, or_1, or_1, or_1, registerFile, registerIF, register_EXE, register_ID, register_MEM, sign_extend_24_to_32, status_register, val2_generator
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -280,6 +280,17 @@ proc create_root_design { parentCell } {
      return 1
    }
   
+  # Create instance: debouncer_0, and set properties
+  set block_name debouncer
+  set block_cell_name debouncer_0
+  if { [catch {set debouncer_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $debouncer_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: dist_mem_gen_0, and set properties
   set dist_mem_gen_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:dist_mem_gen:8.0 dist_mem_gen_0 ]
   set_property -dict [ list \
@@ -295,6 +306,17 @@ proc create_root_design { parentCell } {
    CONFIG.depth {1024} \
  ] $dist_mem_gen_1
 
+  # Create instance: forwardingUnit_0, and set properties
+  set block_name forwardingUnit
+  set block_cell_name forwardingUnit_0
+  if { [catch {set forwardingUnit_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $forwardingUnit_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: hazardDetectionUnit_0, and set properties
   set block_name hazardDetectionUnit
   set block_cell_name hazardDetectionUnit_0
@@ -311,14 +333,46 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.C_ENABLE_ILA_AXI_MON {false} \
    CONFIG.C_MONITOR_TYPE {Native} \
-   CONFIG.C_NUM_OF_PROBES {3} \
+   CONFIG.C_NUM_OF_PROBES {8} \
    CONFIG.C_PROBE0_TYPE {2} \
    CONFIG.C_PROBE1_TYPE {1} \
    CONFIG.C_PROBE1_WIDTH {32} \
    CONFIG.C_PROBE2_TYPE {1} \
    CONFIG.C_PROBE2_WIDTH {32} \
+   CONFIG.C_PROBE3_TYPE {1} \
+   CONFIG.C_PROBE3_WIDTH {32} \
+   CONFIG.C_PROBE4_TYPE {1} \
+   CONFIG.C_PROBE4_WIDTH {32} \
+   CONFIG.C_PROBE5_TYPE {1} \
+   CONFIG.C_PROBE5_WIDTH {32} \
+   CONFIG.C_PROBE6_TYPE {1} \
+   CONFIG.C_PROBE6_WIDTH {32} \
+   CONFIG.C_PROBE7_TYPE {1} \
+   CONFIG.C_PROBE7_WIDTH {32} \
  ] $ila_0
 
+  # Create instance: mux3input_0, and set properties
+  set block_name mux3input
+  set block_cell_name mux3input_0
+  if { [catch {set mux3input_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $mux3input_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: mux3input_1, and set properties
+  set block_name mux3input
+  set block_cell_name mux3input_1
+  if { [catch {set mux3input_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $mux3input_1 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: not_1_0, and set properties
   set block_name not_1
   set block_cell_name not_1_0
@@ -560,6 +614,13 @@ proc create_root_design { parentCell } {
      return 1
    }
   
+  # Create instance: vio_0, and set properties
+  set vio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:vio:3.0 vio_0 ]
+  set_property -dict [ list \
+   CONFIG.C_EN_PROBE_IN_ACTIVITY {0} \
+   CONFIG.C_NUM_PROBE_IN {0} \
+ ] $vio_0
+
   # Create instance: xlconstant_0, and set properties
   set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
   set_property -dict [ list \
@@ -589,20 +650,20 @@ proc create_root_design { parentCell } {
 
   # Create port connections
   connect_bd_net -net MUX_0_out [get_bd_pins MUX_0/res] [get_bd_pins PC_0/inp]
-  connect_bd_net -net MUX_1_res [get_bd_pins MUX_1/res] [get_bd_pins registerFile_1/wb_res]
-  connect_bd_net -net MUX_4_0_res [get_bd_pins MUX_4_0/res] [get_bd_pins hazardDetectionUnit_0/rm] [get_bd_pins registerFile_1/adr_rm]
+  connect_bd_net -net MUX_1_res [get_bd_pins MUX_1/res] [get_bd_pins mux3input_0/in3] [get_bd_pins mux3input_1/in3] [get_bd_pins registerFile_1/wb_res]
+  connect_bd_net -net MUX_4_0_res [get_bd_pins MUX_4_0/res] [get_bd_pins hazardDetectionUnit_0/rm] [get_bd_pins registerFile_1/adr_rm] [get_bd_pins register_ID_0/src2]
   connect_bd_net -net MUX_CU_0_b_out [get_bd_pins MUX_CU_0/b_out] [get_bd_pins register_ID_0/b]
   connect_bd_net -net MUX_CU_0_exe_c_out [get_bd_pins MUX_CU_0/exe_c_out] [get_bd_pins register_ID_0/exe_c]
   connect_bd_net -net MUX_CU_0_mem_r_en_out [get_bd_pins MUX_CU_0/mem_r_en_out] [get_bd_pins register_ID_0/mem_r_en]
   connect_bd_net -net MUX_CU_0_mem_w_en_out [get_bd_pins MUX_CU_0/mem_w_en_out] [get_bd_pins register_ID_0/mem_w_en]
   connect_bd_net -net MUX_CU_0_s_out_out [get_bd_pins MUX_CU_0/s_out_out] [get_bd_pins register_ID_0/s]
   connect_bd_net -net MUX_CU_0_wb_en_out [get_bd_pins MUX_CU_0/wb_en_out] [get_bd_pins register_ID_0/wb_en]
-  connect_bd_net -net PC_0_res [get_bd_pins PC_0/res] [get_bd_pins adder_0/b] [get_bd_pins ila_0/probe2] [get_bd_pins xlslice_0/Din]
+  connect_bd_net -net PC_0_res [get_bd_pins PC_0/res] [get_bd_pins adder_0/b] [get_bd_pins ila_0/probe7] [get_bd_pins xlslice_0/Din]
   connect_bd_net -net adder_0_out [get_bd_pins MUX_0/a] [get_bd_pins adder_0/res] [get_bd_pins registerIF_0/PC]
   connect_bd_net -net adder_1_res [get_bd_pins MUX_0/b] [get_bd_pins adder_1/res]
-  connect_bd_net -net alu_0_result [get_bd_pins alu_0/result] [get_bd_pins ila_0/probe1] [get_bd_pins register_EXE_0/alu_res]
+  connect_bd_net -net alu_0_result [get_bd_pins alu_0/result] [get_bd_pins register_EXE_0/alu_res]
   connect_bd_net -net alu_0_status_bits [get_bd_pins alu_0/status_bits] [get_bd_pins status_register_0/status_bits_in]
-  connect_bd_net -net clk_0_1 [get_bd_ports clk] [get_bd_pins PC_0/clk] [get_bd_pins dist_mem_gen_0/clk] [get_bd_pins dist_mem_gen_1/clk] [get_bd_pins ila_0/clk] [get_bd_pins registerFile_1/clk] [get_bd_pins registerIF_0/clk] [get_bd_pins register_EXE_0/clk] [get_bd_pins register_ID_0/clk] [get_bd_pins register_MEM_0/clk] [get_bd_pins status_register_0/clk]
+  connect_bd_net -net clk_0_1 [get_bd_ports clk] [get_bd_pins PC_0/clk] [get_bd_pins debouncer_0/CLK_I] [get_bd_pins dist_mem_gen_0/clk] [get_bd_pins dist_mem_gen_1/clk] [get_bd_pins ila_0/clk] [get_bd_pins registerFile_1/clk] [get_bd_pins registerIF_0/clk] [get_bd_pins register_EXE_0/clk] [get_bd_pins register_ID_0/clk] [get_bd_pins register_MEM_0/clk] [get_bd_pins status_register_0/clk] [get_bd_pins vio_0/clk]
   connect_bd_net -net conditionCheck_0_res [get_bd_pins conditionCheck_0/res] [get_bd_pins not_1_0/a]
   connect_bd_net -net controlUnit_0_b [get_bd_pins MUX_CU_0/b] [get_bd_pins controlUnit_0/b]
   connect_bd_net -net controlUnit_0_exe_c [get_bd_pins MUX_CU_0/exe_c] [get_bd_pins controlUnit_0/exe_c]
@@ -612,42 +673,55 @@ proc create_root_design { parentCell } {
   connect_bd_net -net controlUnit_0_wb_en [get_bd_pins MUX_CU_0/wb_en] [get_bd_pins controlUnit_0/wb_en]
   connect_bd_net -net dist_mem_gen_0_spo [get_bd_pins dist_mem_gen_0/spo] [get_bd_pins registerIF_0/instruction]
   connect_bd_net -net dist_mem_gen_1_spo [get_bd_pins dist_mem_gen_1/spo] [get_bd_pins register_MEM_0/data_mem]
+  connect_bd_net -net forwardingUnit_0_sel_src1 [get_bd_pins forwardingUnit_0/sel_src1] [get_bd_pins mux3input_1/sel]
+  connect_bd_net -net forwardingUnit_0_sel_src2 [get_bd_pins forwardingUnit_0/sel_src2] [get_bd_pins mux3input_0/sel]
   connect_bd_net -net hazardDetectionUnit_0_hazard [get_bd_pins PC_0/freeze] [get_bd_pins hazardDetectionUnit_0/hazard] [get_bd_pins or_1_1/a] [get_bd_pins registerIF_0/freeze]
+  connect_bd_net -net mux3input_1_o [get_bd_pins alu_0/in1] [get_bd_pins mux3input_1/o]
   connect_bd_net -net not_1_0_o [get_bd_pins not_1_0/o] [get_bd_pins or_1_1/b]
   connect_bd_net -net not_1_1_o [get_bd_pins not_1_1/o] [get_bd_pins or_1_2/a]
   connect_bd_net -net or_1_0_o [get_bd_pins or_1_0/o] [get_bd_pins val2_generator_0/en]
   connect_bd_net -net or_1_1_o [get_bd_pins MUX_CU_0/sel] [get_bd_pins or_1_1/o]
   connect_bd_net -net or_1_2_o [get_bd_pins hazardDetectionUnit_0/two_src] [get_bd_pins or_1_2/o]
+  connect_bd_net -net registerFile_1_r1 [get_bd_pins ila_0/probe1] [get_bd_pins registerFile_1/r1]
+  connect_bd_net -net registerFile_1_r2 [get_bd_pins ila_0/probe2] [get_bd_pins registerFile_1/r2]
+  connect_bd_net -net registerFile_1_r3 [get_bd_pins ila_0/probe3] [get_bd_pins registerFile_1/r3]
+  connect_bd_net -net registerFile_1_r4 [get_bd_pins ila_0/probe4] [get_bd_pins registerFile_1/r4]
+  connect_bd_net -net registerFile_1_r5 [get_bd_pins ila_0/probe5] [get_bd_pins registerFile_1/r5]
+  connect_bd_net -net registerFile_1_r6 [get_bd_pins ila_0/probe6] [get_bd_pins registerFile_1/r6]
   connect_bd_net -net registerFile_1_val_rm [get_bd_pins registerFile_1/val_rm] [get_bd_pins register_ID_0/val_rm]
   connect_bd_net -net registerFile_1_val_rn [get_bd_pins registerFile_1/val_rn] [get_bd_pins register_ID_0/val_rn]
   connect_bd_net -net registerIF_0_PC_out [get_bd_pins registerIF_0/PC_out] [get_bd_pins register_ID_0/PC]
   connect_bd_net -net registerIF_0_instruction_out [get_bd_pins registerIF_0/instruction_out] [get_bd_pins slice_cond/Din] [get_bd_pins slice_dest/Din] [get_bd_pins slice_imm/Din] [get_bd_pins slice_mode/Din] [get_bd_pins slice_opcode/Din] [get_bd_pins slice_rm/Din] [get_bd_pins slice_rn/Din] [get_bd_pins slice_s/Din] [get_bd_pins slice_shiftop/Din] [get_bd_pins slice_signedImm/Din]
-  connect_bd_net -net register_EXE_0_alu_res_out [get_bd_pins register_EXE_0/alu_res_out] [get_bd_pins register_MEM_0/alu_res] [get_bd_pins slice_carry1/Din]
-  connect_bd_net -net register_EXE_0_dst_out [get_bd_pins hazardDetectionUnit_0/mem_dest] [get_bd_pins register_EXE_0/dst_out] [get_bd_pins register_MEM_0/dst]
+  connect_bd_net -net register_EXE_0_alu_res_out [get_bd_pins mux3input_0/in2] [get_bd_pins mux3input_1/in2] [get_bd_pins register_EXE_0/alu_res_out] [get_bd_pins register_MEM_0/alu_res] [get_bd_pins slice_carry1/Din]
+  connect_bd_net -net register_EXE_0_dst_out [get_bd_pins forwardingUnit_0/mem_dest] [get_bd_pins hazardDetectionUnit_0/mem_dest] [get_bd_pins register_EXE_0/dst_out] [get_bd_pins register_MEM_0/dst]
   connect_bd_net -net register_EXE_0_mem_r_en_out [get_bd_pins register_EXE_0/mem_r_en_out] [get_bd_pins register_MEM_0/mem_r_en]
   connect_bd_net -net register_EXE_0_mem_w_en_out [get_bd_pins dist_mem_gen_1/we] [get_bd_pins register_EXE_0/mem_w_en_out]
   connect_bd_net -net register_EXE_0_val_rm_out [get_bd_pins dist_mem_gen_1/d] [get_bd_pins register_EXE_0/val_rm_out]
-  connect_bd_net -net register_EXE_0_wb_en_out [get_bd_pins hazardDetectionUnit_0/mem_wb_en] [get_bd_pins register_EXE_0/wb_en_out] [get_bd_pins register_MEM_0/wb_en]
+  connect_bd_net -net register_EXE_0_wb_en_out [get_bd_pins forwardingUnit_0/mem_wb_en] [get_bd_pins hazardDetectionUnit_0/mem_wb_en] [get_bd_pins register_EXE_0/wb_en_out] [get_bd_pins register_MEM_0/wb_en]
   connect_bd_net -net register_ID_0_PC_out [get_bd_pins adder_1/a] [get_bd_pins register_ID_0/PC_out]
   connect_bd_net -net register_ID_0_b_out [get_bd_pins MUX_0/sel] [get_bd_pins registerIF_0/flush] [get_bd_pins register_ID_0/b_out] [get_bd_pins register_ID_0/flush]
   connect_bd_net -net register_ID_0_carry_out [get_bd_pins alu_0/C] [get_bd_pins register_ID_0/carry_out]
   connect_bd_net -net register_ID_0_dst_out [get_bd_pins hazardDetectionUnit_0/exe_dest] [get_bd_pins register_EXE_0/dst] [get_bd_pins register_ID_0/dst_out]
   connect_bd_net -net register_ID_0_exe_c_out [get_bd_pins alu_0/exe_cmd] [get_bd_pins register_ID_0/exe_c_out]
   connect_bd_net -net register_ID_0_imm_out [get_bd_pins register_ID_0/imm_out] [get_bd_pins val2_generator_0/imm]
-  connect_bd_net -net register_ID_0_mem_r_en_out [get_bd_pins or_1_0/a] [get_bd_pins register_EXE_0/mem_r_en] [get_bd_pins register_ID_0/mem_r_en_out]
+  connect_bd_net -net register_ID_0_mem_r_en_out [get_bd_pins hazardDetectionUnit_0/exe_mem_r_en] [get_bd_pins or_1_0/a] [get_bd_pins register_EXE_0/mem_r_en] [get_bd_pins register_ID_0/mem_r_en_out]
   connect_bd_net -net register_ID_0_mem_w_en_out [get_bd_pins or_1_0/b] [get_bd_pins register_EXE_0/mem_w_en] [get_bd_pins register_ID_0/mem_w_en_out]
   connect_bd_net -net register_ID_0_s_out [get_bd_pins register_ID_0/s_out] [get_bd_pins status_register_0/s]
   connect_bd_net -net register_ID_0_shift_op_out [get_bd_pins register_ID_0/shift_op_out] [get_bd_pins val2_generator_0/shift_op]
   connect_bd_net -net register_ID_0_signed_imm_out [get_bd_pins register_ID_0/signed_imm_out] [get_bd_pins sign_extend_24_to_32_0/a]
-  connect_bd_net -net register_ID_0_val_rm_out [get_bd_pins register_EXE_0/val_rm] [get_bd_pins register_ID_0/val_rm_out] [get_bd_pins val2_generator_0/Rm_val]
-  connect_bd_net -net register_ID_0_val_rn_out [get_bd_pins alu_0/in1] [get_bd_pins register_ID_0/val_rn_out]
+  connect_bd_net -net register_ID_0_src1_out [get_bd_pins forwardingUnit_0/src1] [get_bd_pins register_ID_0/src1_out]
+  connect_bd_net -net register_ID_0_src2_out [get_bd_pins forwardingUnit_0/src2] [get_bd_pins register_ID_0/src2_out]
+  connect_bd_net -net register_ID_0_val_rm_out [get_bd_pins mux3input_0/o] [get_bd_pins register_EXE_0/val_rm] [get_bd_pins val2_generator_0/Rm_val]
+  connect_bd_net -net register_ID_0_val_rm_out1 [get_bd_pins mux3input_0/in1] [get_bd_pins register_ID_0/val_rm_out]
+  connect_bd_net -net register_ID_0_val_rn_out [get_bd_pins mux3input_1/in1] [get_bd_pins register_ID_0/val_rn_out]
   connect_bd_net -net register_ID_0_wb_en_out [get_bd_pins hazardDetectionUnit_0/exe_wb_en] [get_bd_pins register_EXE_0/wb_en] [get_bd_pins register_ID_0/wb_en_out]
   connect_bd_net -net register_MEM_0_alu_res_out [get_bd_pins MUX_1/a] [get_bd_pins register_MEM_0/alu_res_out]
   connect_bd_net -net register_MEM_0_data_mem_out [get_bd_pins MUX_1/b] [get_bd_pins register_MEM_0/data_mem_out]
-  connect_bd_net -net register_MEM_0_dst_out [get_bd_pins registerFile_1/wb_dest] [get_bd_pins register_MEM_0/dst_out]
+  connect_bd_net -net register_MEM_0_dst_out [get_bd_pins forwardingUnit_0/wb_dest] [get_bd_pins registerFile_1/wb_dest] [get_bd_pins register_MEM_0/dst_out]
   connect_bd_net -net register_MEM_0_mem_r_en_out [get_bd_pins MUX_1/sel] [get_bd_pins register_MEM_0/mem_r_en_out]
-  connect_bd_net -net register_MEM_0_wb_en_out [get_bd_pins registerFile_1/wb_en] [get_bd_pins register_MEM_0/wb_en_out]
-  connect_bd_net -net rst_1 [get_bd_ports rst] [get_bd_pins PC_0/rst] [get_bd_pins ila_0/probe0] [get_bd_pins registerFile_1/rst] [get_bd_pins registerIF_0/rst] [get_bd_pins register_EXE_0/rst] [get_bd_pins register_ID_0/rst] [get_bd_pins register_MEM_0/rst] [get_bd_pins status_register_0/rst]
+  connect_bd_net -net register_MEM_0_wb_en_out [get_bd_pins forwardingUnit_0/wb_wb_en] [get_bd_pins registerFile_1/wb_en] [get_bd_pins register_MEM_0/wb_en_out]
+  connect_bd_net -net rst_1 [get_bd_pins PC_0/rst] [get_bd_pins debouncer_0/SIGNAL_O] [get_bd_pins ila_0/probe0] [get_bd_pins registerFile_1/rst] [get_bd_pins registerIF_0/rst] [get_bd_pins register_EXE_0/rst] [get_bd_pins register_ID_0/rst] [get_bd_pins register_MEM_0/rst] [get_bd_pins status_register_0/rst]
+  connect_bd_net -net rst_2 [get_bd_ports rst] [get_bd_pins debouncer_0/SIGNAL_I]
   connect_bd_net -net sign_extend_24_to_32_0_out [get_bd_pins adder_1/b] [get_bd_pins sign_extend_24_to_32_0/b]
   connect_bd_net -net slice_carry1_Dout [get_bd_pins dist_mem_gen_1/a] [get_bd_pins slice_carry1/Dout]
   connect_bd_net -net slice_carry_Dout [get_bd_pins register_ID_0/carry_in] [get_bd_pins slice_carry/Dout]
@@ -656,7 +730,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net slice_mode_Dout [get_bd_pins controlUnit_0/mode] [get_bd_pins slice_mode/Dout]
   connect_bd_net -net slice_opcode_Dout [get_bd_pins controlUnit_0/opcode] [get_bd_pins slice_opcode/Dout]
   connect_bd_net -net slice_rm_Dout [get_bd_pins MUX_4_0/a] [get_bd_pins slice_rm/Dout]
-  connect_bd_net -net slice_rn_Dout [get_bd_pins hazardDetectionUnit_0/rn] [get_bd_pins registerFile_1/adr_rn] [get_bd_pins slice_rn/Dout]
+  connect_bd_net -net slice_rn_Dout [get_bd_pins hazardDetectionUnit_0/rn] [get_bd_pins registerFile_1/adr_rn] [get_bd_pins register_ID_0/src1] [get_bd_pins slice_rn/Dout]
   connect_bd_net -net slice_s_Dout [get_bd_pins controlUnit_0/s] [get_bd_pins slice_s/Dout]
   connect_bd_net -net slice_shiftop_Dout [get_bd_pins register_ID_0/shift_op] [get_bd_pins slice_shiftop/Dout]
   connect_bd_net -net slice_signedImm_Dout [get_bd_pins register_ID_0/signed_imm] [get_bd_pins slice_signedImm/Dout]
@@ -665,6 +739,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net xlconstant_0_dout [get_bd_pins adder_0/a] [get_bd_pins xlconstant_0/dout]
   connect_bd_net -net xlconstant_1_dout1 [get_bd_pins dist_mem_gen_0/we] [get_bd_pins register_EXE_0/flush] [get_bd_pins register_EXE_0/freeze] [get_bd_pins register_ID_0/freeze] [get_bd_pins register_MEM_0/flush] [get_bd_pins register_MEM_0/freeze] [get_bd_pins xlconstant_1/dout]
   connect_bd_net -net xlconstant_2_dout [get_bd_pins dist_mem_gen_0/d] [get_bd_pins xlconstant_2/dout]
+  connect_bd_net -net xlconstant_3_dout [get_bd_pins forwardingUnit_0/en_forward] [get_bd_pins hazardDetectionUnit_0/en_forward] [get_bd_pins vio_0/probe_out0]
   connect_bd_net -net xlslice_0_Dout [get_bd_pins dist_mem_gen_0/a] [get_bd_pins xlslice_0/Dout]
   connect_bd_net -net xlslice_1_Dout [get_bd_pins conditionCheck_0/cond] [get_bd_pins slice_cond/Dout]
 
